@@ -1,0 +1,8 @@
+{
+  "*.+(js|jsx|ts|tsx)": [
+    "npm run lint -- --fix"
+  ],
+  "**/*.+(js|jsx|json|yml|yaml|css|ts|tsx|md|mdx)": [
+    "npm run format"
+  ]
+}
