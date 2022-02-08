@@ -31,11 +31,10 @@ function makeIssue(page: Page, platform: string, generatedStamp: string) {
   Here are some thoughts on how to test the page:
 
   1. Make sure that you assign yourself to this issue.
-  2. Try to follow the page on ${capitalizedPlatform}.
-     If everything works, close this issue :tada:
+  2. Try to follow the page on ${capitalizedPlatform}. If everything works, close this issue :tada:
   3. If something on the page doesn't work or isn't correct
-    1. Assign a label to the issue, such as \`bug\` or \`documentation-needs-update\`
-    2. Write a comment on this issue explaining what's wrong (note, Github let's you include images or videos in comments).
+     1. Assign a label to the issue, such as \`bug\` or \`documentation-needs-update\`
+     2. Write a comment on this issue explaining what's wrong (note, Github let's you include images or videos in comments).
   4. If you make a PR fixing the issue, make sure to add a comment linking to the PR.
   5. Once the page is fixed, close this issue :thumbsup:
 
