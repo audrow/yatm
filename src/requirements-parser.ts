@@ -1,5 +1,7 @@
 import yaml from 'js-yaml'
 import endent from 'endent'
+import fs from 'fs'
+import {join} from 'path'
 
 type Requirements = {
   requirements: Requirement[]
@@ -37,43 +39,9 @@ type Step = Partial<{
   stderr: string
 }>
 
-const yamlString = endent`
-  requirements:
-    - name: Test ROS 2 Topic
-      labels:
-        - ros2cli
-      url: https://github.com/ros2/ros2cli
-      checks:
-        - name: ROS2 Topic help
-          try:
-            - stdin: ros2 topic show --help
-          expect:
-            - stout: /greet
-        - name: ROS 2 Topic echo
-          try:
-            - note: Run this once
-              stdin: ros2 topic echo /greet --once
-            - imageUrl: https://img.search.brave.com/TBRxzNr6M8Enl8QPxfadgwmwEdKnYY1yUuyCsg50AYI/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9hd3Mx/LmRpc2NvdXJzZS1j/ZG4uY29tL2dpdGh1/Yi9vcmlnaW5hbC8y/WC9kL2Q0MTY3NmM5/YmY5ZmJhYThlZGJl/NzZlZjM0NzQ0ZjM4/MDg5ZDA0NzQuc3Zn.svg
-              note: It should look like this image
-            - stdin: ros2 topic echo /greet --twice
-          expect:
-            - note: Will say hello once
-            - stdout: |
-                Hello
-                Hello
-              stderr: None
-        - name: ROS2 Topic help
-          try:
-            - stdin: |
-                ros2 topic show -h
-                ros2 topic show --help
-          expect:
-            - stout: /greet
-        - name: Documentation has no typos
-        - name: Documentation has no obvious grammar mistakes
-`
-
-const req = yaml.load(yamlString) as Requirements
+const reqPath = join(__dirname, '__tests__', 'requirements.yaml')
+const reqStr = fs.readFileSync(reqPath, 'utf8')
+const req = yaml.load(reqStr) as Requirements
 
 console.log(req.requirements[0].checks)
 
@@ -178,8 +146,7 @@ function testCaseToMd(testCase: TestCase) {
   `
 }
 
-console.log(
-  testCaseToMd(
-    requirementToTestCase(req.requirements[0], 'jammy', 'fastdds', 'source'),
-  ),
+const tc = testCaseToMd(
+  requirementToTestCase(req.requirements[0], 'jammy', 'fastdds', 'source'),
 )
+console.log(tc)
