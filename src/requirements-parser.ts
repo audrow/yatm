@@ -5,6 +5,16 @@ type Requirements = {
   requirements: Requirement[]
 }
 
+type Platform = 'jammy' | 'windows' | 'rhel' | 'focal'
+type Dds = 'fastdds' | 'cyclone' | 'connext'
+type InstallType = 'binary' | 'source'
+
+type TestCase = {
+  platform: Platform
+  dds: Dds
+  installType: InstallType
+} & Requirement
+
 type Requirement = {
   name: string
   description?: string
@@ -13,9 +23,9 @@ type Requirement = {
 }
 
 type Check = {
-  name?: string
-  try: Step[]
-  expect: Step[]
+  name: string
+  try?: Step[]
+  expect?: Step[]
 }
 
 type Step = Partial<{
@@ -53,13 +63,14 @@ const yamlString = endent`
                 Hello
               stderr: None
         - name: ROS2 Topic help
-          # instructions: Run the following in a terminal (optional)
           try:
             - stdin: |
                 ros2 topic show -h
                 ros2 topic show --help
           expect:
             - stout: /greet
+        - name: Documentation has no typos
+        - name: Documentation has no obvious grammar mistakes
 `
 
 const req = yaml.load(yamlString) as Requirements
@@ -80,7 +91,7 @@ function getStep(step: Step) {
     out += endent`
       \`\`\`bash
       # User input in terminal ${step.terminal}
-      ${step.stdin}
+      ${step.stdin.trim()}
       \`\`\`
     `
   }
@@ -88,7 +99,7 @@ function getStep(step: Step) {
     out += endent`
       \`\`\`bash
       # stdout in terminal ${step.terminal}
-      ${step.stout}
+      ${step.stout.trim()}
       \`\`\`
     `
   }
@@ -96,50 +107,79 @@ function getStep(step: Step) {
     out += endent`
       \`\`\`bash
       # stderr in terminal ${step.terminal}
-      ${step.stderr}
+      ${step.stderr.trim()}
       \`\`\`
     `
   }
   return out
 }
 
-function requirementToMd(requirement: Requirement) {
+function requirementToTestCase(
+  req: Requirement,
+  platform: Platform,
+  dds: Dds,
+  installType: InstallType,
+) {
+  return {
+    installType,
+    platform,
+    dds,
+    ...req,
+  }
+}
+
+function testCaseToMd(testCase: TestCase) {
   return endent`
-    ${requirement.name}
+    ${testCase.name}
+
+    ## Setup
+    - Platform: ${testCase.platform}
+    - Install Type: ${testCase.installType}
+    - DDS: ${testCase.dds}
 
     ## Checks
-    ${requirement.checks
+    ${testCase.checks
       .map((check) => {
         return endent`
           - [ ] ${check.name}
 
-            <details><summary>details</summary>
+            ${
+              !(check.try && check.expect)
+                ? ''
+                : endent`
+              <details><summary>details</summary>
 
-              ### Try
+                **Try**
 
-              ${check.try
-                .map(
-                  (s) => endent`
-                1.
-                   ${getStep(s)}`,
-                )
-                .join('\n')}
+                ${check.try
+                  .map(
+                    (s) => endent`
+                  1.
+                     ${getStep(s)}`,
+                  )
+                  .join('\n')}
 
-              ### Expect
+                **Expect**
 
-              ${check.expect
-                .map(
-                  (s) => endent`
-                1.
-                   ${getStep(s)}`,
-                )
-                .join('\n')}
+                ${check.expect
+                  .map(
+                    (s) => endent`
+                  1.
+                     ${getStep(s)}`,
+                  )
+                  .join('\n')}
 
-            </details>
+              </details>
+            `
+            }
         `
       })
       .join('\n')}
   `
 }
 
-console.log(requirementToMd(req.requirements[0]))
+console.log(
+  testCaseToMd(
+    requirementToTestCase(req.requirements[0], 'jammy', 'fastdds', 'source'),
+  ),
+)
