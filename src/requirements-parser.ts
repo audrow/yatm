@@ -35,7 +35,7 @@ type Step = Partial<{
   imageUrl: string
   note: string
   stdin: string
-  stout: string
+  stdout: string
   stderr: string
 }>
 
@@ -63,11 +63,11 @@ function getStep(step: Step) {
       \`\`\`
     `
   }
-  if (step.stout) {
+  if (step.stdout) {
     out += endent`
       \`\`\`bash
       # stdout in terminal ${step.terminal}
-      ${step.stout.trim()}
+      ${step.stdout.trim()}
       \`\`\`
     `
   }
@@ -98,7 +98,7 @@ function requirementToTestCase(
 
 function testCaseToMd(testCase: TestCase) {
   return endent`
-    ${testCase.name}
+    # ${testCase.name}
 
     ## Setup
     - Platform: ${testCase.platform}
@@ -146,7 +146,9 @@ function testCaseToMd(testCase: TestCase) {
   `
 }
 
-const tc = testCaseToMd(
-  requirementToTestCase(req.requirements[0], 'jammy', 'fastdds', 'source'),
-)
+const tc = req.requirements
+  .map((r) =>
+    testCaseToMd(requirementToTestCase(r, 'jammy', 'fastdds', 'source')),
+  )
+  .join('\n\n---')
 console.log(tc)

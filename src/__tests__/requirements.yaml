@@ -8,7 +8,7 @@ requirements:
         try:
           - stdin: ros2 topic show --help
         expect:
-          - stout: /greet
+          - stdout: /greet
       - name: ROS 2 Topic echo
         try:
           - note: Run this once
@@ -28,7 +28,7 @@ requirements:
               ros2 topic show -h
               ros2 topic show --help
         expect:
-          - stout: /greet
+          - stdout: /greet
   - name: Check tutorial documentation page
     url: https://ros2.org/tutorials
     checks:
