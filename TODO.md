@@ -4,7 +4,7 @@
 - [x] Scrape the documentation site for pages
 - [x] Make a generic way to write requirements with YAML
 - [x] Validate YAML requirements file
-- [ ] Add tests for requirements validator
+- [x] Add tests for requirements validator
 - [ ] Split out markdown renderer
 - [ ] Make a better Github CRUD
   - [ ] Keeps running until done while issues limit is in place

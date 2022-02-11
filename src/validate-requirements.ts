@@ -8,7 +8,7 @@ import type {
   Step,
 } from './requirements-parser'
 
-const stepSchema: JSONSchemaType<Step> = {
+export const stepSchema: JSONSchemaType<Step> = {
   type: 'object',
   properties: {
     terminal: {
@@ -56,7 +56,7 @@ const stepSchema: JSONSchemaType<Step> = {
   additionalProperties: false,
 }
 
-const checkSchema: JSONSchemaType<Check> = {
+export const checkSchema: JSONSchemaType<Check> = {
   type: 'object',
   properties: {
     name: {
@@ -67,15 +67,16 @@ const checkSchema: JSONSchemaType<Check> = {
       type: 'array',
       items: stepSchema,
       nullable: true,
+      minItems: 1,
     },
     expect: {
       type: 'array',
       items: stepSchema,
       nullable: true,
+      minItems: 1,
     },
   },
   required: ['name'],
-  minProperties: 1,
   additionalProperties: false,
   dependencies: {
     try: ['expect'],
@@ -83,7 +84,7 @@ const checkSchema: JSONSchemaType<Check> = {
   },
 }
 
-const requirementSchema: JSONSchemaType<Requirement> = {
+export const requirementSchema: JSONSchemaType<Requirement> = {
   type: 'object',
   properties: {
     name: {
@@ -104,12 +105,13 @@ const requirementSchema: JSONSchemaType<Requirement> = {
     checks: {
       type: 'array',
       items: checkSchema,
+      minItems: 1,
     },
   },
-  required: ['name'],
+  required: ['name', 'checks'],
 }
 
-const requirementsSchema: JSONSchemaType<Requirements> = {
+export const requirementsSchema: JSONSchemaType<Requirements> = {
   type: 'object',
   properties: {
     requirements: {
@@ -121,7 +123,7 @@ const requirementsSchema: JSONSchemaType<Requirements> = {
   required: ['requirements'],
 }
 
-export default function validateRequirements(data: unknown): boolean {
+export function validateRequirements(data: unknown): boolean {
   const ajv = new Ajv()
   const validate = ajv.compile(requirementsSchema)
   const valid = validate(data)
@@ -131,6 +133,8 @@ export default function validateRequirements(data: unknown): boolean {
   }
   return true
 }
+
+export default validateRequirements
 
 if (typeof require !== 'undefined' && require.main === module) {
   const data = {
