@@ -1,6 +1,11 @@
-import getSitePages from './get-site-pages'
+import getSitePages from './lib/get-site-pages'
 import makeIssues from './make-issues'
-import {createIssues, closeGeneratedIssues, getUser, getIssues} from './gh-api'
+import {
+  createIssues,
+  closeGeneratedIssues,
+  getUser,
+  getIssues,
+} from './test-case-db/gh-issues-test-case-db'
 
 import type Repo from './__types__/Repo'
 

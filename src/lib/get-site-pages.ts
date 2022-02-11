@@ -1,7 +1,7 @@
 import Sitemapper from 'sitemapper'
 import urlJoin from 'proper-url-join'
 
-import type Page from './__types__/Page'
+import type Page from '../__types__/Page'
 
 export default async function getSitePages(
   distro: string,

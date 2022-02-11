@@ -2,6 +2,8 @@ import Ajv from 'ajv'
 
 import requirementsSchema from './__schemas__/requirements-schema'
 
+export default validateRequirements
+
 export function validateRequirements(data: unknown): boolean {
   const ajv = new Ajv()
   const validate = ajv.compile(requirementsSchema)
@@ -12,8 +14,6 @@ export function validateRequirements(data: unknown): boolean {
   }
   return true
 }
-
-export default validateRequirements
 
 if (typeof require !== 'undefined' && require.main === module) {
   const data = {

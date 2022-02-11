@@ -1,9 +1,9 @@
 import {Octokit} from 'octokit'
-import {GITHUB_API_TOKEN} from './lib/constants'
+import {GITHUB_API_TOKEN} from '../lib/constants'
 
-import type Issue from './__types__/Issue'
-import type Repo from './__types__/Repo'
-import type IssueState from './__types__/IssueState'
+import type Issue from '../__types__/Issue'
+import type Repo from '../__types__/Repo'
+import type IssueState from '../__types__/IssueState'
 
 const gh = new Octokit({
   auth: GITHUB_API_TOKEN,

@@ -48,7 +48,7 @@ function makeIssue(page: Page, platform: string, generatedStamp: string) {
 }
 
 async function main() {
-  const getPages = (await import('./get-site-pages')).default
+  const getPages = (await import('./lib/get-site-pages')).default
   const distro = 'rolling'
   const baseUrl = 'https://docs.ros.org/en/'
   const sections: string[] = ['Install', 'Tutorials', 'How-to-guide']
