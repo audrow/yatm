@@ -2,35 +2,36 @@ import yaml from 'js-yaml'
 import endent from 'endent'
 import fs from 'fs'
 import {join} from 'path'
-
-type Requirements = {
-  requirements: Requirement[]
-}
+import validateRequirements from './validate-requirements'
 
 type Platform = 'jammy' | 'windows' | 'rhel' | 'focal'
 type Dds = 'fastdds' | 'cyclone' | 'connext'
 type InstallType = 'binary' | 'source'
 
-type TestCase = {
+export type TestCase = {
   platform: Platform
   dds: Dds
   installType: InstallType
 } & Requirement
 
-type Requirement = {
+export type Requirements = {
+  requirements: Requirement[]
+}
+
+export type Requirement = {
   name: string
   description?: string
   labels?: string[]
   checks: Check[]
 }
 
-type Check = {
+export type Check = {
   name: string
   try?: Step[]
   expect?: Step[]
 }
 
-type Step = Partial<{
+export type Step = Partial<{
   terminal: number
   imageUrl: string
   note: string
@@ -42,8 +43,11 @@ type Step = Partial<{
 const reqPath = join(__dirname, '__tests__', 'requirements.yaml')
 const reqStr = fs.readFileSync(reqPath, 'utf8')
 const req = yaml.load(reqStr) as Requirements
-
-console.log(req.requirements[0].checks)
+const isValid = validateRequirements(req)
+if (!isValid) {
+  console.error('Invalid requirements file - exiting with code 1')
+  process.exit(1)
+}
 
 function getStep(step: Step) {
   step.terminal = step.terminal || 1
