@@ -36,7 +36,23 @@ const stepSchema: JSONSchemaType<Step> = {
       nullable: true,
     },
   },
-  minProperties: 1,
+  anyOf: [
+    {
+      required: ['note'],
+    },
+    {
+      required: ['imageUrl'],
+    },
+    {
+      required: ['stdin'],
+    },
+    {
+      required: ['stdout'],
+    },
+    {
+      required: ['stderr'],
+    },
+  ],
   additionalProperties: false,
 }
 
@@ -133,7 +149,7 @@ if (typeof require !== 'undefined' && require.main === module) {
             expect: [
               {
                 terminal: 1,
-                note: 'you win',
+                note: 'note',
               },
             ],
           },
