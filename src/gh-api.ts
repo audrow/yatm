@@ -1,5 +1,5 @@
 import {Octokit} from 'octokit'
-import {GITHUB_API_TOKEN} from './constants'
+import {GITHUB_API_TOKEN} from './lib/constants'
 
 import type Issue from './__types__/Issue'
 import type Repo from './__types__/Repo'

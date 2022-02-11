@@ -1,18 +1,14 @@
 import Ajv from 'ajv'
-import {
-  validateRequirements,
-  requirementsSchema,
-  requirementSchema,
-  checkSchema,
-  stepSchema,
-} from '../validate-requirements'
 
-import type {
-  Check,
-  Requirement,
-  Requirements,
-  Step,
-} from '../requirements-parser'
+import stepSchema from '../__schemas__/step-schema'
+import checkSchema from '../__schemas__/check-schema'
+import requirementSchema from '../__schemas__/requirement-schema'
+import requirementsSchema from '../__schemas__/requirements-schema'
+
+import type Step from '../__types__/Step'
+import type Check from '../__types__/Check'
+import type Requirement from '../__types__/Requirement'
+import type Requirements from '../__types__/Requirements'
 
 describe('validate step schema', () => {
   const ajv = new Ajv()
@@ -233,40 +229,33 @@ describe('validate requirements schema', () => {
     ],
   }
 
-  const validateFns: ((data: unknown) => boolean)[] = [
-    validate,
-    validateRequirements,
-  ]
-  validateFns.forEach((validateFn, idx) => {
-    const methodNumber = idx + 1
-    it(`returns true on valid requirements - method ${methodNumber}`, () => {
-      const validRequirements: Requirements[] = [
-        {
-          requirements: [requirement],
-        },
-        {
-          requirements: [requirement, requirement, requirement],
-        },
-      ]
-      validRequirements.forEach((requirements) => {
-        expect(validateFn(requirements)).toBeTruthy()
-      })
+  it(`returns true on valid requirements`, () => {
+    const validRequirements: Requirements[] = [
+      {
+        requirements: [requirement],
+      },
+      {
+        requirements: [requirement, requirement, requirement],
+      },
+    ]
+    validRequirements.forEach((requirements) => {
+      expect(validate(requirements)).toBeTruthy()
+    })
 
-      expect(
-        validateFn({
-          requirements: [],
-        }),
-      ).toBeFalsy()
-    })
-    it(`requires the requirement key - method ${methodNumber}`, () => {
-      expect(validateFn({})).toBeFalsy()
-    })
-    it(`returns false on unknown key - method ${methodNumber}`, () => {
-      expect(
-        validateFn({
-          foo: 'bar',
-        }),
-      ).toBeFalsy()
-    })
+    expect(
+      validate({
+        requirements: [],
+      }),
+    ).toBeFalsy()
+  })
+  it(`requires the requirement key`, () => {
+    expect(validate({})).toBeFalsy()
+  })
+  it(`returns false on unknown key`, () => {
+    expect(
+      validate({
+        foo: 'bar',
+      }),
+    ).toBeFalsy()
   })
 })
