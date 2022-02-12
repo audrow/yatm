@@ -6,6 +6,8 @@ import {
   getUser,
   getIssues,
 } from './test-case-db/gh-issues-test-case-db'
+import {RequestError} from '@octokit/request-error'
+import sleep from 'sleep'
 
 import type Repo from './__types__/Repo'
 
@@ -24,12 +26,22 @@ async function main() {
   const pages = await getSitePages(distro, baseUrl, sections)
   const possibleIssues = makeIssues(pages, platforms, generatedStamp)
 
-  const existingIssues = (await getIssues(repo, 'open')).map((i) => i.title)
-  const newIssues = possibleIssues.filter(
-    (i) => !existingIssues.includes(i.title),
-  )
-
-  await createIssues(repo, newIssues)
+  let done = false
+  while (!done) {
+    try {
+      const existingIssues = (await getIssues(repo, 'open')).map((i) => i.title)
+      const newIssues = possibleIssues.filter(
+        (i) => !existingIssues.includes(i.title),
+      )
+      await createIssues(repo, newIssues)
+      done = true
+    } catch (e) {
+      if (e instanceof RequestError && e.status === 403) {
+        console.log(`Rate limited error - trying again in 5 minutes`)
+        sleep.sleep(5 * 60)
+      }
+    }
+  }
 
   if (isCloseGeneratedIssues) {
     await closeGeneratedIssues(repo, generatedStamp)

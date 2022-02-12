@@ -5,10 +5,10 @@
 - [x] Make a generic way to write requirements with YAML
 - [x] Validate YAML requirements file
 - [x] Add tests for requirements validator
-- [ ] Split out markdown renderer
+- [x] Split out markdown renderer
 - [ ] Make a better Github CRUD
   - [ ] Keeps running until done while issues limit is in place
-  - [ ] Create issues
+  - [x] Create issues
   - [ ] Delete issues based on filter
   - [ ] Update issues based on filter
 - [ ] Tie the application together

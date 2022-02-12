@@ -21,11 +21,14 @@ export async function getIssues(repo: Repo, state: IssueState) {
 }
 
 export async function createIssues(repo: Repo, issues: Issue[]) {
-  issues.map(async (issue) => await createIssue(repo, issue))
+  for (const issue of issues) {
+    await createIssue(repo, issue)
+    console.info(`Created issue: ${issue.title}`)
+  }
 }
 
 export async function createIssue(repo: Repo, issue: Issue) {
-  await gh.issues.create({
+  return await gh.issues.create({
     owner: repo.owner,
     repo: repo.name,
     title: issue.title,

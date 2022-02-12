@@ -48,6 +48,7 @@
     "@types/jest": "^27.4.0",
     "@types/js-yaml": "^4.0.5",
     "@types/proper-url-join": "^2.1.1",
+    "@types/sleep": "^0.0.8",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
     "eslint": "^8.8.0",
@@ -62,12 +63,14 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "@octokit/request-error": "^2.1.0",
     "ajv": "^8.10.0",
     "dotenv": "^16.0.0",
     "endent": "^2.1.0",
     "js-yaml": "^4.1.0",
     "octokit": "^1.7.1",
     "proper-url-join": "^2.1.1",
-    "sitemapper": "^3.2.2"
+    "sitemapper": "^3.2.2",
+    "sleep": "^6.3.0"
   }
 }
