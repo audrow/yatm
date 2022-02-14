@@ -5,7 +5,7 @@ import {
   closeGeneratedIssues,
   getUser,
   getIssues,
-} from './test-case-db/gh-issues-test-case-db'
+} from './test-case-db/gh-issue-crud'
 import {RequestError} from '@octokit/request-error'
 import sleep from 'sleep'
 
