@@ -7,7 +7,7 @@
 - [x] Add tests for requirements validator
 - [x] Split out markdown renderer
 - [ ] Make a better Github CRUD
-  - [ ] Keeps running until done while issues limit is in place
+  - [x] Keeps running until done while issues limit is in place
   - [x] Create issues
   - [ ] Delete issues based on filter
   - [ ] Update issues based on filter
