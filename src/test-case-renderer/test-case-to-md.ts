@@ -5,14 +5,25 @@ import type Step from '../__types__/Step'
 
 export default testCaseToMd
 
-function testCaseToMd(testCase: TestCase) {
+function testCaseToMd(
+  testCase: TestCase,
+  translationMap?: {[key: string]: string},
+) {
   return endent`
     # ${testCase.name}
 
     ## Setup
-    - Platform: ${testCase.platform}
-    - Install Type: ${testCase.installType}
-    - DDS: ${testCase.dds}
+    ${Object.entries(testCase.dimensions)
+      .map(([key, value]) => {
+        if (translationMap) {
+          key = translationMap[key] || key
+          value = translationMap[value] || value
+        }
+        key = key[0].toUpperCase() + key.slice(1)
+        value = value[0].toUpperCase() + value.slice(1)
+        return `- ${key}: ${value}`
+      })
+      .join('\n')}
 
     ## Checks
     ${testCase.checks
@@ -90,4 +101,53 @@ function getStep(step: Step) {
     `
   }
   return out
+}
+
+if (typeof require !== 'undefined' && require.main === module) {
+  const map = {
+    jammy: 'Ubuntu Jammy',
+    installType: 'Install type',
+    fastdds: 'FastDDS',
+    dds: 'DDS vendor',
+  }
+  const testCase: TestCase = {
+    name: 'test case',
+    dimensions: {
+      platform: 'jammy',
+      dds: 'fastdds',
+      installType: 'source',
+    },
+    generation: 37,
+    checks: [
+      {
+        name: 'check',
+        try: [
+          {
+            note: 'try',
+            terminal: 1,
+            stderr: 'stderr',
+          },
+        ],
+        expect: [
+          {
+            note: 'expect',
+            terminal: 1,
+            stdout: 'stdout',
+          },
+          {
+            note: 'expect',
+            imageUrl: 'image url',
+          },
+        ],
+      },
+      {
+        name: 'Name only check',
+      },
+      {
+        name: 'Name only check 2',
+      },
+    ],
+  }
+  const out = testCaseToMd(testCase, map)
+  console.log(out)
 }

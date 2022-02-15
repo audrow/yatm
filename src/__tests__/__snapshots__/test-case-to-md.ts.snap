@@ -4,9 +4,9 @@ exports[`testCaseToMd should render a test case 1`] = `
 "# test case
 
 ## Setup
-- Platform: jammy
-- Install Type: source
-- DDS: fastdds
+- Platform: Jammy
+- Dds: Fastdds
+- InstallType: Source
 
 ## Checks
 - [ ] check

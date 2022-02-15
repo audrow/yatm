@@ -32,12 +32,7 @@ class githubTestCaseDb implements TestCaseDb {
 }
 
 export function getTestCaseTitle(testCase: TestCase): string {
-  const code = (
-    testCase.platform[0] +
-    testCase.dds[0] +
-    testCase.installType[0]
-  ).toUpperCase()
-  return `[${code}] ${testCase.name}`
+  return testCase.name
 }
 
 export default githubTestCaseDb

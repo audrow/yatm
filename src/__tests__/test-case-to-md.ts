@@ -6,9 +6,12 @@ describe('testCaseToMd', () => {
   it('should render a test case', () => {
     const testCase: TestCase = {
       name: 'test case',
-      platform: 'jammy',
-      dds: 'fastdds',
-      installType: 'source',
+      dimensions: {
+        platform: 'jammy',
+        dds: 'fastdds',
+        installType: 'source',
+      },
+      generation: 37,
       checks: [
         {
           name: 'check',
