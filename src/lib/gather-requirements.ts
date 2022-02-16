@@ -14,7 +14,7 @@ export type Platform = 'jammy' | 'windows' | 'rhel' | 'focal'
 export type Dds = 'fastdds' | 'cyclone' | 'connext'
 export type InstallType = 'binary' | 'source'
 
-export async function getRequirements(
+export async function gatherRequirements(
   inputRequirementsPath: string,
   outputRequirementsPath: string,
 ) {
@@ -23,7 +23,6 @@ export async function getRequirements(
 }
 
 function copyRequirementFiles(inputPath: string, outputPath: string) {
-  const requirementNames = new Set<string>()
   fs.readdirSync(inputPath).forEach((file) => {
     const filePath = join(inputPath, file)
     const requirementsYaml = yaml.load(
@@ -31,18 +30,6 @@ function copyRequirementFiles(inputPath: string, outputPath: string) {
     ) as Requirements
 
     validateRequirementsYaml(requirementsYaml)
-
-    // Check if there are any duplicate requirement names
-    requirementsYaml.requirements.forEach((requirement) => {
-      if (requirementNames.has(requirement.name)) {
-        console.error(
-          `ERROR: ${requirement.name} is duplicated requirement name: ${filePath}`,
-        )
-        process.exit(1)
-      } else {
-        requirementNames.add(requirement.name)
-      }
-    })
 
     const outputFilePath = join(outputPath, file)
     const outText = endent`
@@ -63,12 +50,13 @@ async function makeDocumentationRequirementFiles(
   distro = 'rolling',
   baseUrl = 'https://docs.ros.org/en/',
   sections: string[] = ['Install', 'Tutorials', 'How-to-guide'],
+  documentationLabel = 'docs',
 ) {
   const pages = await getSitePages(distro, baseUrl, sections)
   const requirements = pages.map((page) => {
     const out: Requirement = {
       name: page.name,
-      labels: page.labels,
+      labels: [...page.labels, documentationLabel],
       description: `Check the documentation for the '${page.name}' page`,
       links: [
         {
@@ -122,4 +110,23 @@ function errorIfFileExists(filePath: string) {
     console.error(`ERROR: file already exists: ${filePath}`)
     process.exit(1)
   }
+}
+
+async function main() {
+  const inputRequirementsPath = join(__dirname, '..', '..', 'requirements')
+  const constants = await import('./constants')
+
+  if (fs.existsSync(constants.outputPath)) {
+    fs.rmSync(constants.outputPath, {recursive: true})
+  }
+  fs.mkdirSync(constants.outputRequirementsPath, {recursive: true})
+
+  await gatherRequirements(
+    inputRequirementsPath,
+    constants.outputRequirementsPath,
+  )
+}
+
+if (typeof require !== 'undefined' && require.main === module) {
+  main()
 }
