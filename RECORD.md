@@ -88,7 +88,7 @@ Open questions:
       - Try 2
         ```yaml
         filter:
-          - include: documentation
+          - include: *
             permutations:
               - dds:
                   - cyclone
@@ -99,7 +99,8 @@ Open questions:
                   - windows
               - installType:
                   - source
-          - exclude: install
+          - exclude:
+              title: install
             permutations:
               - dds:
                   - connext
