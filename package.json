@@ -49,6 +49,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/proper-url-join": "^2.1.1",
     "@types/sleep": "^0.0.8",
+    "@types/url-parse": "^1.4.8",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
     "eslint": "^8.9.0",
@@ -71,6 +72,7 @@
     "octokit": "^1.7.1",
     "proper-url-join": "^2.1.1",
     "sitemapper": "^3.2.2",
-    "sleep": "^6.3.0"
+    "sleep": "^6.3.0",
+    "url-parse": "^1.5.6"
   }
 }

@@ -14,6 +14,23 @@ const requirementSchema: JSONSchemaType<Requirement> = {
       type: 'string',
       nullable: true,
     },
+    links: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          name: {
+            type: 'string',
+            minLength: 5,
+          },
+          url: {
+            type: 'string',
+          },
+        },
+        required: ['name', 'url'],
+      },
+      nullable: true,
+    },
     labels: {
       type: 'array',
       items: {
