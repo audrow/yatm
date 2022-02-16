@@ -1,0 +1,31 @@
+requirements:
+  - name: Test ROS 2 Bag
+    labels:
+      - ros2cli
+    url: https://github.com/ros2/ros2cli
+    checks:
+      - name: ROS2 Topic help
+        try:
+          - stdin: ros2 topic show --help
+        expect:
+          - stdout: /greet
+      - name: ROS 2 Topic echo
+        try:
+          - note: Run this once
+            stdin: ros2 topic echo /greet --once
+          - imageUrl: https://img.search.brave.com/TBRxzNr6M8Enl8QPxfadgwmwEdKnYY1yUuyCsg50AYI/rs:fit:200:200:1/g:ce/aHR0cHM6Ly9hd3Mx/LmRpc2NvdXJzZS1j/ZG4uY29tL2dpdGh1/Yi9vcmlnaW5hbC8y/WC9kL2Q0MTY3NmM5/YmY5ZmJhYThlZGJl/NzZlZjM0NzQ0ZjM4/MDg5ZDA0NzQuc3Zn.svg
+            note: It should look like this image
+          - stdin: ros2 topic echo /greet --twice
+        expect:
+          - note: Will say hello once
+          - stdout: |
+              Hello
+              Hello
+            stderr: None
+      - name: ROS2 Topic help
+        try:
+          - stdin: |
+              ros2 topic show -h
+              ros2 topic show --help
+        expect:
+          - stdout: /greet

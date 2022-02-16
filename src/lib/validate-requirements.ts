@@ -4,15 +4,13 @@ import requirementsSchema from '../__schemas__/requirements-schema'
 
 export default validateRequirements
 
-export function validateRequirements(data: unknown): boolean {
+export function validateRequirements(data: unknown) {
   const ajv = new Ajv()
   const validate = ajv.compile(requirementsSchema)
   const valid = validate(data)
   if (!valid) {
-    console.error(validate.errors)
-    return false
+    return validate.errors
   }
-  return true
 }
 
 if (typeof require !== 'undefined' && require.main === module) {
