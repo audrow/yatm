@@ -1,7 +1,7 @@
 import {Octokit} from 'octokit'
 import {GITHUB_API_TOKEN} from '../lib/constants'
 
-import type Issue from '../__types__/Issue'
+import type GithubIssue from '../__types__/GithubIssue'
 import type Repo from '../__types__/Repo'
 import type IssueState from '../__types__/IssueState'
 
@@ -20,14 +20,14 @@ export async function getIssues(repo: Repo, state: IssueState) {
   return issuesAndPrs.filter((i) => !i.pull_request)
 }
 
-export async function createIssues(repo: Repo, issues: Issue[]) {
+export async function createIssues(repo: Repo, issues: GithubIssue[]) {
   for (const issue of issues) {
     await createIssue(repo, issue)
     console.info(`Created issue: ${issue.title}`)
   }
 }
 
-export async function createIssue(repo: Repo, issue: Issue) {
+export async function createIssue(repo: Repo, issue: GithubIssue) {
   return await gh.issues.create({
     owner: repo.owner,
     repo: repo.name,

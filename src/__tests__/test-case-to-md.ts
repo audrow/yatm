@@ -1,6 +1,6 @@
 import testCaseToMd from '../test-case-renderer/test-case-to-md'
 
-import TestCase from '../__types__/TestsCase'
+import TestCase from '../__types__/TestCase'
 
 describe('testCaseToMd', () => {
   it('should render a test case', () => {

@@ -1,29 +1,51 @@
 import endent from 'endent'
 
-import type TestCase from '../__types__/TestsCase'
+import type TestCase from '../__types__/TestCase'
 import type Step from '../__types__/Step'
+import {translationMap as tMap} from '../lib/constants'
 
 export default testCaseToMd
 
 function testCaseToMd(
   testCase: TestCase,
-  translationMap?: {[key: string]: string},
+  translationMap: {[key: string]: string} = tMap,
 ) {
-  return endent`
-    # ${testCase.name}
+  let text = ''
 
-    ## Setup
-    ${Object.entries(testCase.dimensions)
-      .map(([key, value]) => {
-        if (translationMap) {
-          key = translationMap[key] || key
-          value = translationMap[value] || value
-        }
-        key = key[0].toUpperCase() + key.slice(1)
-        value = value[0].toUpperCase() + value.slice(1)
-        return `- ${key}: ${value}`
-      })
-      .join('\n')}
+  if (Object.entries(testCase.dimensions).length > 0) {
+    text = endent`
+      ${text}
+
+      ## Setup
+      ${Object.entries(testCase.dimensions)
+        .map(([key, value]) => {
+          if (translationMap) {
+            key = translationMap[key] || key
+            value = translationMap[value] || value
+          }
+          key = key[0].toUpperCase() + key.slice(1)
+          value = value[0].toUpperCase() + value.slice(1)
+          return `- ${key}: ${value}`
+        })
+        .join('\n')}
+      `
+  }
+
+  if (testCase.links && testCase.links.length > 0) {
+    text = endent`
+      ${text}
+
+      ## Links
+      ${testCase.links
+        .map((link) => {
+          return `- [${link.name}](${link.url})`
+        })
+        .join('\n')} 
+    `
+  }
+
+  text = endent`
+    ${text}
 
     ## Checks
     ${testCase.checks
@@ -64,6 +86,7 @@ function testCaseToMd(
       })
       .join('\n')}
   `
+  return text
 }
 
 function getStep(step: Step) {
@@ -103,13 +126,8 @@ function getStep(step: Step) {
   return out
 }
 
-if (typeof require !== 'undefined' && require.main === module) {
-  const map = {
-    jammy: 'Ubuntu Jammy',
-    installType: 'Install type',
-    fastdds: 'FastDDS',
-    dds: 'DDS vendor',
-  }
+async function main() {
+  const translationMap = (await import('../lib/constants')).translationMap
   const testCase: TestCase = {
     name: 'test case',
     dimensions: {
@@ -117,6 +135,16 @@ if (typeof require !== 'undefined' && require.main === module) {
       dds: 'fastdds',
       installType: 'source',
     },
+    links: [
+      {
+        url: 'google.com',
+        name: 'Google',
+      },
+      {
+        url: 'Yandex.com',
+        name: 'Yandex',
+      },
+    ],
     generation: 37,
     checks: [
       {
@@ -148,6 +176,10 @@ if (typeof require !== 'undefined' && require.main === module) {
       },
     ],
   }
-  const out = testCaseToMd(testCase, map)
+  const out = testCaseToMd(testCase, translationMap)
   console.log(out)
+}
+
+if (typeof require !== 'undefined' && require.main === module) {
+  main()
 }

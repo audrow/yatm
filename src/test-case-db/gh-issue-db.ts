@@ -4,7 +4,7 @@ import {Octokit} from 'octokit'
 import TestCaseDb from '../__interfaces__/test-case-db'
 import {GITHUB_API_TOKEN} from '../lib/constants'
 
-import type TestCase from '../__types__/TestsCase'
+import type TestCase from '../__types__/TestCase'
 import type Repo from '../__types__/Repo'
 
 class githubTestCaseDb implements TestCaseDb {

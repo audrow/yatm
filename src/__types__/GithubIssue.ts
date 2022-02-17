@@ -1,7 +1,7 @@
-type Issue = {
+type GithubIssue = {
   title: string
   body: string
   labels: string[]
 }
 
-export default Issue
+export default GithubIssue

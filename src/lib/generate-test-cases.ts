@@ -9,7 +9,7 @@ import warnOnDuplicateRequirementNames from './warn-on-duplicate-requirement-nam
 import type TestCaseDimensions from '../__types__/TestCaseDimensions'
 import type Requirement from '../__types__/Requirement'
 import type RequirementFilter from '../__types__/RequirementFilter'
-import type TestCase from '../__types__/TestsCase'
+import type TestCase from '../__types__/TestCase'
 
 export default function generateTestCases({
   requirements,
@@ -131,14 +131,18 @@ function printTestCases(testCases: TestCase[]) {
 
 function saveTestCases(testCases: TestCase[], outputDirectory: string) {
   testCases.forEach((testCase) => {
-    let fileName = testCase.name
-    Object.values(testCase.dimensions).forEach((dimension) => {
-      fileName += `-${dimension}`
-    })
-    fileName += `-g${testCase.generation}.yaml`
-    fileName = fileName.replace(/\s/g, '-').toLowerCase()
-
+    const fileName = getTestCaseSaveFileName(testCase)
     const filePath = join(outputDirectory, `${fileName}.yaml`)
     fs.writeFileSync(filePath, yaml.dump(testCase))
   })
+}
+
+export function getTestCaseSaveFileName(testCase: TestCase) {
+  let fileName = testCase.name
+  Object.values(testCase.dimensions).forEach((dimension) => {
+    fileName += `-${dimension}`
+  })
+  fileName += `-g${testCase.generation}`
+  fileName = fileName.replace(/\s/g, '-').toLowerCase()
+  return fileName
 }

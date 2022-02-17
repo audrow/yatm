@@ -1,12 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`testCaseToMd should render a test case 1`] = `
-"# test case
-
-## Setup
-- Platform: Jammy
-- Dds: Fastdds
-- InstallType: Source
+"## Setup
+- Platform: Ubuntu Jammy
+- DDS vendor: FastDDS
+- Install type: Source
 
 ## Checks
 - [ ] check
