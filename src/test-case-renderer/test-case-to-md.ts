@@ -1,8 +1,7 @@
 import endent from 'endent'
-
-import type TestCase from '../__types__/TestCase'
-import type Step from '../__types__/Step'
 import {translationMap as tMap} from '../lib/constants'
+import type Step from '../__types__/Step'
+import type TestCase from '../__types__/TestCase'
 
 export default testCaseToMd
 

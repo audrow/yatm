@@ -1,14 +1,12 @@
-import fs from 'fs'
-import {join, resolve} from 'path'
-import yaml from 'js-yaml'
 import endent from 'endent'
+import fs from 'fs'
+import yaml from 'js-yaml'
+import {join, resolve} from 'path'
 import urlParse from 'url-parse'
-
-import validateRequirements from './validate-requirements'
-import getSitePages from './get-site-pages'
-
-import type Requirements from '../__types__/Requirements'
 import type Requirement from '../__types__/Requirement'
+import type Requirements from '../__types__/Requirements'
+import getSitePages from './get-site-pages'
+import validateRequirements from './validate-requirements'
 
 export type Platform = 'jammy' | 'windows' | 'rhel' | 'focal'
 export type Dds = 'fastdds' | 'cyclone' | 'connext'

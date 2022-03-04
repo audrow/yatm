@@ -1,25 +1,24 @@
 import fs from 'fs'
-import {join} from 'path'
 import yaml from 'js-yaml'
-
-import {gatherRequirements} from './lib/gather-requirements'
+import {join} from 'path'
 import {
   outputPath,
   outputRequirementsPath,
   outputTestCasePath,
   outputTestCaseRenderPath,
 } from './lib/constants'
-import generateTestCases from './lib/generate-test-cases'
-import warnOnDuplicateRequirementNames from './lib/warn-on-duplicate-requirement-names'
-import testCaseToMd from './test-case-renderer/test-case-to-md'
-import {getTestCaseSaveFileName} from './lib/generate-test-cases'
+import {gatherRequirements} from './lib/gather-requirements'
+import generateTestCases, {
+  getTestCaseSaveFileName,
+} from './lib/generate-test-cases'
 import testCaseToGithubIssue from './lib/test-case-to-gh-issue'
+import warnOnDuplicateRequirementNames from './lib/warn-on-duplicate-requirement-names'
 import {createIssue} from './test-case-db/gh-issue-crud'
-
-import type Requirements from './__types__/Requirements'
-import type Requirement from './__types__/Requirement'
-import type TestCase from './__types__/TestCase'
+import testCaseToMd from './test-case-renderer/test-case-to-md'
 import type Repo from './__types__/Repo'
+import type Requirement from './__types__/Requirement'
+import type Requirements from './__types__/Requirements'
+import type TestCase from './__types__/TestCase'
 
 async function initGeneratedFilesDirectory() {
   if (fs.existsSync(outputPath)) {

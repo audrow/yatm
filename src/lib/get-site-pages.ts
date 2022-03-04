@@ -1,6 +1,5 @@
-import Sitemapper from 'sitemapper'
 import urlJoin from 'proper-url-join'
-
+import Sitemapper from 'sitemapper'
 import type Page from '../__types__/Page'
 
 export default async function getSitePages(

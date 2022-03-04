@@ -1,7 +1,6 @@
-import checkSchema from './check-schema'
-
 import type {JSONSchemaType} from 'ajv'
 import type Requirement from '../__types__/Requirement'
+import checkSchema from './check-schema'
 
 const requirementSchema: JSONSchemaType<Requirement> = {
   type: 'object',

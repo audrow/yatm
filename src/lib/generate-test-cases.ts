@@ -1,15 +1,13 @@
-import fs from 'fs'
-import {join} from 'path'
-import yaml from 'js-yaml'
 import combinate from 'combinate'
 import endent from 'endent'
-
-import warnOnDuplicateRequirementNames from './warn-on-duplicate-requirement-names'
-
-import type TestCaseDimensions from '../__types__/TestCaseDimensions'
+import fs from 'fs'
+import yaml from 'js-yaml'
+import {join} from 'path'
 import type Requirement from '../__types__/Requirement'
 import type RequirementFilter from '../__types__/RequirementFilter'
 import type TestCase from '../__types__/TestCase'
+import type TestCaseDimensions from '../__types__/TestCaseDimensions'
+import warnOnDuplicateRequirementNames from './warn-on-duplicate-requirement-names'
 
 export default function generateTestCases({
   requirements,

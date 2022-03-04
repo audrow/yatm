@@ -1,7 +1,6 @@
-import stepSchema from './step-schema'
-
 import type {JSONSchemaType} from 'ajv'
 import type Check from '../__types__/Check'
+import stepSchema from './step-schema'
 
 const checkSchema: JSONSchemaType<Check> = {
   type: 'object',

@@ -1,14 +1,12 @@
 import Ajv from 'ajv'
-
-import stepSchema from '../__schemas__/step-schema'
 import checkSchema from '../__schemas__/check-schema'
 import requirementSchema from '../__schemas__/requirement-schema'
 import requirementsSchema from '../__schemas__/requirements-schema'
-
-import type Step from '../__types__/Step'
+import stepSchema from '../__schemas__/step-schema'
 import type Check from '../__types__/Check'
 import type Requirement from '../__types__/Requirement'
 import type Requirements from '../__types__/Requirements'
+import type Step from '../__types__/Step'
 
 describe('validate step schema', () => {
   const ajv = new Ajv()

@@ -1,5 +1,4 @@
 import endent from 'endent'
-
 import type Requirement from '../__types__/Requirement'
 
 export default function warnOnDuplicateRequirementNames(

@@ -1,11 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {Octokit} from 'octokit'
-
-import TestCaseDb from '../__interfaces__/test-case-db'
 import {GITHUB_API_TOKEN} from '../lib/constants'
-
-import type TestCase from '../__types__/TestCase'
+import TestCaseDb from '../__interfaces__/test-case-db'
 import type Repo from '../__types__/Repo'
+import type TestCase from '../__types__/TestCase'
 
 class githubTestCaseDb implements TestCaseDb {
   octokit: Octokit

@@ -1,5 +1,4 @@
 import Ajv from 'ajv'
-
 import requirementsSchema from '../__schemas__/requirements-schema'
 
 export default validateRequirements

@@ -1,5 +1,4 @@
 import testCaseToMd from '../test-case-renderer/test-case-to-md'
-
 import TestCase from '../__types__/TestCase'
 
 describe('testCaseToMd', () => {

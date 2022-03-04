@@ -1,5 +1,4 @@
 import testCaseToMd from '../test-case-renderer/test-case-to-md'
-
 import type GithubIssue from '../__types__/GithubIssue'
 import type TestCase from '../__types__/TestCase'
 
