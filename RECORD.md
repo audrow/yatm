@@ -23,7 +23,8 @@ How to proceed?
 
 I think it would be best to go along with the way that I imagine using the application. That is
 
-- [ ] Get the requirements generating correctly with the CLI and plugins
+- [x] Get the requirements generating correctly with the CLI and plugins
+- [ ] Get validation working with plugins
 - [ ] Get the test-cases generating with the CLI
   - [ ] Add generation tag
 - [ ] Add exclusion when generating the test cases - use path to YAML file
