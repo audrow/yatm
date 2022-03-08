@@ -1,11 +1,15 @@
+import * as constants from '../constants'
+import copyYaml from '../requirements/generator/copy-yaml'
+import ros2Docs from '../requirements/generator/ros2-docs'
 import type Plugins from './__types__/Plugins'
 
+// TODO expose options, possibly through config
 const requirementsGeneratorPlugins: Plugins = {
   'copy-yaml': async () => {
-    console.log('generate requirements from yaml')
+    copyYaml(constants.inputRequirementsPath, constants.outputRequirementsPath)
   },
   docs: async () => {
-    console.log('generate requirements from docs site')
+    await ros2Docs(constants.outputRequirementsPath)
   },
 }
 

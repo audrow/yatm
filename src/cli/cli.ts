@@ -2,6 +2,7 @@ import {Command, Option, program} from 'commander'
 import {join} from 'path'
 import sortObject from 'sort-object-keys'
 import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
+import setupOutputDir from '../plugins/setup-output-dir'
 import markupPlugins from '../plugins/test-case-markup-plugins'
 import type Plugins from '../plugins/__types__/Plugins'
 
@@ -15,10 +16,16 @@ function addRequirementsCommand(cmd: Command, plugins: Plugins) {
 
   const makeCmd = requirementsCmd.command('make').aliases(['m', 'mk'])
   makeCmd.command('all').action(() => {
+    setupOutputDir()
     Object.values(plugins).forEach((fn) => fn())
   })
   Object.entries(plugins).forEach(([name, fn]) => {
-    makeCmd.addCommand(new Command(name).action(fn))
+    makeCmd.addCommand(
+      new Command(name).action(async () => {
+        setupOutputDir()
+        fn()
+      }),
+    )
   })
 
   requirementsCmd

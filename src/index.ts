@@ -1,15 +1,12 @@
 import fs from 'fs'
 import yaml from 'js-yaml'
 import {join} from 'path'
-import {
-  outputPath,
-  outputRequirementsPath,
-  outputTestCasePath,
-  outputTestCaseRenderPath,
-} from './constants'
+import * as constants from './constants'
 import {createIssue} from './db/github/gh-issue-crud'
 import type Repo from './db/github/__types__/Repo'
-import {gatherRequirements} from './requirements/generator/gather-requirements'
+import setupOutputDir from './plugins/setup-output-dir'
+import copyYaml from './requirements/generator/copy-yaml'
+import ros2doc from './requirements/generator/ros2-docs'
 import type Requirement from './requirements/__types__/Requirement'
 import type Requirements from './requirements/__types__/Requirements'
 import testCaseToGithubIssue from './test-cases/db/test-case-to-gh-issue'
@@ -19,15 +16,6 @@ import generateTestCases, {
 import warnOnDuplicateRequirementNames from './test-cases/generator/warn-on-duplicate-requirement-names'
 import testCaseToMd from './test-cases/markup/test-case-to-md'
 import type TestCase from './test-cases/__types__/TestCase'
-
-async function initGeneratedFilesDirectory() {
-  if (fs.existsSync(outputPath)) {
-    fs.rmSync(outputPath, {recursive: true})
-  }
-  fs.mkdirSync(outputRequirementsPath, {recursive: true})
-  fs.mkdirSync(outputTestCasePath, {recursive: true})
-  fs.mkdirSync(outputTestCaseRenderPath, {recursive: true})
-}
 
 function loadRequirements(directoryPath: string) {
   const requirements: Requirement[] = []
@@ -68,11 +56,11 @@ function loadTestCases(directoryPath: string) {
 }
 
 async function main() {
-  await initGeneratedFilesDirectory()
-  const inputRequirementsPath = join(__dirname, '..', 'requirements')
-  await gatherRequirements(inputRequirementsPath, outputRequirementsPath)
+  setupOutputDir()
+  copyYaml(constants.inputRequirementsPath, constants.outputRequirementsPath)
+  await ros2doc(constants.outputRequirementsPath)
 
-  const requirements = loadRequirements(outputRequirementsPath)
+  const requirements = loadRequirements(constants.outputRequirementsPath)
   warnOnDuplicateRequirementNames(requirements, false)
 
   const filters = [
@@ -102,13 +90,13 @@ async function main() {
     dimensions,
     generation,
     filters,
-    outputDirectory: outputTestCasePath,
+    outputDirectory: constants.outputTestCasePath,
     // isDryRun: true,
   })
 
   let testCases: TestCase[] = []
   try {
-    testCases = loadTestCases(outputTestCasePath)
+    testCases = loadTestCases(constants.outputTestCasePath)
     testCases.forEach((testCase) => {
       console.log(testCase.name)
     })
@@ -118,7 +106,7 @@ async function main() {
   testCases.forEach((testCase) => {
     const md = testCaseToMd(testCase)
     const filePath = join(
-      outputTestCaseRenderPath,
+      constants.outputTestCaseRenderPath,
       `${getTestCaseSaveFileName(testCase)}.md`,
     )
     fs.writeFileSync(filePath, md)

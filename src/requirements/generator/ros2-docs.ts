@@ -1,47 +1,12 @@
 import endent from 'endent'
 import fs from 'fs'
 import yaml from 'js-yaml'
-import {join, resolve} from 'path'
+import {join} from 'path'
 import urlParse from 'url-parse'
 import validateRequirements from '../validator/validate-requirements'
 import type Requirement from '../__types__/Requirement'
-import type Requirements from '../__types__/Requirements'
 import getFromSiteMap from './get-pages-from-sitemap'
-
-export type Platform = 'jammy' | 'windows' | 'rhel' | 'focal'
-export type Dds = 'fastdds' | 'cyclone' | 'connext'
-export type InstallType = 'binary' | 'source'
-
-export async function gatherRequirements(
-  inputRequirementsPath: string,
-  outputRequirementsPath: string,
-) {
-  await makeDocumentationRequirementFiles(outputRequirementsPath)
-  copyRequirementFiles(inputRequirementsPath, outputRequirementsPath)
-}
-
-function copyRequirementFiles(inputPath: string, outputPath: string) {
-  fs.readdirSync(inputPath).forEach((file) => {
-    const filePath = join(inputPath, file)
-    const requirementsYaml = yaml.load(
-      fs.readFileSync(filePath, 'utf8'),
-    ) as Requirements
-
-    validateRequirementsYaml(requirementsYaml)
-
-    const outputFilePath = join(outputPath, file)
-    const outText = endent`
-      # The original file was located here: ${resolve(filePath)}
-      #
-      # This test case has been validated
-
-      ${yaml.dump(requirementsYaml)}
-    `
-
-    errorIfFileExists(outputFilePath)
-    fs.writeFileSync(outputFilePath, outText)
-  })
-}
+import {errorIfFileExists} from './utils'
 
 async function makeDocumentationRequirementFiles(
   outputDirectory: string,
@@ -103,28 +68,4 @@ function validateRequirementsYaml(loadedText: unknown) {
   }
 }
 
-function errorIfFileExists(filePath: string) {
-  if (fs.existsSync(filePath)) {
-    console.error(`ERROR: file already exists: ${filePath}`)
-    process.exit(1)
-  }
-}
-
-async function main() {
-  const inputRequirementsPath = join(__dirname, '..', '..', 'requirements')
-  const constants = await import('../../constants')
-
-  if (fs.existsSync(constants.outputPath)) {
-    fs.rmSync(constants.outputPath, {recursive: true})
-  }
-  fs.mkdirSync(constants.outputRequirementsPath, {recursive: true})
-
-  await gatherRequirements(
-    inputRequirementsPath,
-    constants.outputRequirementsPath,
-  )
-}
-
-if (typeof require !== 'undefined' && require.main === module) {
-  main()
-}
+export default makeDocumentationRequirementFiles
