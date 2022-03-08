@@ -1,4 +1,4 @@
-import type Plugins from './__types__/Plugins_'
+import type Plugins from './__types__/Plugins'
 
 const checksSchemaValidationPlugins: Plugins = {
   stdin: async () => {

@@ -1,4 +1,4 @@
-import Plugins from './__types__/Plugins_'
+import Plugins from './__types__/Plugins'
 
 const crudPlugins: Plugins = {}
 
