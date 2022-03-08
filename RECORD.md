@@ -1,5 +1,40 @@
 # RECORD
 
+## 2022-03-08
+
+So things have been refactored. Now it is about tieing things up and with the plugins.
+
+Here are the plugins that I think that I should have:
+
+- Generating Requirements
+- Checks
+  - Validation
+  - Markup
+    - Markdown
+    - HTML
+- Database CRUD
+  - Should have markup format
+
+There are also things that should be able to be overwritten, such as the following:
+
+- The function for excluding/including requirements
+
+How to proceed?
+
+I think it would be best to go along with the way that I imagine using the application. That is
+
+- [ ] Get the requirements generating correctly with the CLI and plugins
+- [ ] Get the test-cases generating with the CLI
+  - [ ] Add generation tag
+- [ ] Add exclusion when generating the test cases - use path to YAML file
+- [ ] Convert the test cases into markdown
+- [ ] Create a way of deleting and uploading issues to Github
+  - [ ] Avoid duplication
+- [ ] (Maybe) Create a way of getting the issues on Github with simple stats - number with each label
+- [ ] Write documentation on how to use this
+- [ ] Do the first sheet of tests
+- [ ] Do the second sheet of tests
+
 ## 2022-03-07
 
 Alright, now I'm back from Austin. I should reorganize this project. I have read that it is better to organize by package, rather than by file type. I will split this into the following types:
