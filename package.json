@@ -50,7 +50,7 @@
     "@types/proper-url-join": "^2.1.1",
     "@types/sleep": "^0.0.8",
     "@types/url-parse": "^1.4.8",
-    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
