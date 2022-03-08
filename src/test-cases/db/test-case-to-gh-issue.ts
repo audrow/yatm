@@ -1,6 +1,6 @@
+import type GithubIssue from '../../db/github/__types__/GithubIssue'
 import testCaseToMd from '../../test-cases/markup/test-case-to-md'
 import type TestCase from '../../test-cases/__types__/TestCase'
-import type GithubIssue from './__types__/GithubIssue'
 
 export default function testCaseToGithubIssue(testCase: TestCase) {
   const labels: string[] = []

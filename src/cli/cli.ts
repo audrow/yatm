@@ -3,7 +3,7 @@ import {join} from 'path'
 import sortObject from 'sort-object-keys'
 import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
 import markupPlugins from '../plugins/test-case-markup-plugins'
-import type Plugins from '../plugins/__types__/plugins'
+import type Plugins from '../plugins/__types__/Plugins'
 
 const generatedDirName = 'generated-files'
 const generatedRequirementsDir = join(generatedDirName, 'requirements')

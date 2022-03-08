@@ -8,11 +8,11 @@ import {
   outputTestCaseRenderPath,
 } from './constants'
 import {createIssue} from './db/github/gh-issue-crud'
-import testCaseToGithubIssue from './db/github/test-case-to-gh-issue'
 import type Repo from './db/github/__types__/Repo'
 import {gatherRequirements} from './requirements/generator/gather-requirements'
 import type Requirement from './requirements/__types__/Requirement'
 import type Requirements from './requirements/__types__/Requirements'
+import testCaseToGithubIssue from './test-cases/db/test-case-to-gh-issue'
 import generateTestCases, {
   getTestCaseSaveFileName,
 } from './test-cases/generator/generate-test-cases'
