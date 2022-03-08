@@ -1,0 +1,29 @@
+generation: 3
+sets:
+  - filters:
+      - isMatch: true
+        labels:
+          - tutorials
+        regexOptions: i
+      - isMatch: false
+        labels:
+          - launch-files
+      - isMatch: false
+        name: Launch system
+        regexOptions: i
+        labels:
+          - docs
+          - tutorials
+          - launch
+    dimensions:
+      dds:
+        - fastdds
+        - cyclone
+      buildType:
+        - source
+        - binary
+      os:
+        - jammy
+        - focal
+        - windows
+        - macos

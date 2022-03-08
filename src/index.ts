@@ -1,5 +1,4 @@
 import fs from 'fs'
-import yaml from 'js-yaml'
 import {join} from 'path'
 import setupOutputDir from './cli/setup-output-dir'
 import * as constants from './constants'
@@ -7,53 +6,15 @@ import {createIssue} from './db/github/gh-issue-crud'
 import type Repo from './db/github/__types__/Repo'
 import copyYaml from './requirements/generator/copy-yaml'
 import ros2doc from './requirements/generator/ros2-docs'
-import type Requirement from './requirements/__types__/Requirement'
-import type Requirements from './requirements/__types__/Requirements'
+import loadRequirements from './requirements/utils/load-requirements'
 import testCaseToGithubIssue from './test-cases/db/test-case-to-gh-issue'
 import generateTestCases, {
   getTestCaseSaveFileName,
 } from './test-cases/generator/generate-test-cases'
 import warnOnDuplicateRequirementNames from './test-cases/generator/warn-on-duplicate-requirement-names'
 import testCaseToMd from './test-cases/markup/test-case-to-md'
+import loadTestCases from './test-cases/utils/load-test-cases'
 import type TestCase from './test-cases/__types__/TestCase'
-
-function loadRequirements(directoryPath: string) {
-  const requirements: Requirement[] = []
-  const files = fs.readdirSync(directoryPath)
-  if (files.length === 0) {
-    throw new Error(`No files found in ${directoryPath}`)
-  }
-  files.forEach((file) => {
-    requirements.push(
-      ...(
-        yaml.load(
-          fs.readFileSync(join(directoryPath, file), 'utf8'),
-        ) as Requirements
-      ).requirements,
-    )
-  })
-
-  return requirements.sort((a, b) => {
-    return a.name.localeCompare(b.name)
-  })
-}
-
-function loadTestCases(directoryPath: string) {
-  const testCases: TestCase[] = []
-  const files = fs.readdirSync(directoryPath)
-  if (files.length === 0) {
-    throw new Error(`No files found in ${directoryPath}`)
-  }
-  files.forEach((file) => {
-    testCases.push(
-      yaml.load(fs.readFileSync(join(directoryPath, file), 'utf8')) as TestCase,
-    )
-  })
-
-  return testCases.sort((a, b) => {
-    return a.name.localeCompare(b.name)
-  })
-}
 
 async function main() {
   setupOutputDir()

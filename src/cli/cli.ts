@@ -1,14 +1,13 @@
 import {Command, Option, program} from 'commander'
-import {join} from 'path'
 import sortObject from 'sort-object-keys'
+import * as constants from '../constants'
 import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
 import markupPlugins from '../plugins/test-case-markup-plugins'
 import type Plugins from '../plugins/__types__/Plugins'
+import loadRequirements from '../requirements/utils/load-requirements'
+import generateTestCases from '../test-cases/generator/generate-test-cases'
+import loadConfig from '../test-cases/utils/load-config'
 import setupOutputDir from './setup-output-dir'
-
-const generatedDirName = 'generated-files'
-const generatedRequirementsDir = join(generatedDirName, 'requirements')
-const generatedTestCasesDir = join(generatedDirName, 'test-cases')
 
 function addRequirementsCommand(cmd: Command, plugins: Plugins) {
   plugins = sortObject(plugins)
@@ -46,20 +45,22 @@ function addTestCasesCommand(cmd: Command, plugins: Plugins) {
   testCasesCmd
     .command('generate')
     .aliases(['g', 'gen'])
-    .option(
-      '-o, --output <dir>',
-      'the output location of the generated files',
-      String,
-      generatedTestCasesDir,
-    )
-    .option(
-      '-r, --requirements-dir <dir>',
-      'directory with requirements files',
-      String,
-      generatedRequirementsDir,
-    )
+    .option('-d, --dry-run', 'Dry run', false)
     .action((options) => {
-      console.log('generate test cases command called with path:', options)
+      const isDryRun = options.dryRun as boolean
+      const requirements = loadRequirements(constants.outputRequirementsPath)
+      const {sets, generation} = loadConfig(constants.configPath)
+      sets.forEach((set) => {
+        const {filters, dimensions} = set
+        generateTestCases({
+          requirements,
+          dimensions,
+          filters,
+          generation,
+          outputDirectory: constants.outputTestCasePath,
+          isDryRun,
+        })
+      })
     })
 
   testCasesCmd

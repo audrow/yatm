@@ -24,6 +24,9 @@ export default function generateTestCases({
   outputDirectory: string
   isDryRun?: boolean
 }) {
+  if (requirements.length === 0) {
+    console.warn('No requirements found')
+  }
   const outputRequirements = filterRequirements(requirements, filters)
   warnOnDuplicateRequirementNames(outputRequirements, true)
 
@@ -32,6 +35,13 @@ export default function generateTestCases({
     dimensions,
     generation,
   )
+  if (testCases.length === 0) {
+    console.warn(
+      `No test cases generated for generation ${generation} with filters ${JSON.stringify(
+        filters,
+      )}`,
+    )
+  }
   if (isDryRun) {
     const message = printTestCases(testCases)
     console.log(message)
