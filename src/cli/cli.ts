@@ -1,9 +1,9 @@
 import {Command, Option, program} from 'commander'
 import {join} from 'path'
 import sortObject from 'sort-object-keys'
-import requirementsGeneratorPlugins from './plugins/requirements-generator-plugins'
-import markupPlugins from './plugins/test-case-markup-plugins'
-import type Plugins from './__types__/plugins'
+import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
+import markupPlugins from '../plugins/test-case-markup-plugins'
+import type Plugins from '../plugins/__types__/plugins'
 
 const generatedDirName = 'generated-files'
 const generatedRequirementsDir = join(generatedDirName, 'requirements')

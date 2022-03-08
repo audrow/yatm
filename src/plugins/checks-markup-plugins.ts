@@ -1,4 +1,4 @@
-import type Plugins from '../__types__/plugins'
+import type Plugins from './__types__/plugins'
 
 const checksMarkupPlugins: Plugins = {
   stdin: async () => {
