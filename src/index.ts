@@ -6,19 +6,19 @@ import {
   outputRequirementsPath,
   outputTestCasePath,
   outputTestCaseRenderPath,
-} from './lib/constants'
-import {gatherRequirements} from './lib/gather-requirements'
+} from './constants'
+import {createIssue} from './db/github/gh-issue-crud'
+import testCaseToGithubIssue from './db/github/test-case-to-gh-issue'
+import type Repo from './db/github/__types__/Repo'
+import {gatherRequirements} from './requirements/generator/gather-requirements'
+import type Requirement from './requirements/__types__/Requirement'
+import type Requirements from './requirements/__types__/Requirements'
 import generateTestCases, {
   getTestCaseSaveFileName,
-} from './lib/generate-test-cases'
-import testCaseToGithubIssue from './lib/test-case-to-gh-issue'
-import warnOnDuplicateRequirementNames from './lib/warn-on-duplicate-requirement-names'
-import {createIssue} from './test-case-db/gh-issue-crud'
-import testCaseToMd from './test-case-renderer/test-case-to-md'
-import type Repo from './__types__/Repo'
-import type Requirement from './__types__/Requirement'
-import type Requirements from './__types__/Requirements'
-import type TestCase from './__types__/TestCase'
+} from './test-cases/generator/generate-test-cases'
+import warnOnDuplicateRequirementNames from './test-cases/generator/warn-on-duplicate-requirement-names'
+import testCaseToMd from './test-cases/markup/test-case-to-md'
+import type TestCase from './test-cases/__types__/TestCase'
 
 async function initGeneratedFilesDirectory() {
   if (fs.existsSync(outputPath)) {

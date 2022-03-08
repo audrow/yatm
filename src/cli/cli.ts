@@ -1,11 +1,79 @@
-import {Option, program} from 'commander'
+import {Command, Option, program} from 'commander'
 import {join} from 'path'
-import generateRequirementsPlugins from './generate-requirements-plugins'
-import markupPlugins from './markup-plugins'
+import sortObject from 'sort-object-keys'
+import requirementsGeneratorPlugins from './plugins/requirements-generator-plugins'
+import markupPlugins from './plugins/test-case-markup-plugins'
+import type Plugins from './types/plugins'
+
+const generatedDirName = 'generated-files'
+const generatedRequirementsDir = join(generatedDirName, 'requirements')
+const generatedTestCasesDir = join(generatedDirName, 'test-cases')
+
+function addRequirementsCommand(cmd: Command, plugins: Plugins) {
+  plugins = sortObject(plugins)
+  const requirementsCmd = cmd.command('requirements').aliases(['r', 'req'])
+
+  const makeCmd = requirementsCmd.command('make').aliases(['m', 'mk'])
+  makeCmd.command('all').action(() => {
+    Object.values(plugins).forEach((fn) => fn())
+  })
+  Object.entries(plugins).forEach(([name, fn]) => {
+    makeCmd.addCommand(new Command(name).action(fn))
+  })
+
+  requirementsCmd
+    .command('list-plugins')
+    .aliases(['l', 'ls', 'lp'])
+    .action(() => {
+      console.log('Available plugins to generate requirements files:')
+      Object.keys(plugins).map((plugin) => {
+        console.log(`  * ${plugin}`)
+      })
+    })
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function addTestCasesCommand(cmd: Command, plugins: Plugins) {
+  const testCasesCmd = cmd.command('test-cases').aliases(['t', 'tc', 'tests'])
+
+  testCasesCmd
+    .command('generate')
+    .aliases(['g', 'gen'])
+    .option(
+      '-o, --output <dir>',
+      'the output location of the generated files',
+      String,
+      generatedTestCasesDir,
+    )
+    .option(
+      '-r, --requirements-dir <dir>',
+      'directory with requirements files',
+      String,
+      generatedRequirementsDir,
+    )
+    .action((options) => {
+      console.log('generate test cases command called with path:', options)
+    })
+
+  testCasesCmd
+    .command('markup')
+    .aliases(['m', 'mk', 'mup'])
+    .addOption(
+      new Option('--format <ext>', 'the file format to markup to')
+        .choices(Object.keys(markupPlugins))
+        .default('md'),
+    )
+    .action((options) => {
+      if (markupPlugins[options.format]) {
+        markupPlugins[options.format](options)
+      } else {
+        throw new Error(`Unknown markup format: ${options.format}`)
+      }
+    })
+}
 
 const name = 'tc-maker'
 const version = '1.0.0'
-const generatedDirName = 'generated-files'
 
 program
   .name(name)
@@ -14,68 +82,8 @@ program
   .showSuggestionAfterError(true)
   .allowExcessArguments(false)
 
-const requirementsCmd = program.command('requirements').aliases(['r', 'req'])
-
-requirementsCmd
-  .command('generate')
-  .aliases(['g', 'gen'])
-  .addOption(
-    new Option('--generator <generator>', 'generator to use')
-      .choices(['all', ...Object.keys(generateRequirementsPlugins)])
-      .default('all'),
-  )
-  .option(
-    '-o, --output <dir>',
-    'the output location of the generated files',
-    String,
-    join(generatedDirName, 'requirements'),
-  )
-  .option(
-    '-r, --requirements-dir <dir>',
-    'directory with requirements files',
-    String,
-    '.',
-  )
-  .action((options) => {
-    console.log('generate requirements command called with path:', options)
-  })
-
-const testCasesCmd = program.command('test-cases').aliases(['t', 'tc', 'tests'])
-
-testCasesCmd
-  .command('generate')
-  .aliases(['g', 'gen'])
-  .option(
-    '-o, --output <dir>',
-    'the output location of the generated files',
-    String,
-    join(generatedDirName, 'test-cases'),
-  )
-  .option(
-    '-r, --requirements-dir <dir>',
-    'directory with requirements files',
-    String,
-    '.',
-  )
-  .action((options) => {
-    console.log('generate test cases command called with path:', options)
-  })
-
-testCasesCmd
-  .command('markup')
-  .aliases(['m', 'mk', 'mup'])
-  .addOption(
-    new Option('--format <ext>', 'the file format to markup to')
-      .choices(Object.keys(markupPlugins))
-      .default('md'),
-  )
-  .action((options) => {
-    if (markupPlugins[options.format]) {
-      markupPlugins[options.format](options)
-    } else {
-      throw new Error(`Unknown markup format: ${options.format}`)
-    }
-  })
+addRequirementsCommand(program, requirementsGeneratorPlugins)
+addTestCasesCommand(program, requirementsGeneratorPlugins)
 
 program.command('upload')
 

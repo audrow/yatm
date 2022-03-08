@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testCaseToMd should render a test case 1`] = `
+"## Setup
+- Platform: Ubuntu Jammy
+- DDS vendor: FastDDS
+- Install type: Source
+
+## Checks
+- [ ] check
+
+  <details><summary>details</summary>
+  
+    **Try**
+  
+    1.
+       try
+       \`\`\`bash
+       # stderr in terminal 1
+       stderr
+       \`\`\`
+  
+    **Expect**
+  
+    1.
+       expect
+       \`\`\`bash
+       # stdout in terminal 1
+       stdout
+       \`\`\`
+    1.
+       expect
+       ![](image url)
+       
+  
+  </details>
+- [ ] Name only check
+- [ ] Name only check 2"
+`;

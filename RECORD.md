@@ -1,5 +1,54 @@
 # RECORD
 
+## 2022-03-07
+
+Alright, now I'm back from Austin. I should reorganize this project. I have read that it is better to organize by package, rather than by file type. I will split this into the following types:
+
+- Requirements generators
+  - Plugin: types of generators and their args
+- Requirements schema validation
+  - Plugin: requirements validation schema
+- Test generators with exclusion
+- Test markup
+  - Plugin: markup types
+- Test CRUD
+  - Plugin: uploader type
+
+The CLI:
+
+- Generate requirements
+  - Implicitly calls validation
+  - Options
+    - `requirements generate all|docs|files`
+    - `generate requirements all|docs|files`
+    - `generate requirements all|docs|files`
+    - `make all requirements`
+    - - `requirements make all`
+- Generate test cases
+  - Options
+    - `make tasks --generation 1 --filter-file filter.yaml`
+    - - `test-cases make ...`
+- Markup test case
+  - Options
+    - `test-cases markup md|html`
+- CRUD
+  - Options
+    - `test-cases db create|read|delete --type github`
+
+In summary, the interface is as follows:
+
+- `requirements`
+  - `list-plugins`
+  - `make <plugin|all>`
+  - Possible
+    - `clean`
+- `test-cases`
+  - `markup md|html --generation 1`
+  - `db create|read|delete --type github --generation 1`
+  - Possible
+    - `clean --generation 1|undefined`
+- `run --generate-plugins all --markup md --db github --generation 1`
+
 ## 2022-02-14
 
 I am getting a little lost in organizing this application since it is many parts.
