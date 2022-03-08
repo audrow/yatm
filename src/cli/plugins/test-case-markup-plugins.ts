@@ -1,4 +1,4 @@
-import type Plugins from '../types/plugins'
+import type Plugins from '../__types__/plugins'
 
 const markupPlugins: Plugins = {
   md: async () => {

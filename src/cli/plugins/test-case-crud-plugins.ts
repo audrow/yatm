@@ -1,4 +1,4 @@
-import type Plugins from '../types/plugins'
+import type Plugins from '../__types__/plugins'
 
 const testCaseCrudPlugins: Plugins = {
   github: async () => {
