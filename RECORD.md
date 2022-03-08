@@ -24,9 +24,6 @@ How to proceed?
 I think it would be best to go along with the way that I imagine using the application. That is
 
 - [x] Get the requirements generating correctly with the CLI and plugins
-- [ ] Get validation working with plugins
-- [ ] Get the test-cases generating with the CLI
-  - [ ] Add generation tag
 - [ ] Add exclusion when generating the test cases - use path to YAML file
 - [ ] Convert the test cases into markdown
 - [ ] Create a way of deleting and uploading issues to Github
@@ -35,6 +32,11 @@ I think it would be best to go along with the way that I imagine using the appli
 - [ ] Write documentation on how to use this
 - [ ] Do the first sheet of tests
 - [ ] Do the second sheet of tests
+
+Future tasks:
+
+- [ ] Get validation working with plugins
+  - [ ] Add generation tag
 
 ## 2022-03-07
 
