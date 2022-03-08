@@ -13,4 +13,4 @@ jobs:
       - name: Install
         run: npm ci
       - name: Validate
-        run: npm run validate
+        run: npm run validate-sync
