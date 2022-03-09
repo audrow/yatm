@@ -2,28 +2,30 @@ generation: 3
 sets:
   - filters:
       - isMatch: true
-        labels:
-          - tutorials
-        regexOptions: i
+        name: .*
       - isMatch: false
         labels:
           - launch-files
       - isMatch: false
         name: Launch system
-        regexOptions: i
         labels:
           - docs
-          - tutorials
-          - launch
     dimensions:
       dds:
         - fastdds
         - cyclone
       buildType:
         - source
-        - binary
+      os:
+        - macos
+  - filters:
+      - isMatch: true
+        name: 'tf2'
+    dimensions:
+      dds:
+        - fastdds
+        - cyclone
+      buildType:
+        - source
       os:
         - jammy
-        - focal
-        - windows
-        - macos

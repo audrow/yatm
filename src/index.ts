@@ -1,6 +1,6 @@
 import fs from 'fs'
 import {join} from 'path'
-import setupOutputDir from './cli/setup-output-dir'
+import setupOutputDirectory from './cli/setup-output-directory'
 import * as constants from './constants'
 import {createIssue} from './db/github/gh-issue-crud'
 import type Repo from './db/github/__types__/Repo'
@@ -8,16 +8,15 @@ import copyYaml from './requirements/generator/copy-yaml'
 import ros2doc from './requirements/generator/ros2-docs'
 import loadRequirements from './requirements/utils/load-requirements'
 import testCaseToGithubIssue from './test-cases/db/test-case-to-gh-issue'
-import generateTestCases, {
-  getTestCaseSaveFileName,
-} from './test-cases/generator/generate-test-cases'
+import generateTestCases from './test-cases/generator/generate-test-cases'
 import warnOnDuplicateRequirementNames from './test-cases/generator/warn-on-duplicate-requirement-names'
 import testCaseToMd from './test-cases/markup/test-case-to-md'
 import loadTestCases from './test-cases/utils/load-test-cases'
+import {getTestCaseSaveFileName} from './test-cases/utils/save-test-cases'
 import type TestCase from './test-cases/__types__/TestCase'
 
 async function main() {
-  setupOutputDir()
+  setupOutputDirectory()
   copyYaml(constants.inputRequirementsPath, constants.outputRequirementsPath)
   await ros2doc(constants.outputRequirementsPath)
 
@@ -51,8 +50,6 @@ async function main() {
     dimensions,
     generation,
     filters,
-    outputDirectory: constants.outputTestCasePath,
-    // isDryRun: true,
   })
 
   let testCases: TestCase[] = []

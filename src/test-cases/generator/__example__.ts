@@ -1,5 +1,4 @@
-import setupOutputDir from '../../cli/setup-output-dir'
-import * as constants from '../../constants'
+import setupOutputDirectory from '../../cli/setup-output-directory'
 import Requirement from '../../requirements/__types__/Requirement'
 import RequirementFilter from '../__types__/RequirementFilter'
 import type TestCaseDimensions from '../__types__/TestCaseDimensions'
@@ -66,12 +65,10 @@ const filters: RequirementFilter[] = [
   // },
 ]
 
-setupOutputDir()
+setupOutputDirectory()
 generateTestCases({
   requirements,
   dimensions,
   generation,
   filters,
-  outputDirectory: constants.outputTestCasePath,
-  isDryRun: true,
 })

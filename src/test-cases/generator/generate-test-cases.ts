@@ -1,8 +1,4 @@
 import combinate from 'combinate'
-import endent from 'endent'
-import fs from 'fs'
-import yaml from 'js-yaml'
-import {join} from 'path'
 import type Requirement from '../../requirements/__types__/Requirement'
 import type RequirementFilter from '../__types__/RequirementFilter'
 import type TestCase from '../__types__/TestCase'
@@ -14,21 +10,19 @@ export default function generateTestCases({
   dimensions,
   generation,
   filters,
-  outputDirectory,
-  isDryRun = false,
+  isTerminateOnError = true,
 }: {
   requirements: Requirement[]
   dimensions: TestCaseDimensions
   generation: number
   filters: RequirementFilter | RequirementFilter[]
-  outputDirectory: string
-  isDryRun?: boolean
+  isTerminateOnError?: boolean
 }) {
   if (requirements.length === 0) {
     console.warn('No requirements found')
   }
   const outputRequirements = filterRequirements(requirements, filters)
-  warnOnDuplicateRequirementNames(outputRequirements, true)
+  warnOnDuplicateRequirementNames(outputRequirements, isTerminateOnError)
 
   const testCases = getTestCasesFromRequirements(
     outputRequirements,
@@ -42,12 +36,7 @@ export default function generateTestCases({
       )}`,
     )
   }
-  if (isDryRun) {
-    const message = printTestCases(testCases)
-    console.log(message)
-  } else {
-    saveTestCases(testCases, outputDirectory)
-  }
+  return testCases
 }
 
 function filterRequirements(
@@ -107,50 +96,4 @@ function getTestCasesFromRequirements(
     })
   })
   return testCases
-}
-
-function printTestCases(testCases: TestCase[]) {
-  let message = 'Test cases:'
-  testCases.forEach((testCase, idx) => {
-    message = endent`
-        ${message}
-        ${idx + 1}. ${testCase.name}
-      `
-    if (Object.keys(testCase.dimensions).length > 0) {
-      message = endent`
-          ${message}
-            - dimensions:
-                ${Object.entries(testCase.dimensions)
-                  .map(([key, value]) => {
-                    return `${key}: ${value}`
-                  })
-                  .join(',\n')}
-        `
-    }
-    if (testCase.labels && testCase.labels.length > 0) {
-      message = endent`
-          ${message}
-            - labels: ${testCase.labels.join(', ')}
-        `
-    }
-  })
-  return message
-}
-
-function saveTestCases(testCases: TestCase[], outputDirectory: string) {
-  testCases.forEach((testCase) => {
-    const fileName = getTestCaseSaveFileName(testCase)
-    const filePath = join(outputDirectory, `${fileName}.yaml`)
-    fs.writeFileSync(filePath, yaml.dump(testCase))
-  })
-}
-
-export function getTestCaseSaveFileName(testCase: TestCase) {
-  let fileName = testCase.name
-  Object.values(testCase.dimensions).forEach((dimension) => {
-    fileName += `-${dimension}`
-  })
-  fileName += `-g${testCase.generation}`
-  fileName = fileName.replace(/\s/g, '-').toLowerCase()
-  return fileName
 }
