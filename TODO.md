@@ -6,6 +6,7 @@
 - [x] Validate YAML requirements file
 - [x] Add tests for requirements validator
 - [x] Split out markdown renderer
+- [x] Figure out a good way to exclude certain issues from being created
 - [ ] Make a better Github CRUD
   - [x] Keeps running until done while issues limit is in place
   - [x] Create issues
@@ -14,7 +15,6 @@
 - [ ] Tie the application together
 - [ ] Make a tool with an executable that others can run
 - [ ] Document how to use this tool
-- [ ] Figure out a good way to exclude certain issues from being created
 
 ## Bonus
 
