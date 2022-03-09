@@ -1,10 +1,12 @@
-import {Command, Option, program} from 'commander'
+import {Argument, Command, Option, program} from 'commander'
 import fs from 'fs'
 import {join} from 'path'
 import sortObject from 'sort-object-keys'
 import * as constants from '../constants'
+import dbPlugins from '../plugins/db-plugins'
 import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
 import testCaseMarkupPlugins from '../plugins/test-case-markup-plugins'
+import type DbPlugins from '../plugins/__types__/DbPlugins'
 import type Plugins from '../plugins/__types__/Plugins'
 import loadRequirements from '../requirements/utils/load-requirements'
 import generateTestCases from '../test-cases/generator/generate-test-cases'
@@ -48,7 +50,7 @@ function addRequirementsCommand(cmd: Command, plugins: Plugins) {
     })
 }
 
-function addTestCasesCommand(cmd: Command) {
+function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
   const testCasesCmd = cmd.command('test-cases').aliases(['t', 'tc', 'tests'])
 
   testCasesCmd
@@ -111,13 +113,53 @@ function addTestCasesCommand(cmd: Command) {
         }
       })
     })
-}
-program
-  .command('clear')
-  .description(`Removes the generated directory '${constants.outputPath}'`)
-  .action(() => {
-    fs.rmSync(constants.outputPath, {recursive: true})
+
+  const dbCommand = testCasesCmd.command('db').alias('d')
+
+  const regexArg = new Argument(
+    '[regex]',
+    'The regex to match test cases',
+  ).default('.*')
+  Object.entries(dbPlugins).forEach(([name, obj]) => {
+    const command = new Command(name)
+
+    command
+      .command('create')
+      .alias('c')
+      .addArgument(regexArg)
+      .action(obj.create)
+
+    command.command('read').alias('r').addArgument(regexArg).action(obj.read)
+
+    // command.command('update').alias('u').action(obj.update)
+
+    command
+      .command('delete')
+      .alias('d')
+      .addArgument(regexArg)
+      .action(obj.delete)
+
+    dbCommand.addCommand(command)
   })
+  dbCommand
+    .command('list-plugins')
+    .aliases(['l', 'ls', 'lp'])
+    .action(() => {
+      console.log('Available database plugins:')
+      Object.keys(dbPlugins).map((plugin) => {
+        console.log(`  * ${plugin}`)
+      })
+    })
+}
+
+function addClearCommand(cmd: Command) {
+  cmd
+    .command('clear')
+    .description(`Removes the generated directory '${constants.outputPath}'`)
+    .action(() => {
+      fs.rmSync(constants.outputPath, {recursive: true})
+    })
+}
 
 const version = '1.0.0'
 program
@@ -128,7 +170,8 @@ program
   .allowExcessArguments(false)
 
 addRequirementsCommand(program, requirementsGeneratorPlugins)
-addTestCasesCommand(program)
+addTestCasesCommand(program, dbPlugins)
+addClearCommand(program)
 
 program.command('upload')
 
