@@ -1,5 +1,5 @@
 import {REPOSITORY} from '../constants.github'
-import {createIssues} from '../test-cases/db/github/gh-issues'
+import {closeAllIssues, createIssues} from '../test-cases/db/github/gh-issues'
 import testCaseToGithubIssue from '../test-cases/db/github/test-case-to-gh-issue'
 import loadMatchingTestCases from '../test-cases/utils/load-matching-test-cases'
 import type TestCase from '../test-cases/__types__/TestCase'
@@ -20,6 +20,7 @@ const dbPlugins: DbPlugins = {
     },
     delete: async (regex: string) => {
       console.log(`Deleting test case that match '${regex}'`)
+      await closeAllIssues(REPOSITORY)
     },
   },
 }

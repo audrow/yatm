@@ -47,13 +47,38 @@ export async function getIssueByTitleAndLabels(
 }
 
 export async function getIssues(repo: Repo, state: IssueState) {
+  const issuesPerPage = 100
+  let page = 1
+
   const issuesAndPrs = (
     await gh.issues.listForRepo({
       owner: repo.owner,
       repo: repo.name,
       state,
+      per_page: issuesPerPage,
+      page,
     })
   ).data
+
+  if (issuesAndPrs.length === issuesPerPage) {
+    let numberOfNewIssues: number
+    do {
+      page++
+      const newIssues = (
+        await gh.issues.listForRepo({
+          owner: repo.owner,
+          repo: repo.name,
+          state,
+          per_page: 100,
+          page,
+        })
+      ).data
+      issuesAndPrs.push(...newIssues)
+
+      numberOfNewIssues = newIssues.length
+    } while (numberOfNewIssues === issuesPerPage)
+  }
+
   return issuesAndPrs.filter((i) => !i.pull_request)
 }
 
@@ -108,6 +133,7 @@ export async function closeGeneratedIssues(repo: Repo, generatedStamp: string) {
 }
 
 export async function closeIssue(repo: Repo, issueNumber: number) {
+  console.info(`Closing issue ${issueNumber}`)
   await gh.issues.update({
     owner: repo.owner,
     repo: repo.name,
@@ -121,4 +147,16 @@ export async function getUser() {
     data: {login},
   } = await gh.users.getAuthenticated()
   return login
+}
+
+export async function closeAllIssues(repo: Repo) {
+  const issues = await getIssues(repo, 'open')
+  if (issues.length > 0) {
+    console.info(`No issues to close`)
+  } else {
+    for (const issue of issues) {
+      await closeIssue(repo, issue.number)
+    }
+    console.info(`Closed ${issues.length} issues`)
+  }
 }
