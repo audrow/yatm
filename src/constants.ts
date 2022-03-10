@@ -2,9 +2,10 @@ import 'dotenv/config'
 import fs from 'fs'
 import {join} from 'path'
 
-export const VERSION = JSON.parse(
+const packageXml = JSON.parse(
   fs.readFileSync(join(process.cwd(), 'package.json'), 'utf8'),
-).version
+)
+export const VERSION = packageXml.version
 
 export const TEST_CASE_CONFIG = join(process.cwd(), 'test-case.config.yaml')
 

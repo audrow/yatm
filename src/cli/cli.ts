@@ -165,7 +165,7 @@ function addClearCommand(cmd: Command) {
 }
 
 program
-  .nameFromFilename(__filename)
+  .name('tcm')
   .version(constants.VERSION)
   .showHelpAfterError('(add --help for additional information)')
   .showSuggestionAfterError(true)
