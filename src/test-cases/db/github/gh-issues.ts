@@ -8,6 +8,42 @@ const gh = new Octokit({
   auth: GITHUB_API_TOKEN,
 }).rest
 
+export async function isIssueAlreadyOpen(
+  repo: Repo,
+  issue: GithubIssue,
+): Promise<boolean> {
+  const issues = await getIssueByTitleAndLabels(
+    repo,
+    issue.title,
+    issue.labels,
+    'open',
+  )
+  return issues.length > 0
+}
+
+export async function getIssueByTitleAndLabels(
+  repo: Repo,
+  title: string,
+  labels: string[],
+  state: IssueState,
+) {
+  const issues = (await getIssues(repo, state)).filter((issue) => {
+    const matchTitle = issue.title === title
+    const issueLabels = issue.labels
+      .filter((label) => typeof label === 'string' || !!label.name)
+      .map((label) => {
+        if (typeof label === 'string') {
+          return label
+        } else {
+          return label.name as string
+        }
+      })
+    const matchLabels = labels.every((label) => issueLabels.includes(label))
+    return matchTitle && matchLabels
+  })
+  return issues
+}
+
 export async function getIssues(repo: Repo, state: IssueState) {
   const issuesAndPrs = (
     await gh.issues.listForRepo({
@@ -21,10 +57,20 @@ export async function getIssues(repo: Repo, state: IssueState) {
 
 export async function createIssues(repo: Repo, issues: GithubIssue[]) {
   for (const issue of issues) {
-    await createIssue(repo, issue)
-    console.info(
-      `Created issue: ${issue.title} - with labels ${issue.labels.join(', ')}`,
-    )
+    try {
+      const issueString = `${issue.title} - with labels: ${issue.labels.join(
+        ', ',
+      )}`
+      if (await isIssueAlreadyOpen(repo, issue)) {
+        console.info(`Issue already exists: ${issueString}`)
+      } else {
+        await createIssue(repo, issue)
+        console.info(`Created issue: ${issueString}`)
+      }
+    } catch (error) {
+      console.error(error)
+      return
+    }
   }
 }
 

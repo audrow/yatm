@@ -9,7 +9,6 @@ const dbPlugins: DbPlugins = {
   github: {
     create: async (regex) => {
       const testCases = loadMatchingTestCases(regex)
-      // console.log(printTestCases(testCases))
       const issues = testCases.map(testCaseToGithubIssue)
       await createIssues(REPO, issues)
     },
