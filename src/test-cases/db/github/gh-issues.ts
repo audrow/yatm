@@ -14,7 +14,7 @@ export async function isIssueAlreadyOpen(
   repo: Repo,
   issue: GithubIssue,
 ): Promise<boolean> {
-  const issues = await getIssueByTitleAndLabels(
+  const issues = await getIssuesByTitleAndLabels(
     repo,
     issue.title,
     issue.labels,
@@ -23,7 +23,7 @@ export async function isIssueAlreadyOpen(
   return issues.length > 0
 }
 
-export async function getIssueByTitleAndLabels(
+export async function getIssuesByTitleAndLabels(
   repo: Repo,
   title: string,
   labels: string[],
@@ -132,6 +132,17 @@ export async function closeGeneratedIssues(repo: Repo, generatedStamp: string) {
     .map(async (i) => closeIssue(repo, i.number))
 }
 
+export async function closeIssueByTitleAndLabels(
+  repo: Repo,
+  title: string,
+  labels: string[],
+) {
+  const issues = await getIssuesByTitleAndLabels(repo, title, labels, 'open')
+  for (const issue of issues) {
+    await closeIssue(repo, issue.number)
+  }
+}
+
 export async function closeIssue(repo: Repo, issueNumber: number) {
   console.info(`Closing issue ${issueNumber}`)
   await gh.issues.update({
@@ -140,13 +151,6 @@ export async function closeIssue(repo: Repo, issueNumber: number) {
     issue_number: issueNumber,
     state: 'closed',
   })
-}
-
-export async function getUser() {
-  const {
-    data: {login},
-  } = await gh.users.getAuthenticated()
-  return login
 }
 
 export async function closeAllIssues(repo: Repo) {

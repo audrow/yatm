@@ -129,14 +129,17 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
       .addArgument(regexArg)
       .action(obj.create)
 
-    command.command('read').alias('r').addArgument(regexArg).action(obj.read)
-
-    // command.command('update').alias('u').action(obj.update)
+    if (obj.read) {
+      command.command('read').alias('r').addArgument(regexArg).action(obj.read)
+    }
+    if (obj.update) {
+      command.command('update').alias('u').action(obj.update)
+    }
 
     command
       .command('delete')
       .alias('d')
-      .addArgument(regexArg)
+      .argument('<regex>', 'The regex to match test cases')
       .action(obj.delete)
 
     dbCommand.addCommand(command)
