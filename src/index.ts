@@ -1,6 +1,6 @@
 import fs from 'fs'
 import {join} from 'path'
-import setupOutputDirectory from './cli/setup-output-directory'
+import setupOutputDirectory from './cli/utils/setup-output-directory'
 import * as constants from './constants'
 import {createIssue} from './db/github/gh-issue-crud'
 import type Repo from './db/github/__types__/Repo'

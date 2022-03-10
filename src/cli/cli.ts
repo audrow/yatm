@@ -18,8 +18,8 @@ import saveTestCases, {
 } from '../test-cases/utils/save-test-cases'
 import sortTestCases from '../test-cases/utils/sort-test-cases'
 import TestCase from '../test-cases/__types__/TestCase'
-import clearDirectory from './clear-directory'
-import setupOutputDirectory from './setup-output-directory'
+import clearDirectory from './utils/clear-directory'
+import setupOutputDirectory from './utils/setup-output-directory'
 
 function addRequirementsCommand(cmd: Command, plugins: Plugins) {
   plugins = sortObject(plugins)

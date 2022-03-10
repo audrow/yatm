@@ -1,5 +1,5 @@
 import fs from 'fs'
-import * as constants from '../constants'
+import * as constants from '../../constants'
 
 function setupOutputDirectory() {
   if (fs.existsSync(constants.outputPath)) {

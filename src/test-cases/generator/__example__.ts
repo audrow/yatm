@@ -1,4 +1,4 @@
-import setupOutputDirectory from '../../cli/setup-output-directory'
+import setupOutputDirectory from '../../cli/utils/setup-output-directory'
 import Requirement from '../../requirements/__types__/Requirement'
 import RequirementFilter from '../__types__/RequirementFilter'
 import type TestCaseDimensions from '../__types__/TestCaseDimensions'

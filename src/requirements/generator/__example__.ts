@@ -1,4 +1,4 @@
-import setupOutputDirectory from '../../cli/setup-output-directory'
+import setupOutputDirectory from '../../cli/utils/setup-output-directory'
 import * as constants from '../../constants'
 import copyYaml from './copy-yaml'
 import ros2Docs from './ros2-docs'
