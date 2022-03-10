@@ -1,8 +1,10 @@
 import {Octokit} from 'octokit'
-import {GITHUB_API_TOKEN} from '../../../constants.github'
+import {sleep} from 'sleep'
+import {GITHUB_API_TOKEN, RETRY_SECONDS} from '../../../constants.github'
 import type GithubIssue from './__types__/GithubIssue'
 import type IssueState from './__types__/IssueState'
 import type Repo from './__types__/Repo'
+import type Status from './__types__/Status'
 
 const gh = new Octokit({
   auth: GITHUB_API_TOKEN,
@@ -56,6 +58,20 @@ export async function getIssues(repo: Repo, state: IssueState) {
 }
 
 export async function createIssues(repo: Repo, issues: GithubIssue[]) {
+  let status: Status
+  do {
+    status = await createIssuesHelper(repo, issues)
+    if (status === 'failure') {
+      console.log(`Retrying in ${RETRY_SECONDS.toLocaleString()} seconds...`)
+      sleep(RETRY_SECONDS)
+    }
+  } while (status === 'failure')
+}
+
+async function createIssuesHelper(
+  repo: Repo,
+  issues: GithubIssue[],
+): Promise<Status> {
   for (const issue of issues) {
     try {
       const issueString = `${issue.title} - with labels: ${issue.labels.join(
@@ -69,12 +85,13 @@ export async function createIssues(repo: Repo, issues: GithubIssue[]) {
       }
     } catch (error) {
       console.error(error)
-      return
+      return 'failure'
     }
   }
+  return 'success'
 }
 
-export async function createIssue(repo: Repo, issue: GithubIssue) {
+async function createIssue(repo: Repo, issue: GithubIssue) {
   return await gh.issues.create({
     owner: repo.owner,
     repo: repo.name,
