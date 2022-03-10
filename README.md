@@ -37,6 +37,13 @@ To get started, install [NodeJS 16](https://nodejs.org/en/), clone this reposito
 ```bash
 npm ci  # install dependencies
 npm run prepare  # setup git hooks
+npm link # call directly with tcm
+```
+
+From there, you should be able to run the following command. If this doesn't work make sure that the place where node files are being stored is in your system path (`PATH`).
+
+```bash
+tcm -h
 ```
 
 From there, you can run the tests to confirm that things are working:
@@ -47,33 +54,33 @@ npm test
 
 ## How to use this repository
 
-To run the script we'll use `npx tcm`. You can run this command without any arguments to see the help message. Note that most commands have shortcuts, such as `npx tcm requirements` which can be shortened to `npx tcm r`.
+To run the script we'll use `tcm`. You can run this command without any arguments to see the help message. Note that most commands have shortcuts, such as `tcm requirements` which can be shortened to `tcm r`.
 
 Here are the steps to using this package:
 
 1. Make requirements
 
 ```bash
-npx tcm requirements list-plugins # or npx tcm r l
-npx tcm requirements make all # plugin name or all
+tcm requirements list-plugins # or tcm r l
+tcm requirements make all # plugin name or all
 ```
 
 2. Make test cases:
 
 ```bash
-npx tcm test-cases make
+tcm test-cases make
 ```
 
 Note that these test cases are made from data specified in the `test-case.config.yaml`. 3. Create the test cases in the db
 
 ```bash
-npx tcm test-cases db github create # or npx tcm t d github c
+tcm test-cases db github create # or tcm t d github c
 ```
 
 You could then delete the created issues with the following command:
 
 ```bash
-npx tcm test-cases db github delete "." # or npx tcm t d github d
+tcm test-cases db github delete "." # or tcm t d github d
 ```
 
 Note you can also specify some regex code with create or delete that will be used to match labels or the PR's title.
