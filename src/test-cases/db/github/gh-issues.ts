@@ -1,5 +1,5 @@
 import {Octokit} from 'octokit'
-import {GITHUB_API_TOKEN} from '../../constants'
+import {GITHUB_API_TOKEN} from '../../../constants.github'
 import type GithubIssue from './__types__/GithubIssue'
 import type IssueState from './__types__/IssueState'
 import type Repo from './__types__/Repo'
@@ -22,6 +22,9 @@ export async function getIssues(repo: Repo, state: IssueState) {
 export async function createIssues(repo: Repo, issues: GithubIssue[]) {
   for (const issue of issues) {
     await createIssue(repo, issue)
+    console.info(
+      `Created issue: ${issue.title} - with labels ${issue.labels.join(', ')}`,
+    )
   }
 }
 

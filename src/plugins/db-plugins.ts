@@ -1,5 +1,7 @@
+import {REPO} from '../constants.github'
+import {createIssues} from '../test-cases/db/github/gh-issues'
+import testCaseToGithubIssue from '../test-cases/db/github/test-case-to-gh-issue'
 import loadMatchingTestCases from '../test-cases/utils/load-matching-test-cases'
-import printTestCases from '../test-cases/utils/print-test-cases'
 import type TestCase from '../test-cases/__types__/TestCase'
 import DbPlugins from './__types__/DbPlugins'
 
@@ -7,7 +9,9 @@ const dbPlugins: DbPlugins = {
   github: {
     create: async (regex) => {
       const testCases = loadMatchingTestCases(regex)
-      console.log(printTestCases(testCases))
+      // console.log(printTestCases(testCases))
+      const issues = testCases.map(testCaseToGithubIssue)
+      await createIssues(REPO, issues)
     },
     read: async (regex: string) => {
       console.log(`Reading test cases that match '${regex}'`)

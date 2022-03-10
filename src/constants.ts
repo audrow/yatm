@@ -1,9 +1,6 @@
 import 'dotenv/config'
 import {join} from 'path'
 
-export const GITHUB_API_TOKEN =
-  process.env.GITHUB_API_TOKEN || 'GITHUB_API_TOKEN is not set'
-
 export const configPath = join(process.cwd(), 'config.yaml')
 
 const requirementsDirectory = 'requirements'
