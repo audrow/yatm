@@ -1,5 +1,9 @@
 # RECORD
 
+## 2022-03-10
+
+Now is the time to get the Github uploader working and connected to the CLI. For this, I will make it so that the titles of tests are the titles of the Github issues. The other permutations will be labeled with their specific combinations, as well as the generation number. In finding and uploading posts, I wil check the title, permutations, and generation.
+
 ## 2022-03-08
 
 So things have been refactored. Now it is about tieing things up and with the plugins.
