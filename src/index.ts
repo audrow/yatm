@@ -1,1 +1,3 @@
-// to come
+import runCli from './cli/cli'
+
+runCli()

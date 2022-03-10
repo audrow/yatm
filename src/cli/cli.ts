@@ -164,10 +164,9 @@ function addClearCommand(cmd: Command) {
     })
 }
 
-const version = '1.0.0'
 program
   .nameFromFilename(__filename)
-  .version(version)
+  .version(constants.VERSION)
   .showHelpAfterError('(add --help for additional information)')
   .showSuggestionAfterError(true)
   .allowExcessArguments(false)
@@ -176,6 +175,6 @@ addRequirementsCommand(program, requirementsGeneratorPlugins)
 addTestCasesCommand(program, dbPlugins)
 addClearCommand(program)
 
-program.command('upload')
-
-program.parse(process.argv)
+export default function runCli() {
+  program.parse(process.argv)
+}
