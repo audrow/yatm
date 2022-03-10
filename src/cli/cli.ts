@@ -59,8 +59,8 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
     .option('-d, --dry-run', 'Dry run', false)
     .action((options) => {
       const isDryRun = options.dryRun as boolean
-      const requirements = loadRequirements(constants.outputRequirementsPath)
-      const {sets, generation} = loadConfig(constants.configPath)
+      const requirements = loadRequirements(constants.OUTPUT_REQUIREMENTS_PATH)
+      const {sets, generation} = loadConfig(constants.TEST_CASE_CONFIG)
       const testCaseSet = new Set<TestCase>()
       sets.forEach((set) => {
         const {filters, dimensions} = set
@@ -76,8 +76,8 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
         const message = printTestCases(testCases)
         console.log(message)
       } else {
-        clearDirectory(constants.outputTestCasePath)
-        saveTestCases(testCases, constants.outputTestCasePath)
+        clearDirectory(constants.OUTPUT_TEST_CASE_PATH)
+        saveTestCases(testCases, constants.OUTPUT_TEST_CASE_PATH)
       }
     })
 
@@ -94,9 +94,9 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
       const markupFn = testCaseMarkupPlugins[options.format]
       const isDryRun = options.dryRun as boolean
       if (!isDryRun) {
-        clearDirectory(constants.outputTestCaseRenderPath)
+        clearDirectory(constants.OUTPUT_TEST_CASE_RENDER_PATH)
       }
-      const testCases = loadTestCases(constants.outputTestCasePath)
+      const testCases = loadTestCases(constants.OUTPUT_TEST_CASE_PATH)
       testCases.forEach(async (testCase) => {
         const text = await markupFn(testCase)
         if (isDryRun) {
@@ -105,7 +105,7 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
           const fileName = getTestCaseSaveFileName(testCase)
           fs.writeFileSync(
             join(
-              constants.outputTestCaseRenderPath,
+              constants.OUTPUT_TEST_CASE_RENDER_PATH,
               `${fileName}.${options.format}`,
             ),
             text,
@@ -155,9 +155,9 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
 function addClearCommand(cmd: Command) {
   cmd
     .command('clear')
-    .description(`Removes the generated directory '${constants.outputPath}'`)
+    .description(`Removes the generated directory '${constants.OUTPUT_PATH}'`)
     .action(() => {
-      fs.rmSync(constants.outputPath, {recursive: true})
+      fs.rmSync(constants.OUTPUT_PATH, {recursive: true})
     })
 }
 

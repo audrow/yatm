@@ -6,10 +6,13 @@ import type Plugins from './__types__/Plugins'
 // TODO expose options, possibly through config
 const requirementsGeneratorPlugins: Plugins = {
   'copy-yaml': async () => {
-    copyYaml(constants.inputRequirementsPath, constants.outputRequirementsPath)
+    copyYaml(
+      constants.INPUT_REQUIREMENTS_PATH,
+      constants.OUTPUT_REQUIREMENTS_PATH,
+    )
   },
   docs: async () => {
-    await ros2Docs(constants.outputRequirementsPath)
+    await ros2Docs(constants.OUTPUT_REQUIREMENTS_PATH)
   },
 }
 

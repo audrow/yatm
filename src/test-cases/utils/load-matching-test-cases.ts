@@ -2,7 +2,7 @@ import * as constants from '../../constants'
 import loadTestCases from './load-test-cases'
 
 export default function loadMatchingTestCases(regex: string) {
-  return loadTestCases(constants.outputTestCasePath).filter((testCase) => {
+  return loadTestCases(constants.OUTPUT_TEST_CASE_PATH).filter((testCase) => {
     const nameMatch = testCase.name.match(regex)
     const descriptionMatch = testCase.description?.match(regex)
     const dimensionMatches = Object.values(testCase.dimensions).some(

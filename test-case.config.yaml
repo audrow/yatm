@@ -1,0 +1,31 @@
+generation: 4
+sets:
+  # - filters:
+  #     - isMatch: true
+  #       name: .*
+  #     - isMatch: false
+  #       labels:
+  #         - launch-files
+  #     - isMatch: false
+  #       name: Launch system
+  #       labels:
+  #         - docs
+  #   dimensions:
+  #     dds:
+  #       - fastdds
+  #       - cyclone
+  #     buildType:
+  #       - source
+  #     os:
+  #       - macos
+  - filters:
+      - isMatch: true
+        name: 'tf2'
+    dimensions:
+      dds:
+        - fastdds
+        - cyclone
+      buildType:
+        - source
+      os:
+        - jammy

@@ -5,6 +5,9 @@ import ros2Docs from './ros2-docs'
 
 if (typeof require !== 'undefined' && require.main === module) {
   setupOutputDirectory()
-  copyYaml(constants.inputRequirementsPath, constants.outputRequirementsPath)
-  ros2Docs(constants.outputRequirementsPath)
+  copyYaml(
+    constants.INPUT_REQUIREMENTS_PATH,
+    constants.OUTPUT_REQUIREMENTS_PATH,
+  )
+  ros2Docs(constants.OUTPUT_REQUIREMENTS_PATH)
 }

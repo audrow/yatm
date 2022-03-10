@@ -1,5 +1,5 @@
 import endent from 'endent'
-import {translationMap as tMap} from '../../constants'
+import {TRANSLATION_MAP as tMap} from '../../constants'
 import type Step from '../../requirements/__types__/Step'
 import type TestCase from '../__types__/TestCase'
 
@@ -126,7 +126,7 @@ function getStep(step: Step) {
 }
 
 async function main() {
-  const translationMap = (await import('../../constants')).translationMap
+  const translationMap = (await import('../../constants')).TRANSLATION_MAP
   const testCase: TestCase = {
     name: 'test case',
     dimensions: {

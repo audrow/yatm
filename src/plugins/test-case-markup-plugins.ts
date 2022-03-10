@@ -5,7 +5,7 @@ import TestCaseMarkupPlugins from './__types__/TestCaseMarkupPlugins'
 
 const testCaseMarkupPlugins: TestCaseMarkupPlugins = {
   md: async (testCase: TestCase) => {
-    return testCaseToMd(testCase, constants.translationMap)
+    return testCaseToMd(testCase, constants.TRANSLATION_MAP)
   },
 }
 
