@@ -15,6 +15,20 @@ sets:
     dimensions:
       dds:
         - fastdds
+
+  # Features
+  - filters:
+      - isMatch: true
+        labels:
+          - feature
+    dimensions:
+      dds:
+        - fastdds
+      buildType:
+        - debian
+      os:
+        - jammy
+
   # Core for Jammy
   - filters:
       - isMatch: true
@@ -34,6 +48,7 @@ sets:
         - arm64
       os:
         - jammy
+
   # Core for Windows (no arm64)
   - filters:
       - isMatch: true
