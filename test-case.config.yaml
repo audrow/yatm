@@ -1,5 +1,21 @@
 generation: 1
 sets:
+  # Documentation
+  - filters:
+      - isMatch: true
+        labels:
+          - docs
+      - isMatch: false
+        labels:
+          - launch-files
+      - isMatch: false
+        name: Launch system
+        labels:
+          - launch
+    dimensions:
+      dds:
+        - fastdds
+  # Core for Jammy
   - filters:
       - isMatch: true
         labels:
@@ -18,6 +34,7 @@ sets:
         - arm64
       os:
         - jammy
+  # Core for Windows (no arm64)
   - filters:
       - isMatch: true
         labels:
@@ -35,6 +52,7 @@ sets:
         - amd64
       os:
         - windows
+  # Core for tear 3 platforms
   - filters:
       - isMatch: true
         labels:

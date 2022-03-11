@@ -82,7 +82,7 @@ requirements:
       - core
     url: https://github.com/ros-visualization/rqt
     checks:
-      - name: Some name
+      - name: Check RQT
         description: |
           Launch using the `rqt` command.
 
