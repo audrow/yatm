@@ -60,13 +60,13 @@ sets:
         - cyclone
         - connext
       buildType:
-        - debian
         - binary
         - source
       chip:
         - amd64
       os:
         - windows
+
   # Core for tear 3 platforms
   - filters:
       - isMatch: true
