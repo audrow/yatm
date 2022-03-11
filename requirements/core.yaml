@@ -87,3 +87,21 @@ requirements:
           Launch using the `rqt` command.
 
           The rqt window should be generally usable and should be able to populate some of the discovered plugins.
+  - name: Installation instructions
+    description: |
+      Follow the official installation instructions for the platform. If instructions have not been published for the platform, use the instructions for Rolling Ridley.
+
+      For source build platforms, this includes the installation of dependencies and building the packages.
+    checks:
+      - name: Install works
+  - name: Local workspace overlay
+    description: |
+      Build a package in a local workspace which depends on packages supplied for the platform.
+
+      Run the tests for the package - all of them should pass.
+
+      For source platforms, this means building the candidate package in a separate workspace from the one used in the installation instructions.
+
+      TODO: Create a "dummy" package that ensures that we can target other packages using CMake, link against them, and run executables (tests) that are linked against libraries in the main workspace.
+    checks:
+      - name: Local workspace overlay works
