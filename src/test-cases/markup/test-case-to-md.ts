@@ -11,6 +11,14 @@ function testCaseToMd(
 ) {
   let text = ''
 
+  if (testCase.description) {
+    text = endent`
+      ${text}
+
+      ${testCase.description}
+    `
+  }
+
   if (Object.entries(testCase.dimensions).length > 0) {
     text = endent`
       ${text}
@@ -40,14 +48,6 @@ function testCaseToMd(
           return `- [${link.name}](${link.url})`
         })
         .join('\n')}
-    `
-  }
-
-  if (testCase.description) {
-    text = endent`
-      ${text}
-
-      ${testCase.description}
     `
   }
 
