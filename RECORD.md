@@ -1,5 +1,10 @@
 # RECORD
 
+## 2022-03-11
+
+Now most of the work for version 1.0.0 is done, so I should finish making the test cases.
+It was fairly easy to make the core ones, let's see if this continues for the feature tests.
+
 ## 2022-03-10
 
 Now is the time to get the Github uploader working and connected to the CLI. For this, I will make it so that the titles of tests are the titles of the Github issues. The other permutations will be labeled with their specific combinations, as well as the generation number. In finding and uploading posts, I wil check the title, permutations, and generation.
@@ -30,11 +35,11 @@ I think it would be best to go along with the way that I imagine using the appli
 - [x] Get the requirements generating correctly with the CLI and plugins
 - [x] Add exclusion when generating the test cases - use path to YAML file
 - [x] Convert the test cases into markdown
-- [ ] Create a way of deleting and uploading issues to Github
-  - [ ] Avoid duplication
+- [x] Create a way of deleting and uploading issues to Github
+  - [x] Avoid duplication
 - [ ] (Maybe) Create a way of getting the issues on Github with simple stats - number with each label
-- [ ] Write documentation on how to use this
-- [ ] Do the first sheet of tests
+- [x] Write documentation on how to use this
+- [x] Do the first sheet of tests
 - [ ] Do the second sheet of tests
 
 Future tasks:
