@@ -7,7 +7,9 @@ exports[`testCaseToMd should render a test case 1`] = `
 - Install type: Source
 
 ## Checks
-- [ ] check
+- [ ] **check**
+
+     
 
   <details><summary>details</summary>
   
@@ -34,6 +36,6 @@ exports[`testCaseToMd should render a test case 1`] = `
        
   
   </details>
-- [ ] Name only check
-- [ ] Name only check 2"
+- [ ] **Name only check**
+- [ ] **Name only check 2**"
 `;

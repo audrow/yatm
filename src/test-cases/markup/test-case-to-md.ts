@@ -43,6 +43,14 @@ function testCaseToMd(
     `
   }
 
+  if (testCase.description) {
+    text = endent`
+      ${text}
+
+      ${testCase.description}
+    `
+  }
+
   text = endent`
     ${text}
 
@@ -50,7 +58,9 @@ function testCaseToMd(
     ${testCase.checks
       .map((check) => {
         return endent`
-          - [ ] ${check.name}
+          - [ ] **${check.name}**
+
+               ${check.description ? `${check.description}` : ''}
 
             ${
               !(check.try && check.expect)

@@ -9,6 +9,11 @@ const checkSchema: JSONSchemaType<Check> = {
       type: 'string',
       minLength: 5,
     },
+    description: {
+      type: 'string',
+      minLength: 5,
+      nullable: true,
+    },
     try: {
       type: 'array',
       items: stepSchema,
