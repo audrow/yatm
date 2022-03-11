@@ -1,31 +1,51 @@
-generation: 4
+generation: 1
 sets:
-  # - filters:
-  #     - isMatch: true
-  #       name: .*
-  #     - isMatch: false
-  #       labels:
-  #         - launch-files
-  #     - isMatch: false
-  #       name: Launch system
-  #       labels:
-  #         - docs
-  #   dimensions:
-  #     dds:
-  #       - fastdds
-  #       - cyclone
-  #     buildType:
-  #       - source
-  #     os:
-  #       - macos
   - filters:
       - isMatch: true
-        name: 'tf2'
+        labels:
+          - core
     dimensions:
       dds:
         - fastdds
         - cyclone
+        - connext
       buildType:
+        - debian
+        - binary
         - source
+      chip:
+        - amd64
+        - arm64
       os:
         - jammy
+  - filters:
+      - isMatch: true
+        labels:
+          - core
+    dimensions:
+      dds:
+        - fastdds
+        - cyclone
+        - connext
+      buildType:
+        - debian
+        - binary
+        - source
+      chip:
+        - amd64
+      os:
+        - windows
+  - filters:
+      - isMatch: true
+        labels:
+          - core
+    dimensions:
+      dds:
+        - fastdds
+      buildType:
+        - source
+      chip:
+        - amd64
+      os:
+        - focal
+        - rhel 8

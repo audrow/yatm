@@ -1,0 +1,89 @@
+requirements:
+  - name: ros2cli on a local machine
+    description: |
+      Test the basic functionality of the ros2cli package family
+    labels:
+      - ros2cli
+      - local
+      - core
+    url: https://github.com/ros2/ros2cli
+    checks:
+      - name: Help text
+        description: |
+          Long-form help text should be available when invoking `ros2 --help` as well as `ros2 <command> --help`
+        try:
+          - stdin: ros2 -h
+          - stdin: ros2 --help
+          - stdin: ros2 topic -h
+          - stdin: ros2 topic --help
+        expect:
+          - note: Long-form help is available.
+      - name: Tab completion
+        description: |
+          When using a supported shell (i.e. bash), tab completion should work for both the bare executable to list commands and for listing sub-commands, like `ros2 <tab>` or `ros2 <command> tab`
+      - name: Node discovery
+        description: |
+          With another node running, use `ros2 node list` to ensure that the expected node is listed. Then stop the node and ensure that the list operation no longer shows the node.
+      - name: Topic discovery
+        description: |
+          With another node running, use `ros2 topic list` to ensure that the expected topics are listed. Then stop the node and ensure that the list operation no longer shows the node's topics.
+      - name: Service discovery
+        description: |
+          With another node running, use `ros2 service list` to ensure that the expected services are listed. Then stop the node and ensure that the list operation no longer shows the node's services.
+
+          ```bash
+          ros2 run demo_nodes_cpp add_two_ints_server
+          ```
+      - name: Parameter discovery
+        description: |
+          With another node running, use `ros2 param list` to ensure that the expected parameters are listed. Then stop the node and ensure that the list operation no longer shows the node's parameters.
+  - name: ros2cli network tests
+    description: |
+      Test the basic functionality of the ros2cli package family in an environment where nodes are running on other machines on the network.
+    labels:
+      - ros2cli
+      - core
+    url: https://github.com/ros2/ros2cli
+    checks:
+      - name: Node discovery
+        description: |
+          With another node running, use `ros2 node list` to ensure that the expected node is listed. Then stop the node and ensure that the list operation no longer shows the node.
+      - name: Topic discovery
+        description: |
+          With another node running, use `ros2 topic list` to ensure that the expected topics are listed. Then stop the node and ensure that the list operation no longer shows the node's topics.
+      - name: Service discovery
+        description: |
+          With another node running, use `ros2 service list` to ensure that the expected services are listed. Then stop the node and ensure that the list operation no longer shows the node's services.
+      - name: Parameter discovery
+        description: |
+          With another node running, use `ros2 param list` to ensure that the expected parameters are listed. Then stop the node and ensure that the list operation no longer shows the node's parameters.
+  - name: Rviz
+    description: |
+      This is a sanity check to ensure that the GUI tools aren't fundamentally broken.
+    labels:
+      - rviz
+      - visualization
+      - core
+    url: https://github.com/ros2/rviz
+    checks:
+      - name: Check Rviz
+        description: |
+          Launch using the `rviz2` command.
+
+          The rviz window should be generally usable and should be able to load some of the discovered visualizations.
+
+          Loading visualizations into the tree and using the mouse to navigate through the virtual workspace is sufficient for this test.
+  - name: RQT
+    description: |
+      This is a sanity check to ensure that the GUI tools aren't fundamentally broken.
+    labels:
+      - rqt
+      - visualization
+      - core
+    url: https://github.com/ros-visualization/rqt
+    checks:
+      - name: Some name
+        description: |
+          Launch using the `rqt` command.
+
+          The rqt window should be generally usable and should be able to populate some of the discovered plugins.
