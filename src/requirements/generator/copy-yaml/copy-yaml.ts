@@ -2,8 +2,8 @@ import endent from 'endent'
 import fs from 'fs'
 import yaml from 'js-yaml'
 import {join, resolve} from 'path'
-import type Requirements from '../__types__/Requirements'
-import {errorIfFileExists, validateRequirementsYaml} from './utils'
+import type Requirements from '../../__types__/Requirements'
+import {errorIfFileExists, validateRequirementsYaml} from '../utils'
 
 function copyRequirementFiles(inputPath: string, outputPath: string) {
   fs.readdirSync(inputPath).forEach((file) => {

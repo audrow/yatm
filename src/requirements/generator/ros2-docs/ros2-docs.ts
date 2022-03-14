@@ -3,10 +3,10 @@ import fs from 'fs'
 import yaml from 'js-yaml'
 import {join} from 'path'
 import urlParse from 'url-parse'
-import validateRequirements from '../validator/validate-requirements'
-import type Requirement from '../__types__/Requirement'
+import validateRequirements from '../../validator/validate-requirements'
+import type Requirement from '../../__types__/Requirement'
+import {errorIfFileExists} from '../utils'
 import getFromSiteMap from './get-pages-from-sitemap'
-import {errorIfFileExists} from './utils'
 
 async function makeDocumentationRequirementFiles(
   outputDirectory: string,
