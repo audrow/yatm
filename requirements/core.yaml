@@ -88,6 +88,9 @@ requirements:
 
           The rqt window should be generally usable and should be able to populate some of the discovered plugins.
   - name: Installation instructions
+    labels:
+      - installation
+      - core
     description: |
       Follow the official installation instructions for the platform. If instructions have not been published for the platform, use the instructions for Rolling Ridley.
 
@@ -95,6 +98,9 @@ requirements:
     checks:
       - name: Install works
   - name: Local workspace overlay
+    labels:
+      - overlays
+      - core
     description: |
       Build a package in a local workspace which depends on packages supplied for the platform.
 
