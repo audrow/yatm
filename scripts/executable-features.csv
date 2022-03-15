@@ -44,5 +44,4 @@ dummy_robot_bringup (ros2 launch),"dummy_robot_bringup.launch.py, dummy_robot_br
 rviz2,rviz2
 gazebo_ros_pkgs,gazebo --verbose /opt/ros/rolling/share/gazebo_plugins/worlds/gazebo_ros_camera_distortion_barrel_demo.world
 rqt,rqt
-rosbag2,"ros2 bag record -a, ros2 bag record <topic1>, <topic2>, <topic3>, ros2 bag info <bag_file>, ros2 bag play <bag_file>"
-Sane Development environment,"Test message generation with .msg, .srv, .action, and .idl on top of the installed environment"
+rosbag2,"ros2 bag record -a, ros2 bag record <topic1> <topic2> <topic3>, ros2 bag info <bag_file>, ros2 bag play <bag_file>"
