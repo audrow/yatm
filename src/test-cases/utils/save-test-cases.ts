@@ -20,6 +20,11 @@ export function getTestCaseSaveFileName(testCase: TestCase) {
     fileName += `-${dimension}`
   })
   fileName += `-g${testCase.generation}`
-  fileName = fileName.replace(/\s/g, '-').toLowerCase()
+  fileName = fileName
+    .replace(/\s/g, '-')
+    .replace(/`/g, '')
+    .replace(/\//g, '')
+    .replace(/--/g, '-')
+    .toLowerCase()
   return fileName
 }
