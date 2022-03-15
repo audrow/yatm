@@ -37,5 +37,9 @@ exports[`testCaseToMd should render a test case 1`] = `
   
   </details>
 - [ ] **Name only check**
-- [ ] **Name only check 2**"
+- [ ] **Name only check 2**
+
+---
+
+*You can find the code used to generate this test case [here](https://github.com/audrow/yatm)*"
 `;

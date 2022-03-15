@@ -1,5 +1,5 @@
 import endent from 'endent'
-import {TRANSLATION_MAP as tMap} from '../../constants'
+import {CODE_URL, TRANSLATION_MAP as tMap} from '../../constants'
 import type Step from '../../requirements/__types__/Step'
 import type TestCase from '../__types__/TestCase'
 
@@ -8,6 +8,7 @@ export default testCaseToMd
 function testCaseToMd(
   testCase: TestCase,
   translationMap: {[key: string]: string} = tMap,
+  isIncludeGeneratedUrl = true,
 ) {
   let text = ''
 
@@ -95,6 +96,17 @@ function testCaseToMd(
       })
       .join('\n')}
   `
+
+  if (isIncludeGeneratedUrl) {
+    text = endent`
+      ${text}
+
+      ---
+
+      *You can find the code used to generate this test case [here](${CODE_URL})*
+    `
+  }
+
   return text
 }
 

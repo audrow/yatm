@@ -35,3 +35,5 @@ export const TRANSLATION_MAP = {
   fastdds: 'FastDDS',
   dds: 'DDS vendor',
 }
+
+export const CODE_URL = 'https://github.com/audrow/yatm'
