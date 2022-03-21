@@ -44,6 +44,9 @@ sets:
       - isMatch: true
         labels:
           - feature
+      - isMatch: false
+        labels:
+          - windows
     dimensions:
       dds:
         - fastdds
@@ -59,6 +62,9 @@ sets:
       - isMatch: true
         labels:
           - feature
+      - isMatch: false
+        labels:
+          - linux
     dimensions:
       dds:
         - fastdds
