@@ -86,6 +86,10 @@ describe('validate check schema', () => {
       {
         name,
         try: [step],
+      },
+      {
+        name,
+        try: [step],
         expect: [step],
       },
       {
@@ -129,13 +133,13 @@ describe('validate check schema', () => {
       }),
     ).toBeFalsy()
   })
-  it('expects expect if there is a try', () => {
+  it("doesn't require expect if there is a try", () => {
     expect(
       validate({
         name,
         try: [step],
       }),
-    ).toBeFalsy()
+    ).toBeTruthy()
   })
   it('returns false on unknown properties', () => {
     expect(

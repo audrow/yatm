@@ -23,7 +23,7 @@ exports[`testCaseToMd should render a test case 1`] = `
        \`\`\`
   
     **Expect**
-  
+    
     1.
        expect
        \`\`\`bash
@@ -33,8 +33,7 @@ exports[`testCaseToMd should render a test case 1`] = `
     1.
        expect
        ![](image url)
-       
-  
+    
   </details>
 - [ ] **Name only check**
 - [ ] **Name only check 2**

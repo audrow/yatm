@@ -30,7 +30,6 @@ const checkSchema: JSONSchemaType<Check> = {
   required: ['name'],
   additionalProperties: false,
   dependencies: {
-    try: ['expect'],
     expect: ['try'],
   },
 }

@@ -64,7 +64,7 @@ function testCaseToMd(
                ${check.description ? `${check.description}` : ''}
 
             ${
-              !(check.try && check.expect)
+              !check.try
                 ? ''
                 : endent`
               <details><summary>details</summary>
@@ -79,16 +79,21 @@ function testCaseToMd(
                   )
                   .join('\n')}
 
-                **Expect**
+                ${
+                  !check.expect
+                    ? ''
+                    : endent`
+                  **Expect**
 
-                ${check.expect
-                  .map(
-                    (s) => endent`
-                  1.
-                     ${getStep(s)}`,
-                  )
-                  .join('\n')}
-
+                  ${check.expect
+                    .map(
+                      (s) => endent`
+                    1.
+                       ${getStep(s)}`,
+                    )
+                    .join('\n')}
+                `
+                }
               </details>
             `
             }
