@@ -2,7 +2,6 @@ requirements:
   - name: Test ROS 2 Topic
     labels:
       - ros2cli
-    url: https://github.com/ros2/ros2cli
     checks:
       - name: ROS2 Topic help
         try:
@@ -30,7 +29,9 @@ requirements:
         expect:
           - stdout: /greet
   - name: Check tutorial documentation page
-    url: https://ros2.org/tutorials
+    links:
+      - name: Tutorials page URL
+        url: https://ros2.org/tutorials
     checks:
       - name: I am able to follow the tutorial
       - name: Documentation has no typos
@@ -38,7 +39,9 @@ requirements:
   - name: Test RViz
     labels:
       - rviz
-    url: https://github.com/ros-visualization/rviz
+    links:
+      - name: RViz repo URL
+        url: https://github.com/ros-visualization/rviz
     checks:
       - name: It runs
       - name: Can visualize point cloud

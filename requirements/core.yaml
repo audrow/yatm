@@ -6,7 +6,9 @@ requirements:
       - ros2cli
       - local
       - core
-    url: https://github.com/ros2/ros2cli
+    links:
+      - name: Repo URL
+        url: https://github.com/ros2/ros2cli
     checks:
       - name: Help text
         description: |
@@ -43,7 +45,9 @@ requirements:
     labels:
       - ros2cli
       - core
-    url: https://github.com/ros2/ros2cli
+    links:
+      - name: Repo URL
+        url: https://github.com/ros2/ros2cli
     checks:
       - name: Node discovery
         description: |
@@ -64,7 +68,9 @@ requirements:
       - rviz
       - visualization
       - core
-    url: https://github.com/ros2/rviz
+    links:
+      - name: Repo URL
+        url: https://github.com/ros2/rviz
     checks:
       - name: Check Rviz
         description: |
@@ -80,7 +86,9 @@ requirements:
       - rqt
       - visualization
       - core
-    url: https://github.com/ros-visualization/rqt
+    links:
+      - name: Repo URL
+        url: https://github.com/ros-visualization/rqt
     checks:
       - name: Check RQT
         description: |

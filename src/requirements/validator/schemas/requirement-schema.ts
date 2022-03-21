@@ -44,6 +44,7 @@ const requirementSchema: JSONSchemaType<Requirement> = {
     },
   },
   required: ['name', 'checks'],
+  additionalProperties: false,
 }
 
 export default requirementSchema

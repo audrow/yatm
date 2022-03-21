@@ -337,7 +337,9 @@ requirements:
       - feature
       - ros2security
       - linux
-    url: https://github.com/ros2/sros2/blob/master/SROS2_Linux.md
+    links:
+      - name: Tutorial URL
+        url: https://github.com/ros2/sros2/blob/master/SROS2_Linux.md
     checks:
       - name: The Linux tutorials work
 
@@ -347,7 +349,9 @@ requirements:
       - feature
       - ros2security
       - windows
-    url: https://github.com/ros2/sros2/blob/master/SROS2_Windows.md
+    links:
+      - name: Tutorial URL
+        url: https://github.com/ros2/sros2/blob/master/SROS2_Windows.md
     checks:
       - name: The Linux tutorials work
 
