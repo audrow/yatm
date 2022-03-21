@@ -14,102 +14,102 @@ requirements:
         try:
           - stdin: ros2 run demo_nodes_cpp talker
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `listener`
         try:
           - stdin: ros2 run demo_nodes_cpp listener
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `listener_best_effort`
         try:
           - stdin: ros2 run demo_nodes_cpp listener_best_effort
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `talker_serialized_message`
         try:
           - stdin: ros2 run demo_nodes_cpp talker_serialized_message
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `listener_serialized_message`
         try:
           - stdin: ros2 run demo_nodes_cpp listener_serialized_message
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `talker_loaned_message`
         try:
           - stdin: ros2 run demo_nodes_cpp talker_loaned_message
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `add_two_ints_server`
         try:
           - stdin: ros2 run demo_nodes_cpp add_two_ints_server
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `add_two_ints_client`
         try:
           - stdin: ros2 run demo_nodes_cpp add_two_ints_client
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `add_two_ints_client_async`
         try:
           - stdin: ros2 run demo_nodes_cpp add_two_ints_client_async
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `list_parameters`
         try:
           - stdin: ros2 run demo_nodes_cpp list_parameters
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `list_parameters_async`
         try:
           - stdin: ros2 run demo_nodes_cpp list_parameters_async
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `set_and_get_parameters`
         try:
           - stdin: ros2 run demo_nodes_cpp set_and_get_parameters
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `set_and_get_parameters_async`
         try:
           - stdin: ros2 run demo_nodes_cpp set_and_get_parameters_async
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `parameter_events`
         try:
           - stdin: ros2 run demo_nodes_cpp parameter_events
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `parameter_events_async`
         try:
           - stdin: ros2 run demo_nodes_cpp parameter_events_async
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `parameter_blackboard`
         try:
           - stdin: ros2 run demo_nodes_cpp parameter_blackboard
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `even_parameters_node`
         try:
           - stdin: ros2 run demo_nodes_cpp even_parameters_node
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `one_off_timer`
         try:
           - stdin: ros2 run demo_nodes_cpp one_off_timer
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `reuse_timer`
         try:
           - stdin: ros2 run demo_nodes_cpp reuse_timer
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `allocator_tutorial`
         try:
           - stdin: ros2 run demo_nodes_cpp allocator_tutorial
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `demo_nodes_cpp_native`
     labels:
       - executable
@@ -119,7 +119,7 @@ requirements:
         try:
           - stdin: ros2 run demo_nodes_cpp_native talker
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `image_tools`
     labels:
       - executable
@@ -129,12 +129,12 @@ requirements:
         try:
           - stdin: ros2 run image_tools cam2image
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `showimage`
         try:
           - stdin: ros2 run image_tools showimage
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `intra_process_demo`
     labels:
       - executable
@@ -144,37 +144,37 @@ requirements:
         try:
           - stdin: ros2 run intra_process_demo camera_node
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `watermark_node`
         try:
           - stdin: ros2 run intra_process_demo watermark_node
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `image_view_node`
         try:
           - stdin: ros2 run intra_process_demo image_view_node
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `cyclic_pipeline`
         try:
           - stdin: ros2 run intra_process_demo cyclic_pipeline
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `image_pipeline_all_in_one`
         try:
           - stdin: ros2 run intra_process_demo image_pipeline_all_in_one
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `image_pipeline_with_two_image_view`
         try:
           - stdin: ros2 run intra_process_demo image_pipeline_with_two_image_view
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `two_node_pipeline`
         try:
           - stdin: ros2 run intra_process_demo two_node_pipeline
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `composition`
     labels:
       - executable
@@ -184,7 +184,7 @@ requirements:
         try:
           - stdin: ros2 run composition linktime_composition
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `quality_of_service_demo_cpp`
     labels:
       - executable
@@ -194,17 +194,17 @@ requirements:
         try:
           - stdin: ros2 run quality_of_service_demo_cpp lifespan
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `liveliness`
         try:
           - stdin: ros2 run quality_of_service_demo_cpp liveliness
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `deadline`
         try:
           - stdin: ros2 run quality_of_service_demo_cpp deadline
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `quality_of_service_demo_py`
     labels:
       - executable
@@ -214,17 +214,17 @@ requirements:
         try:
           - stdin: ros2 run quality_of_service_demo_py lifespan
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `liveliness`
         try:
           - stdin: ros2 run quality_of_service_demo_py liveliness
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `deadline`
         try:
           - stdin: ros2 run quality_of_service_demo_py deadline
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `lifecycle`
     labels:
       - executable
@@ -234,7 +234,7 @@ requirements:
         try:
           - stdin: ros2 launch lifecycle lifecycle_demo.launch.py
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `tf2_ros`
     labels:
       - executable
@@ -244,17 +244,17 @@ requirements:
         try:
           - stdin: ros2 run tf2_ros tf2_echo
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `tf2_monitor`
         try:
           - stdin: ros2 run tf2_ros tf2_monitor
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `static_transform_publisher`
         try:
           - stdin: ros2 run tf2_ros static_transform_publisher
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `ros1_bridge`
     labels:
       - executable
@@ -264,17 +264,17 @@ requirements:
         try:
           - stdin: ros2 run ros1_bridge dynamic_bridge
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `ros1_bridge*`
         try:
           - stdin: ros2 run ros1_bridge ros1_bridge*
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `both directions`
         try:
           - stdin: ros2 run ros1_bridge both directions
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_minimal_publisher`
     labels:
       - executable
@@ -284,21 +284,21 @@ requirements:
         try:
           - stdin: ros2 run examples_rclcpp_minimal_publisher publisher_lambda
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `publisher_member_function`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_publisher
               publisher_member_function
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `publisher_not_composable`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_publisher
               publisher_not_composable
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_minimal_subscriber`
     labels:
       - executable
@@ -308,21 +308,21 @@ requirements:
         try:
           - stdin: ros2 run examples_rclcpp_minimal_subscriber subscriber_lambda
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `subscriber_member_function`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_subscriber
               subscriber_member_function
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `subscriber_not_composable`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_subscriber
               subscriber_not_composable
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_minimal_service`
     labels:
       - executable
@@ -332,7 +332,7 @@ requirements:
         try:
           - stdin: ros2 run examples_rclcpp_minimal_service service_main
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_minimal_client`
     labels:
       - executable
@@ -342,7 +342,7 @@ requirements:
         try:
           - stdin: ros2 run examples_rclcpp_minimal_client client_main
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_minimal_composition`
     labels:
       - executable
@@ -352,19 +352,19 @@ requirements:
         try:
           - stdin: ros2 run examples_rclcpp_minimal_composition composition_composed
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `composition_publisher`
         try:
           - stdin: ros2 run examples_rclcpp_minimal_composition composition_publisher
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `composition_subscriber`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_composition
               composition_subscriber
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_minimal_action_server`
     labels:
       - executable
@@ -376,14 +376,14 @@ requirements:
               ros2 run examples_rclcpp_minimal_action_server
               action_server_not_composable
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `action_server_member_functions`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_action_server
               action_server_member_functions
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_minimal_action_client`
     labels:
       - executable
@@ -395,28 +395,28 @@ requirements:
               ros2 run examples_rclcpp_minimal_action_client
               action_client_not_composable
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `action_client_not_composable_with_cancel`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_action_client
               action_client_not_composable_with_cancel
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `action_client_not_composable_with_feedback`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_action_client
               action_client_not_composable_with_feedback
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `action_client_member_functions`
         try:
           - stdin: >-
               ros2 run examples_rclcpp_minimal_action_client
               action_client_member_functions
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclcpp_multithreaded_executor`
     labels:
       - executable
@@ -428,7 +428,7 @@ requirements:
               ros2 run examples_rclcpp_multithreaded_executor
               multithreaded_executor
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclpy_minimal_action_server`
     labels:
       - executable
@@ -438,29 +438,29 @@ requirements:
         try:
           - stdin: ros2 run examples_rclpy_minimal_action_server server_defer
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `server_not_composable`
         try:
           - stdin: >-
               ros2 run examples_rclpy_minimal_action_server
               server_not_composable
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `server`
         try:
           - stdin: ros2 run examples_rclpy_minimal_action_server server
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `server_queue_goals`
         try:
           - stdin: ros2 run examples_rclpy_minimal_action_server server_queue_goals
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `server_single_goal`
         try:
           - stdin: ros2 run examples_rclpy_minimal_action_server server_single_goal
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclpy_minimal_action_client`
     labels:
       - executable
@@ -470,19 +470,19 @@ requirements:
         try:
           - stdin: ros2 run examples_rclpy_minimal_action_client client_cancel
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `client_not_composable`
         try:
           - stdin: >-
               ros2 run examples_rclpy_minimal_action_client
               client_not_composable
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `client`
         try:
           - stdin: ros2 run examples_rclpy_minimal_action_client client
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclpy_minimal_publisher`
     labels:
       - executable
@@ -492,19 +492,19 @@ requirements:
         try:
           - stdin: ros2 run examples_rclpy_minimal_publisher publisher_local_function
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `publisher_member_function`
         try:
           - stdin: >-
               ros2 run examples_rclpy_minimal_publisher
               publisher_member_function
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `publisher_old_school`
         try:
           - stdin: ros2 run examples_rclpy_minimal_publisher publisher_old_school
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclpy_minimal_subscriber`
     labels:
       - executable
@@ -514,19 +514,19 @@ requirements:
         try:
           - stdin: ros2 run examples_rclpy_minimal_subscriber subscriber_lambda
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `subscriber_member_function`
         try:
           - stdin: >-
               ros2 run examples_rclpy_minimal_subscriber
               subscriber_member_function
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `subscriber_old_school`
         try:
           - stdin: ros2 run examples_rclpy_minimal_subscriber subscriber_old_school
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclpy_minimal_client`
     labels:
       - executable
@@ -536,24 +536,24 @@ requirements:
         try:
           - stdin: ros2 run examples_rclpy_minimal_client client
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `client_async`
         try:
           - stdin: ros2 run examples_rclpy_minimal_client client_async
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `client_async_member_function`
         try:
           - stdin: >-
               ros2 run examples_rclpy_minimal_client
               client_async_member_function
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `client_async_callback`
         try:
           - stdin: ros2 run examples_rclpy_minimal_client client_async_callback
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclpy_minimal_service`
     labels:
       - executable
@@ -563,12 +563,12 @@ requirements:
         try:
           - stdin: ros2 run examples_rclpy_minimal_service service
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `service_member_function`
         try:
           - stdin: ros2 run examples_rclpy_minimal_service service_member_function
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `examples_rclpy_executors`
     labels:
       - executable
@@ -578,32 +578,32 @@ requirements:
         try:
           - stdin: ros2 run examples_rclpy_executors callback_group
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `composed`
         try:
           - stdin: ros2 run examples_rclpy_executors composed
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `custom_callback_group`
         try:
           - stdin: ros2 run examples_rclpy_executors custom_callback_group
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `custom_executor`
         try:
           - stdin: ros2 run examples_rclpy_executors custom_executor
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `listener`
         try:
           - stdin: ros2 run examples_rclpy_executors listener
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `talker`
         try:
           - stdin: ros2 run examples_rclpy_executors talker
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `pendulum_control`
     labels:
       - executable
@@ -613,22 +613,22 @@ requirements:
         try:
           - stdin: ros2 run pendulum_control pendulum_demo
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `pendulum_teleop`
         try:
           - stdin: ros2 run pendulum_control pendulum_teleop
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `pendulum_launch.bash`
         try:
           - stdin: ros2 launch pendulum_control pendulum_launch.bash
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `pendulum_logger`
         try:
           - stdin: ros2 run pendulum_control pendulum_logger
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `tlsf_cpp`
     labels:
       - executable
@@ -638,7 +638,7 @@ requirements:
         try:
           - stdin: ros2 run tlsf_cpp tlsf_allocator_example
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `rttest`
     labels:
       - executable
@@ -648,7 +648,7 @@ requirements:
         try:
           - stdin: ros2 run rttest rttest_plot
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `dummy_map_server`
     labels:
       - executable
@@ -658,7 +658,7 @@ requirements:
         try:
           - stdin: ros2 run dummy_map_server dummy_map_server
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `dummy_sensors`
     labels:
       - executable
@@ -668,12 +668,12 @@ requirements:
         try:
           - stdin: ros2 run dummy_sensors dummy_joint_states
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `dummy_laser`
         try:
           - stdin: ros2 run dummy_sensors dummy_laser
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `dummy_robot_bringup`
     labels:
       - executable
@@ -683,17 +683,17 @@ requirements:
         try:
           - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `dummy_robot_bringup_launch.xml`
         try:
           - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.xml
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `dummy_robot_bringup_launch.yaml`
         try:
           - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.yaml
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `rviz2`
     labels:
       - executable
@@ -703,7 +703,7 @@ requirements:
         try:
           - stdin: ros2 run rviz2 rviz2
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `gazebo_ros_pkgs`
     labels:
       - executable
@@ -717,7 +717,7 @@ requirements:
               ros2 run gazebo_ros_pkgs gazebo --verbose
               /opt/ros/rolling/share/gazebo_plugins/worlds/gazebo_ros_camera_distortion_barrel_demo.world
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `rqt`
     labels:
       - executable
@@ -727,7 +727,7 @@ requirements:
         try:
           - stdin: ros2 run rqt rqt
         expect:
-          - note: It works
+          - note: It works.
   - name: Executables in `rosbag2`
     labels:
       - executable
@@ -737,19 +737,19 @@ requirements:
         try:
           - stdin: ros2 run rosbag2 ros2 bag record -a
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `ros2 bag record <topic1> <topic2> <topic3>`
         try:
           - stdin: ros2 run rosbag2 ros2 bag record <topic1> <topic2> <topic3>
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `ros2 bag info <bag_file>`
         try:
           - stdin: ros2 run rosbag2 ros2 bag info <bag_file>
         expect:
-          - note: It works
+          - note: It works.
       - name: Check `ros2 bag play <bag_file>`
         try:
           - stdin: ros2 run rosbag2 ros2 bag play <bag_file>
         expect:
-          - note: It works
+          - note: It works.

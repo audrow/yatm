@@ -9,17 +9,17 @@ requirements:
         try:
           - stdin: ros2 action info
         expect:
-          - note: The command work
+          - note: It works.
       - name: Check list
         try:
           - stdin: ros2 action list
         expect:
-          - note: The command work
+          - note: It works.
       - name: Check send_goal
         try:
           - stdin: ros2 action send_goal
         expect:
-          - note: The command work
+          - note: It works.
 
   - name: Check ROS 2 bag CLI
     labels:
@@ -31,17 +31,17 @@ requirements:
         try:
           - stdin: ros2 bag info
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check record
         try:
           - stdin: ros2 bag record
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check play
         try:
           - stdin: ros2 bag play
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 component CLI
     labels:
@@ -53,32 +53,32 @@ requirements:
         try:
           - stdin: ros2 component info
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check list
         try:
           - stdin: ros2 component list
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check load
         try:
           - stdin: ros2 component load
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check standalone
         try:
           - stdin: ros2 component standalone
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check types
         try:
           - stdin: ros2 component types
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check unload
         try:
           - stdin: ros2 component unload
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 daemon CLI
     labels:
@@ -90,17 +90,17 @@ requirements:
         try:
           - stdin: ros2 daemon start
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check status
         try:
           - stdin: ros2 daemon status
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check stop
         try:
           - stdin: ros2 daemon stop
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 doctor CLI
     labels:
@@ -112,22 +112,22 @@ requirements:
         try:
           - stdin: ros2 doctor -r
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check `-rf`
         try:
           - stdin: ros2 doctor -rf
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check `-iw`
         try:
           - stdin: ros2 doctor -iw
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check hello
         try:
           - stdin: ros2 doctor hello
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 wtf CLI
     labels:
@@ -140,22 +140,22 @@ requirements:
         try:
           - stdin: ros2 wtf -r
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check `-rf`
         try:
           - stdin: ros2 wtf -rf
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check `-iw`
         try:
           - stdin: ros2 wtf -iw
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check hello
         try:
           - stdin: ros2 wtf hello
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 interface CLI
     labels:
@@ -167,27 +167,27 @@ requirements:
         try:
           - stdin: ros2 interface list
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check package
         try:
           - stdin: ros2 interface package
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check packages
         try:
           - stdin: ros2 interface packages
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check proto
         try:
           - stdin: ros2 interface proto
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check show
         try:
           - stdin: ros2 interface show
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 launch CLI
     labels:
@@ -199,12 +199,12 @@ requirements:
         try:
           - stdin: ros2 launch <package> <launchfile>
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check launch launch file directly
         try:
           - stdin: ros2 launch <launchfile>
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 Multicast CLI
     labels:
@@ -216,12 +216,12 @@ requirements:
         try:
           - stdin: ros2 multicast receive
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check send
         try:
           - stdin: ros2 multicast send
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 Node CLI
     labels:
@@ -233,12 +233,12 @@ requirements:
         try:
           - stdin: ros2 node info
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check list
         try:
           - stdin: ros2 node list
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 Param CLI
     labels:
@@ -250,37 +250,37 @@ requirements:
         try:
           - stdin: ros2 param delete
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check describe
         try:
           - stdin: ros2 param describe
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check dump
         try:
           - stdin: ros2 param dump
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check dump
         try:
           - stdin: ros2 param dump
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check get
         try:
           - stdin: ros2 param get
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check list
         try:
           - stdin: ros2 param list
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check set
         try:
           - stdin: ros2 param set
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 Pkg CLI
     labels:
@@ -292,27 +292,27 @@ requirements:
         try:
           - stdin: ros2 pkg create
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check executables
         try:
           - stdin: ros2 pkg executables
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check list
         try:
           - stdin: ros2 pkg list
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check prefix
         try:
           - stdin: ros2 pkg prefix
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check xml
         try:
           - stdin: ros2 pkg xml
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 run CLI
     labels:
@@ -324,12 +324,12 @@ requirements:
         try:
           - stdin: ros2 run <package> <executable>
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check run with prefix
         try:
           - stdin: ros2 run <package> <executable> --prefix
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 security CLI on Linux
     labels:
@@ -365,22 +365,22 @@ requirements:
         try:
           - stdin: ros2 service call
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check find
         try:
           - stdin: ros2 service find
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check list
         try:
           - stdin: ros2 service list
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check type
         try:
           - stdin: ros2 service type
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 test CLI
     labels:
@@ -392,7 +392,7 @@ requirements:
         try:
           - stdin: ros2 test <package> <test launch file>
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 topic CLI
     labels:
@@ -404,47 +404,47 @@ requirements:
         try:
           - stdin: ros2 service bw
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check delay
         try:
           - stdin: ros2 service delay
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check echo
         try:
           - stdin: ros2 service echo
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check find
         try:
           - stdin: ros2 service find
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check hz
         try:
           - stdin: ros2 service hz
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check info
         try:
           - stdin: ros2 service info
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check list
         try:
           - stdin: ros2 service list
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check pub
         try:
           - stdin: ros2 service pub
         expect:
-          - note: The command works
+          - note: The command works.
       - name: Check type
         try:
           - stdin: ros2 service type
         expect:
-          - note: The command works
+          - note: The command works.
 
   - name: Check ROS 2 trace CLI
     labels:
@@ -456,4 +456,4 @@ requirements:
         try:
           - stdin: ros2 trace
         expect:
-          - note: The command works
+          - note: The command works.

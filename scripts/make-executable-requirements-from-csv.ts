@@ -102,7 +102,7 @@ function getRequirementsYaml(features: Features, labels: string[]) {
           ],
           expect: [
             {
-              note: 'It works',
+              note: 'It works.',
             },
           ],
         }
