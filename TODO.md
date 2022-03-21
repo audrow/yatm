@@ -19,6 +19,7 @@
 
 ### Possible
 
+- [ ] Make it so that each step has a try and expect section, to keep them closer together
 - [ ] Only create issues in a generation if they have no match, open or closed
 - [ ] Make a way of getting stats on issues opened and closed
 - [ ] Make the CLI more configurable and easier to use

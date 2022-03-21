@@ -127,7 +127,7 @@ requirements:
       - name: Check 3
 ```
 
-Requirements also support instructions for the tester to try and for what they should expect. If you have a try entry, you must have an expect entry.
+Requirements also support instructions for the tester to try and for what they should expect. You can have a try statement without an expect statement, but you cannot have an expect statement without a try statement.
 
 ```yaml
 requirements:
