@@ -1,5 +1,14 @@
 # README
 
+- [Features](#features)
+- [Getting started](#getting-started)
+- [How to use this repository](#how-to-use-this-repository)
+  - [Command line interface](#command-line-interface)
+  - [Configuration](#configuration)
+  - [Creating Requirements](#creating-requirements)
+  - [Creating Test Cases from Requirements](#creating-test-cases-from-requirements)
+  - [Lessons Learned](#lessons-learned)
+
 This project is used as an alternative to various test case management softwares.
 It allows you to define requirements and then to create test cases from those requirements.
 
@@ -40,7 +49,7 @@ npm run prepare  # setup git hooks
 npm link # call directly with tcm
 ```
 
-From there, you should be able to run the following command. If this doesn't work make sure that the place where node files are being stored is in your system path (`PATH`).
+From there, you should be able to run the following command. If this doesn't work make sure that the place where node files are being stored is in your system path (`PATH`). You can also use `npx ts-node src/index.ts`.
 
 ```bash
 tcm -h
@@ -54,36 +63,42 @@ npm test
 
 ## How to use this repository
 
+### Command line interface
+
 To run the script we'll use `tcm`. You can run this command without any arguments to see the help message. Note that most commands have shortcuts, such as `tcm requirements` which can be shortened to `tcm r`.
 
 Here are the steps to using this package:
 
 1. Make requirements
 
-```bash
-tcm requirements list-plugins # or tcm r l
-tcm requirements make all # plugin name or all
-```
+   ```bash
+   tcm requirements list-plugins # or tcm r l
+   tcm requirements make all # plugin name or all
+   ```
 
 2. Make test cases:
 
-```bash
-tcm test-cases make
-```
+   ```bash
+   tcm test-cases make
+   ```
 
-Note that these test cases are made from data specified in the `test-case.config.yaml`. 3. Create the test cases in the db
+   Note that these test cases are made from data specified in the `test-case.config.yaml`.
 
-```bash
-tcm test-cases db github create # or tcm t d github c
-```
+3. Create the test cases in the db
 
-You could then delete the created issues with the following command:
+   ```bash
+   tcm test-cases db github create # or tcm t d github c
+   ```
 
-```bash
-tcm test-cases db github delete "." # or tcm t d github d
-```
+   You could then delete the created issues with the following command:
 
-Note you can also specify some regex code with create or delete that will be used to match labels or the PR's title.
+   ```bash
+   tcm test-cases db github delete "." # or tcm t d github d
+   ```
+
+   Note you can also specify some regex code with create or delete that will be used to match labels or the PR's title.
+
+### Configuration
 
 At the moment things are not very well exposed or configurable without going into a few top-level files and configuring them. If this package has more interest, I expect it to become more configurable over time.
 Here is where different configuration lives:
@@ -91,6 +106,16 @@ Here is where different configuration lives:
 - `src/constants.github.ts`: Configuration to use this project with Github as the database
 - `src/constants.ts`: Configuration about directory structure, files that are looked for, etc.
 - `test-case.config.yaml`: A YAML file that specifies the test case generation, as well as filters for what test cases to create from requirements and to specify the dimensions that should be varied for the test cases.
+
+You will also need an environmental variable for your Github Personal Access token, stored in `GITHUB_API_TOKEN`. The easiest way to do this is probably to have a `.env` file in the project's root which has the following content:
+
+```bash
+GITHUB_API_TOKEN="ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+```
+
+Note that your personal access token will need to have the ability to read and write the repository you would like to create issues in.
+
+### Creating Requirements
 
 To create your own requirements, add a yaml file to the `requirements` directory or create a plugin that puts files into `generated-files/requirements`. The minimum requirement file should look like the following:
 
@@ -168,3 +193,38 @@ requirements:
 ```
 
 Also, note that you should be able to use all of YAML's goodness in any YAML file. You can see [this YAML cheat sheet](https://quickref.me/yaml) for inspiration.
+
+### Creating Test Cases from Requirements
+
+Test cases are generated for requirements for specific combinations of discrete labels. To make this easier, a YAML file, `test-case.config.yaml`, specifies which labels should be applied to which requirements. An example of this YAML file is as follows:
+
+```yaml
+generation: 1
+sets:
+  - filters:
+      - isMatch: true
+        name: tf2
+        labels:
+          - docs
+    dimensions:
+      os:
+        - jammy
+      buildType:
+        - debian
+        - source
+```
+
+The `generation` key is an idea from databases. It creates a high-level label for identifying a group of tests that was created together.
+
+The `sets` key takes an array of sets that should specify which requirements should be made into tests. In each set, there is a `filters` key and a `dimensions` key. The `filters` key allows you to specify which requirements to include (`isMatch: true`) or exclude (`isMatch: false`). Requirements can be narrowed down with zero or more labels or a regex expression that will be compared to the name of each requirement. For example, in the YAML above, the filters would find requirements with the `docs` label that have `tf2` in the title.
+
+The `dimensions` key allows you to specify arbitrary lists to get the combinations for.
+For example, the above YAML would create the following combinations: `[jammy, debian]` and `[jammy, source]`. You can imagine that the number of combinations blows up as there become more dimensions.
+
+### Lessons Learned
+
+Here is some advice for using this framework, based on some experience with it. As it is early days for this project, feel free to disregard them, if you find something better.
+
+- Include requirements in bulk with labels and then refine from there with a combination of labels and name (more brittle).
+- Split requirements up into files with logical groupings.
+- Test how your requirements render before uploading them to a database (e.g., Github).
