@@ -103,6 +103,9 @@ requirements:
       Follow the official installation instructions for the platform. If instructions have not been published for the platform, use the instructions for Rolling Ridley.
 
       For source build platforms, this includes the installation of dependencies and building the packages.
+    links:
+      - name: Installation instructions
+        url: https://docs.ros.org/en/rolling/Installation.html
     checks:
       - name: Install works
   - name: Local workspace overlay
