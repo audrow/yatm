@@ -173,20 +173,6 @@ requirements:
       - name: Check `static_transform_publisher`
         try:
           - stdin: ros2 run tf2_ros static_transform_publisher
-  - name: Executables in `ros1_bridge`
-    labels:
-      - executable
-      - feature
-    checks:
-      - name: Check `dynamic_bridge`
-        try:
-          - stdin: ros2 run ros1_bridge dynamic_bridge
-      - name: Check `ros1_bridge*`
-        try:
-          - stdin: ros2 run ros1_bridge ros1_bridge*
-      - name: Check `both directions`
-        try:
-          - stdin: ros2 run ros1_bridge both directions
   - name: Executables in `examples_rclcpp_minimal_publisher`
     labels:
       - executable
