@@ -141,10 +141,41 @@ requirements:
     checks:
       - name: Check launch package
         try:
-          - stdin: ros2 launch <package> <launchfile>
+          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+        expect:
+          - note: You should see something like the following
+            stdout: |
+              [INFO] [launch]: All log files can be found below /home/parallels/.ros/log/2022-03-21-17-38-54-737866-parallels-Parallels-Virtual-Platform-3717
+              [INFO] [launch]: Default logging verbosity is set to INFO
+              [INFO] [talker-1]: process started with pid [3722]
+              [INFO] [listener-2]: process started with pid [3724]
+              [talker-1] [INFO] [1647909535.937731548] [talker]: Publishing: 'Hello World: 1'
+              [listener-2] [INFO] [1647909535.938337387] [listener]: I heard: [Hello World: 1]
+              [talker-1] [INFO] [1647909536.937932068] [talker]: Publishing: 'Hello World: 2'
+              [listener-2] [INFO] [1647909536.938125486] [listener]: I heard: [Hello World: 2]
+              [talker-1] [INFO] [1647909537.936162331] [talker]: Publishing: 'Hello World: 3'
+              [listener-2] [INFO] [1647909537.936366391] [listener]: I heard: [Hello World: 3]
+              ...
+
       - name: Check launch launch file directly
         try:
-          - stdin: ros2 launch <launchfile>
+          - stdin: curl https://raw.githubusercontent.com/ros2/demos/master/demo_nodes_cpp/launch/topics/talker_listener.launch.py > /tmp/talker_listener.launch.py
+            note: Download a launch file, for example with `curl`.
+          - stdin: ros2 launch /tmp/talker_listener.launch.py
+        expect:
+          - note: You should see something like the following
+            stdout: |
+              [INFO] [launch]: All log files can be found below /home/parallels/.ros/log/2022-03-21-17-38-54-737866-parallels-Parallels-Virtual-Platform-3717
+              [INFO] [launch]: Default logging verbosity is set to INFO
+              [INFO] [talker-1]: process started with pid [3722]
+              [INFO] [listener-2]: process started with pid [3724]
+              [talker-1] [INFO] [1647909535.937731548] [talker]: Publishing: 'Hello World: 1'
+              [listener-2] [INFO] [1647909535.938337387] [listener]: I heard: [Hello World: 1]
+              [talker-1] [INFO] [1647909536.937932068] [talker]: Publishing: 'Hello World: 2'
+              [listener-2] [INFO] [1647909536.938125486] [listener]: I heard: [Hello World: 2]
+              [talker-1] [INFO] [1647909537.936162331] [talker]: Publishing: 'Hello World: 3'
+              [listener-2] [INFO] [1647909537.936366391] [listener]: I heard: [Hello World: 3]
+              ...
 
   - name: Check ROS 2 Multicast CLI
     labels:
@@ -167,10 +198,46 @@ requirements:
     checks:
       - name: Check info
         try:
-          - stdin: ros2 node info
+          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+            note: Launch a node
+            terminal: 1
+          - stdin: ros2 node info /talker
+            terminal: 2
+            note: Get the info for the `talker` that was launched.
+        expect:
+          - terminal: 2
+            note: You should see something similar to the following
+            stdout: |
+              Subscribers:
+                /parameter_events: rcl_interfaces/msg/ParameterEvent
+              Publishers:
+                /chatter: std_msgs/msg/String
+                /parameter_events: rcl_interfaces/msg/ParameterEvent
+                /rosout: rcl_interfaces/msg/Log
+              Service Servers:
+                /talker/describe_parameters: rcl_interfaces/srv/DescribeParameters
+                /talker/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+                /talker/get_parameters: rcl_interfaces/srv/GetParameters
+                /talker/list_parameters: rcl_interfaces/srv/ListParameters
+                /talker/set_parameters: rcl_interfaces/srv/SetParameters
+                /talker/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+              Service Clients:
+
+              Action Servers:
+
+              Action Clients:
       - name: Check list
         try:
+          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+            note: Launch a node
+            terminal: 1
           - stdin: ros2 node list
+            terminal: 2
+        expect:
+          - terminal: 2
+            stdout: |
+              /listener
+              /talker
 
   - name: Check ROS 2 Param CLI
     labels:
