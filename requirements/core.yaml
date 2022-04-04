@@ -23,22 +23,91 @@ requirements:
       - name: Tab completion
         description: |
           When using a supported shell (i.e. bash), tab completion should work for both the bare executable to list commands and for listing sub-commands, like `ros2 <tab>` or `ros2 <command> tab`
+        try:
+          - stdin: ros2 <tab><tab>
+            note: Lists the commands
+          - stdin: ros2 lau<tab>
+            note: Completes the word `launch`
+          - stdin: ros2 launch dem<tab>
+            note: Completes until `demo_nodes_`
+          - stdin: ros2 launch demo_nodes_c<tab>
+            note: Completes the package `demo_nodes_cpp`
+          - stdin: ros2 launch demo_nodes_cpp <tab><tab>
+            note: Lists launch files in `demo_nodes_cpp`
+          - stdin: ros2 launch demo_nodes_cpp ta<tab>
+            note: Suggests the launch files name `talker_listener`
+          - stdin: ros2 launch demo_nodes_cpp talker_listener<tab><tab>
+            note: Lists several launch files that start with `talker_listener`
+          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.p<tab>
+            note: Completes the launch files name `talker_listener.launch.py`
+        expect:
+          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+            note: You eventually get to the full command
       - name: Node discovery
         description: |
           With another node running, use `ros2 node list` to ensure that the expected node is listed. Then stop the node and ensure that the list operation no longer shows the node.
+        try:
+          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+            terminal: 1
+          - stdin: ros2 node list
+            terminal: 2
+        expect:
+          - stdout: |
+              /listener
+              /talker
+            terminal: 2
       - name: Topic discovery
         description: |
           With another node running, use `ros2 topic list` to ensure that the expected topics are listed. Then stop the node and ensure that the list operation no longer shows the node's topics.
+        try:
+          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+            terminal: 1
+          - stdin: ros2 topic list
+            terminal: 2
+        expect:
+          - stdout: |
+              /chatter
+              /parameter_events
+              /rosout
+            terminal: 2
       - name: Service discovery
         description: |
           With another node running, use `ros2 service list` to ensure that the expected services are listed. Then stop the node and ensure that the list operation no longer shows the node's services.
-
-          ```bash
-          ros2 run demo_nodes_cpp add_two_ints_server
-          ```
+        try:
+          - stdin: ros2 run demo_nodes_cpp add_two_ints_server
+            terminal: 1
+          - stdin: ros2 service list
+            terminal: 2
+        expect:
+          - stdout: |
+              /add_two_ints
+              /add_two_ints_server/describe_parameters
+              /add_two_ints_server/get_parameter_types
+              /add_two_ints_server/get_parameters
+              /add_two_ints_server/list_parameters
+              /add_two_ints_server/set_parameters
+              /add_two_ints_server/set_parameters_atomically
+            terminal: 2
       - name: Parameter discovery
         description: |
           With another node running, use `ros2 param list` to ensure that the expected parameters are listed. Then stop the node and ensure that the list operation no longer shows the node's parameters.
+        try:
+          - stdin: ros2 run turtlesim turtlesim_node
+            terminal: 1
+          - stdin: ros2 param list
+            terminal: 2
+        expect:
+          - stdout: |
+              /turtlesim:
+                background_b
+                background_g
+                background_r
+                qos_overrides./parameter_events.publisher.depth
+                qos_overrides./parameter_events.publisher.durability
+                qos_overrides./parameter_events.publisher.history
+                qos_overrides./parameter_events.publisher.reliability
+                use_sim_time
+            terminal: 2
   - name: ros2cli network tests
     description: |
       Test the basic functionality of the ros2cli package family in an environment where nodes are running on other machines on the network.
