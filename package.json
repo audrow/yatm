@@ -71,7 +71,7 @@
     "@octokit/request-error": "^2.1.0",
     "@types/sort-object-keys": "^1.1.0",
     "ajv": "^8.11.0",
-    "combinate": "^1.1.9",
+    "combinate": "^1.1.10",
     "commander": "^9.1.0",
     "csv": "^6.0.5",
     "dotenv": "^16.0.0",
