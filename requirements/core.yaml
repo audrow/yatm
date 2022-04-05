@@ -148,6 +148,17 @@ requirements:
           The rviz window should be generally usable and should be able to load some of the discovered visualizations.
 
           Loading visualizations into the tree and using the mouse to navigate through the virtual workspace is sufficient for this test.
+        try:
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+            terminal: 1
+          - stdin: rviz2
+            terminal: 2
+          - note: In RViz, in the left pane, click 'Add'. A window will pop up. In that window, under 'rviz_default_plugins', select 'TF' and click 'OK'. Under 'Displays', in the 'Global Options' section, change the 'Fixed Frame' to '/world'.
+          - note: In RViz, in the left pane, click 'Add'. A window will pop up. In that window, under 'rviz_default_plugins', select 'LaserScan' and click 'OK'. Under 'Displays', in the 'LaserScan' section, change the 'Topic' to '/scan'.
+        expect:
+          - note: You should see the dummy robot's kinematic tree waving back and forth in the rviz window.
+          - note: You should see a laser scan emitting from the waving end of the dummy robot.
+          - note: Play around, move the camera, enable and disable things in the 'Displays' pane. RViz should be stable.
   - name: RQT
     description: |
       This is a sanity check to ensure that the GUI tools aren't fundamentally broken.
@@ -164,6 +175,17 @@ requirements:
           Launch using the `rqt` command.
 
           The rqt window should be generally usable and should be able to populate some of the discovered plugins.
+        try:
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+            terminal: 1
+          - stdin: rqt
+            terminal: 2
+          - note: In the RQT window, select 'Plugins > Visualization > Plot' in the dropdown menu. In the window that opens, set the Topic to `/joint_states/position[0]`. You should see a Sine wave.
+          - note: With 'Plugins > Introspection > Node Graph' you should see a network of the nodes and topics that are being published and subscribed by the dummy robot.
+          - note: With 'Plugins > Logging > Bag' you should be able record a ROS Bag file.
+          - note: With 'Plugins > Topic > Topic Monitor' you should be able to check the `/joint_states` topic and view messages streaming in.
+        expect:
+          - note: Rqt runs smoothly and the plugins work as expected.
   - name: Installation instructions
     labels:
       - installation
