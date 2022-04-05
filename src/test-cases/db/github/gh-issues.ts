@@ -97,7 +97,8 @@ async function createIssuesHelper(
   repo: Repo,
   issues: GithubIssue[],
 ): Promise<Status> {
-  for (const issue of issues) {
+  while (issues.length > 0) {
+    const issue = issues.shift() as GithubIssue
     try {
       const issueString = `${issue.title} - with labels: ${issue.labels.join(
         ', ',
@@ -110,6 +111,7 @@ async function createIssuesHelper(
       }
     } catch (error) {
       console.error(error)
+      issues.unshift(issue)
       return 'failure'
     }
   }
