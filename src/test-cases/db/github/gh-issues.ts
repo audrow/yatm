@@ -29,6 +29,7 @@ export async function getIssuesByTitleAndLabels(
   labels: string[],
   state: IssueState,
 ) {
+  // TODO: cache the issues for a given repo
   const issues = (await getIssues(repo, state)).filter((issue) => {
     const matchTitle = issue.title === title
     const issueLabels = issue.labels
