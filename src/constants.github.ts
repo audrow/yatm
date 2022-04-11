@@ -6,6 +6,6 @@ export const GITHUB_API_TOKEN =
 export const RETRY_SECONDS = 60 * 5
 
 export const REPOSITORY: Repo = {
-  owner: 'audrow',
-  name: 'humble-tcm-example',
+  owner: 'osrf',
+  name: 'ros2_test_cases',
 }
