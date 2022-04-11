@@ -22,7 +22,8 @@
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
     "test": "jest",
-    "validate": "npm-run-all check-format build lint test"
+    "main": "npx ts-node ./src/index.ts",
+    "validate": "npm-run-all check-format build lint test && npm run main -- -h"
   },
   "files": [
     "dist/*"
