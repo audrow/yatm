@@ -3,6 +3,7 @@ requirements:
     labels:
       - executable
       - feature
+      - demos-py
     checks:
       - name: Check `listener` and `talker`
         try:
