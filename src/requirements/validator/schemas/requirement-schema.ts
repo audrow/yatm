@@ -20,7 +20,7 @@ const requirementSchema: JSONSchemaType<Requirement> = {
         properties: {
           name: {
             type: 'string',
-            minLength: 5,
+            minLength: 2,
           },
           url: {
             type: 'string',
