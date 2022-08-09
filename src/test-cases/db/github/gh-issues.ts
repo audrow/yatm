@@ -101,15 +101,18 @@ async function createIssuesHelper(
   while (issues.length > 0) {
     const issue = issues.shift() as GithubIssue
     try {
-      const issueString = `${issue.title} - with labels: ${issue.labels.join(
+      const issueString = `'${issue.title}' with labels: '${issue.labels.join(
         ', ',
-      )}`
+      )}'`
       if (await isIssueAlreadyOpen(repo, issue)) {
         console.info(`Issue already exists: ${issueString}`)
       } else {
         await createIssue(repo, issue)
         console.info(`Created issue: ${issueString}`)
       }
+      // Following advice from
+      // https://docs.github.com/en/rest/guides/best-practices-for-integrators#dealing-with-secondary-rate-limits
+      sleep(2)
     } catch (error) {
       console.error(error)
       issues.unshift(issue)

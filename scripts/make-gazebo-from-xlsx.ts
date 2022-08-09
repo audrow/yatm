@@ -56,7 +56,6 @@ function getTestsFromXlsxSheet({
       throw new Error(`No title found for row ${i}`)
     }
   }
-  console.log(Object.keys(output))
   return output
 }
 
@@ -116,7 +115,7 @@ function getRequirementsYaml(tests: TestGroups, labels: string[]) {
             name: 'Seems correct',
           },
         ],
-        labels: [label, 'Gazebo'],
+        labels: [label, 'Garden'],
       })
     }
   }

@@ -16,7 +16,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Install: Ubuntu, source'
     links:
       - name: Live
@@ -28,7 +28,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Install: Mac, binaries'
     links:
       - name: Live
@@ -40,7 +40,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Install: Mac, source'
     links:
       - name: Live
@@ -52,7 +52,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Install: Windows, binaries'
     links:
       - name: Live
@@ -64,7 +64,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Install: Windows, source'
     links:
       - name: Live
@@ -76,7 +76,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: ROS integration'
     links:
       - name: Live
@@ -88,7 +88,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: ROS 2 integration'
     links:
       - name: Live
@@ -100,7 +100,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Understanding the GUI'
     links:
       - name: Live
@@ -112,7 +112,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Manipulating models'
     links:
       - name: Live
@@ -124,7 +124,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Model insertion from Fuel'
     links:
       - name: Live
@@ -136,7 +136,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Keyboard shortcuts'
     links:
       - name: Live
@@ -148,7 +148,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Building your own robot'
     links:
       - name: Live
@@ -160,7 +160,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Moving the robot'
     links:
       - name: Live
@@ -172,7 +172,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: SDF worlds'
     links:
       - name: Live
@@ -184,7 +184,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Sensors'
     links:
       - name: Live
@@ -196,7 +196,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Actors'
     links:
       - name: Live
@@ -208,7 +208,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'General tutorials: Hotkeys'
     links:
       - name: Source
@@ -218,7 +218,7 @@ requirements:
       - name: Seems correct
     labels:
       - General tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: README'
     links:
       - name: Live
@@ -229,7 +229,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Battery'
     links:
       - name: Live
@@ -241,7 +241,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Blender sdf exporter'
     links:
       - name: Live
@@ -253,7 +253,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: World exporter'
     links:
       - name: Live
@@ -266,7 +266,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Create System Plugins'
     links:
       - name: Live
@@ -278,7 +278,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Debugging'
     links:
       - name: Live
@@ -290,7 +290,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Detachable joints'
     links:
       - name: Live
@@ -302,7 +302,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Distributed Simulation'
     links:
       - name: Live
@@ -314,7 +314,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Entity creation'
     links:
       - name: Live
@@ -326,7 +326,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: ERB template'
     links:
       - name: Live
@@ -338,7 +338,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: GUI config'
     links:
       - name: Live
@@ -350,7 +350,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Levels'
     links:
       - name: Live
@@ -362,7 +362,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Light configuration'
     links:
       - name: Live
@@ -374,7 +374,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Logging'
     links:
       - name: Live
@@ -386,7 +386,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Logical audio sensor'
     links:
       - name: Live
@@ -398,7 +398,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Mesh to Fuel'
     links:
       - name: Live
@@ -410,7 +410,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Migration : Link API'
     links:
       - name: Live
@@ -422,7 +422,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Migration : Model API'
     links:
       - name: Live
@@ -434,7 +434,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Migration: Plugins'
     links:
       - name: Live
@@ -446,7 +446,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Migration: SDF'
     links:
       - name: Live
@@ -458,7 +458,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Migration : World API'
     links:
       - name: Live
@@ -470,7 +470,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Model and optimize meshes in blender for simulations+'
     links:
       - name: Live
@@ -482,7 +482,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Model Command'
     links:
       - name: Live
@@ -494,7 +494,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Particle Emitter'
     links:
       - name: Live
@@ -506,7 +506,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Physics'
     links:
       - name: Live
@@ -518,7 +518,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Point cloud to mesh'
     links:
       - name: Live
@@ -530,7 +530,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Rendering plugins'
     links:
       - name: Live
@@ -542,7 +542,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Resources'
     links:
       - name: Live
@@ -554,7 +554,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Server configuration'
     links:
       - name: Live
@@ -566,7 +566,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Terminology'
     links:
       - name: Live
@@ -578,7 +578,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Test fixture'
     links:
       - name: Live
@@ -590,7 +590,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Triggered Publisher'
     links:
       - name: Live
@@ -602,7 +602,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Underwater vehicles'
     links:
       - name: Live
@@ -614,7 +614,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo tutorials: Video recorder'
     links:
       - name: Live
@@ -626,7 +626,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo tutorials
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: 3k_shapes.sdf'
     links:
       - name: Source
@@ -636,7 +636,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: ackermann_steering.sdf'
     links:
       - name: Source
@@ -646,7 +646,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: actor_crowd.sdf'
     links:
       - name: Source
@@ -656,7 +656,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: actor.sdf'
     links:
       - name: Source
@@ -666,7 +666,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: actors_population.sdf'
     links:
       - name: Source
@@ -676,7 +676,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: apply_joint_force.sdf'
     links:
       - name: Source
@@ -686,7 +686,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: breadcrumbs.sdf'
     links:
       - name: Source
@@ -696,7 +696,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: buoyancy.sdf'
     links:
       - name: Source
@@ -706,7 +706,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: camera_sensor.sdf'
     links:
       - name: Source
@@ -716,7 +716,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: camera_video_record_dbl_pendulum.sdf'
     links:
       - name: Source
@@ -726,7 +726,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: collada_world_exporter.sdf'
     links:
       - name: Source
@@ -736,7 +736,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: contact_sensor.sdf'
     links:
       - name: Source
@@ -746,7 +746,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: debug_shapes.sdf'
     links:
       - name: Source
@@ -756,7 +756,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: default.sdf'
     links:
       - name: Source
@@ -766,7 +766,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: depth_camera_sensor.sdf'
     links:
       - name: Source
@@ -776,7 +776,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: detachable_joint.sdf'
     links:
       - name: Source
@@ -786,7 +786,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: diff_drive.sdf'
     links:
       - name: Source
@@ -796,7 +796,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: diff_drive_skid.sdf'
     links:
       - name: Source
@@ -806,7 +806,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: empty.sdf'
     links:
       - name: Source
@@ -816,7 +816,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: follow_actor.sdf'
     links:
       - name: Source
@@ -826,7 +826,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: fuel.sdf'
     links:
       - name: Source
@@ -836,7 +836,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: fuel.sdf.orig'
     links:
       - name: Source
@@ -846,7 +846,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: fuel_textured_mesh.sdf'
     links:
       - name: Source
@@ -856,7 +856,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: gpu_lidar_retro_values_sensor.sdf'
     links:
       - name: Source
@@ -866,7 +866,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: gpu_lidar_sensor.sdf'
     links:
       - name: Source
@@ -876,7 +876,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: grid.sdf'
     links:
       - name: Source
@@ -886,7 +886,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: heightmap.sdf'
     links:
       - name: Source
@@ -896,7 +896,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: import_mesh.sdf'
     links:
       - name: Source
@@ -906,7 +906,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: joint_controller.sdf'
     links:
       - name: Source
@@ -916,7 +916,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: joint_position_controller.sdf'
     links:
       - name: Source
@@ -926,7 +926,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: joint_trajectory_controller.sdf'
     links:
       - name: Source
@@ -936,7 +936,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: kinetic_energy_monitor.sdf'
     links:
       - name: Source
@@ -946,7 +946,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: levels_no_performers.sdf'
     links:
       - name: Source
@@ -956,7 +956,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: levels.sdf'
     links:
       - name: Source
@@ -966,7 +966,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: lift_drag_battery.sdf'
     links:
       - name: Source
@@ -976,7 +976,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: lift_drag.sdf'
     links:
       - name: Source
@@ -986,7 +986,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: lift_drag_nested.sdf'
     links:
       - name: Source
@@ -996,7 +996,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: lightmap.sdf'
     links:
       - name: Source
@@ -1006,7 +1006,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: lights.sdf'
     links:
       - name: Source
@@ -1016,7 +1016,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: linear_battery_demo.sdf'
     links:
       - name: Source
@@ -1026,7 +1026,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: logical_audio_sensor_plugin.sdf'
     links:
       - name: Source
@@ -1036,7 +1036,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: logical_camera_sensor.sdf'
     links:
       - name: Source
@@ -1046,7 +1046,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: log_record_dbl_pendulum.sdf'
     links:
       - name: Source
@@ -1056,7 +1056,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: log_record_keyboard.sdf'
     links:
       - name: Source
@@ -1066,7 +1066,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: log_record_resources.sdf'
     links:
       - name: Source
@@ -1076,7 +1076,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: log_record_shapes.sdf'
     links:
       - name: Source
@@ -1086,7 +1086,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: mecanum_drive.sdf'
     links:
       - name: Source
@@ -1096,7 +1096,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: minimal_scene.sdf'
     links:
       - name: Source
@@ -1106,7 +1106,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: multi_lrauv_race.sdf'
     links:
       - name: Source
@@ -1116,7 +1116,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: multicopter_velocity_control.sdf'
     links:
       - name: Source
@@ -1126,7 +1126,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: nested_model.sdf'
     links:
       - name: Source
@@ -1136,7 +1136,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: optical_tactile_sensor_plugin.sdf'
     links:
       - name: Source
@@ -1146,7 +1146,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: particle_emitter.sdf'
     links:
       - name: Source
@@ -1156,7 +1156,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: particle_emitter2.sdf'
     links:
       - name: Source
@@ -1166,7 +1166,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: pendulum_links.sdf'
     links:
       - name: Source
@@ -1176,7 +1176,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: performer_detector.sdf'
     links:
       - name: Source
@@ -1186,7 +1186,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: physics_options.sdf'
     links:
       - name: Source
@@ -1196,7 +1196,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: plane_propeller_demo.sdf'
     links:
       - name: Source
@@ -1206,7 +1206,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: plot_3d.sdf'
     links:
       - name: Source
@@ -1216,7 +1216,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: pose_publisher.sdf'
     links:
       - name: Source
@@ -1226,7 +1226,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: quadcopter.sdf'
     links:
       - name: Source
@@ -1236,7 +1236,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: rolling_shapes.sdf'
     links:
       - name: Source
@@ -1246,7 +1246,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: sensors_demo.sdf'
     links:
       - name: Source
@@ -1256,7 +1256,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: sensors.sdf'
     links:
       - name: Source
@@ -1266,7 +1266,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: shapes_bitmask.sdf'
     links:
       - name: Source
@@ -1276,7 +1276,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: shapes_population.sdf.erb'
     links:
       - name: Source
@@ -1286,7 +1286,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: shapes.sdf'
     links:
       - name: Source
@@ -1296,7 +1296,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: skid_steer_mecanum.sdf'
     links:
       - name: Source
@@ -1306,7 +1306,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: sky.sdf'
     links:
       - name: Source
@@ -1316,7 +1316,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: spaces.sdf'
     links:
       - name: Source
@@ -1326,7 +1326,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: thermal_camera.sdf'
     links:
       - name: Source
@@ -1336,7 +1336,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: touch_plugin.sdf'
     links:
       - name: Source
@@ -1346,7 +1346,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: track_drive.sdf'
     links:
       - name: Source
@@ -1356,7 +1356,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: triggered_publisher.sdf'
     links:
       - name: Source
@@ -1366,7 +1366,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: trisphere_cycle_wheel_slip.sdf'
     links:
       - name: Source
@@ -1376,7 +1376,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: tunnel.sdf'
     links:
       - name: Source
@@ -1386,7 +1386,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: velocity_control.sdf'
     links:
       - name: Source
@@ -1396,7 +1396,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: video_record_dbl_pendulum.sdf'
     links:
       - name: Source
@@ -1406,7 +1406,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: visibility.sdf'
     links:
       - name: Source
@@ -1416,7 +1416,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: visualize_contacts.sdf'
     links:
       - name: Source
@@ -1426,7 +1426,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: visualize_lidar.sdf'
     links:
       - name: Source
@@ -1436,7 +1436,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: wind.sdf'
     links:
       - name: Source
@@ -1446,7 +1446,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Gazebo worlds: world_joint.sdf'
     links:
       - name: Source
@@ -1456,7 +1456,7 @@ requirements:
       - name: Seems correct
     labels:
       - Gazebo worlds
-      - Gazebo
+      - Garden
   - name: 'Common: README'
     links:
       - name: Live
@@ -1468,7 +1468,7 @@ requirements:
       - name: Seems correct
     labels:
       - Common
-      - Gazebo
+      - Garden
   - name: 'Common: Installation'
     links:
       - name: Live
@@ -1481,7 +1481,7 @@ requirements:
       - name: Seems correct
     labels:
       - Common
-      - Gazebo
+      - Garden
   - name: 'Common: Profiler'
     links:
       - name: Live
@@ -1494,7 +1494,7 @@ requirements:
       - name: Seems correct
     labels:
       - Common
-      - Gazebo
+      - Garden
   - name: 'Common: Hardware-accelerated video encoding'
     links:
       - name: Live
@@ -1507,7 +1507,7 @@ requirements:
       - name: Seems correct
     labels:
       - Common
-      - Gazebo
+      - Garden
   - name: 'Fuel tools: README'
     links:
       - name: Live
@@ -1519,7 +1519,7 @@ requirements:
       - name: Seems correct
     labels:
       - Fuel tools
-      - Gazebo
+      - Garden
   - name: 'Fuel tools: Installation'
     links:
       - name: Live
@@ -1531,7 +1531,7 @@ requirements:
       - name: Seems correct
     labels:
       - Fuel tools
-      - Gazebo
+      - Garden
   - name: 'Fuel tools: Configuration'
     links:
       - name: Live
@@ -1543,7 +1543,7 @@ requirements:
       - name: Seems correct
     labels:
       - Fuel tools
-      - Gazebo
+      - Garden
   - name: 'Fuel tools: Command Line Tools'
     links:
       - name: Live
@@ -1555,7 +1555,7 @@ requirements:
       - name: Seems correct
     labels:
       - Fuel tools
-      - Gazebo
+      - Garden
   - name: 'Fuel tools: C++ API'
     links:
       - name: Live
@@ -1567,7 +1567,7 @@ requirements:
       - name: Seems correct
     labels:
       - Fuel tools
-      - Gazebo
+      - Garden
   - name: 'GUI: README'
     links:
       - name: Live
@@ -1578,7 +1578,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Installation'
     links:
       - name: Live
@@ -1590,7 +1590,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Command line usage'
     links:
       - name: Live
@@ -1602,7 +1602,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Plugins'
     links:
       - name: Live
@@ -1614,7 +1614,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Layout'
     links:
       - name: Live
@@ -1626,7 +1626,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Style'
     links:
       - name: Live
@@ -1638,7 +1638,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Examples'
     links:
       - name: Live
@@ -1650,7 +1650,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Configuration'
     links:
       - name: Live
@@ -1662,7 +1662,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Screenshot'
     links:
       - name: Live
@@ -1674,7 +1674,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'GUI: Scene'
     links:
       - name: Live
@@ -1686,7 +1686,7 @@ requirements:
       - name: Seems correct
     labels:
       - GUI
-      - Gazebo
+      - Garden
   - name: 'Math: README'
     links:
       - name: Live
@@ -1699,7 +1699,7 @@ requirements:
       - name: Seems correct
     labels:
       - Math
-      - Gazebo
+      - Garden
   - name: 'Math: Installation'
     links:
       - name: Live
@@ -1712,7 +1712,7 @@ requirements:
       - name: Seems correct
     labels:
       - Math
-      - Gazebo
+      - Garden
   - name: 'Math: Cpp getting stated'
     links:
       - name: Live
@@ -1725,7 +1725,7 @@ requirements:
       - name: Seems correct
     labels:
       - Math
-      - Gazebo
+      - Garden
   - name: 'Math: Example angle'
     links:
       - name: Source
@@ -1735,7 +1735,7 @@ requirements:
       - name: Seems correct
     labels:
       - Math
-      - Gazebo
+      - Garden
   - name: 'Math: Example triangle'
     links:
       - name: Source
@@ -1745,7 +1745,7 @@ requirements:
       - name: Seems correct
     labels:
       - Math
-      - Gazebo
+      - Garden
   - name: 'Math: Example vector2'
     links:
       - name: Source
@@ -1755,7 +1755,7 @@ requirements:
       - name: Seems correct
     labels:
       - Math
-      - Gazebo
+      - Garden
   - name: 'Math: Example rotation'
     links:
       - name: Source
@@ -1765,7 +1765,7 @@ requirements:
       - name: Seems correct
     labels:
       - Math
-      - Gazebo
+      - Garden
   - name: 'Plugin: README'
     links:
       - name: Live
@@ -1778,7 +1778,7 @@ requirements:
       - name: Seems correct
     labels:
       - Plugin
-      - Gazebo
+      - Garden
   - name: 'Plugin: Introduction'
     links:
       - name: Live
@@ -1791,7 +1791,7 @@ requirements:
       - name: Seems correct
     labels:
       - Plugin
-      - Gazebo
+      - Garden
   - name: 'Plugin: Installation'
     links:
       - name: Live
@@ -1804,7 +1804,7 @@ requirements:
       - name: Seems correct
     labels:
       - Plugin
-      - Gazebo
+      - Garden
   - name: 'Plugin: Examples'
     links:
       - name: Source
@@ -1814,7 +1814,7 @@ requirements:
       - name: Seems correct
     labels:
       - Plugin
-      - Gazebo
+      - Garden
   - name: 'Messages: README'
     links:
       - name: Live
@@ -1827,7 +1827,7 @@ requirements:
       - name: Seems correct
     labels:
       - Messages
-      - Gazebo
+      - Garden
   - name: 'Messages: Installation'
     links:
       - name: Live
@@ -1839,7 +1839,7 @@ requirements:
       - name: Seems correct
     labels:
       - Messages
-      - Gazebo
+      - Garden
   - name: 'Messages: C++ Get Started'
     links:
       - name: Live
@@ -1851,7 +1851,7 @@ requirements:
       - name: Seems correct
     labels:
       - Messages
-      - Gazebo
+      - Garden
   - name: 'Physics: README'
     links:
       - name: Live
@@ -1862,7 +1862,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Introduction'
     links:
       - name: Live
@@ -1874,7 +1874,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Installation'
     links:
       - name: Live
@@ -1886,7 +1886,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Physics plugins'
     links:
       - name: Live
@@ -1898,7 +1898,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Switching physics engines'
     links:
       - name: Live
@@ -1910,7 +1910,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Plugin loading'
     links:
       - name: Live
@@ -1922,7 +1922,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Physics simulation concepts'
     links:
       - name: Live
@@ -1934,7 +1934,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Implementing a physics plugin'
     links:
       - name: Live
@@ -1946,7 +1946,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Implementing a custom feature'
     links:
       - name: Live
@@ -1958,7 +1958,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Set up physics engine TPE'
     links:
       - name: Live
@@ -1971,7 +1971,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Physics: Use custom engine'
     links:
       - name: Live
@@ -1984,7 +1984,7 @@ requirements:
       - name: Seems correct
     labels:
       - Physics
-      - Gazebo
+      - Garden
   - name: 'Rendering: README'
     links:
       - name: Live
@@ -1996,7 +1996,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Introduction'
     links:
       - name: Live
@@ -2008,7 +2008,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Installation'
     links:
       - name: Live
@@ -2020,7 +2020,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Rendering plugins'
     links:
       - name: Live
@@ -2032,7 +2032,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Lightmap'
     links:
       - name: Live
@@ -2044,7 +2044,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Actor animation'
     links:
       - name: Live
@@ -2056,7 +2056,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Gazebo scene viewer'
     links:
       - name: Live
@@ -2069,7 +2069,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Mesh viewer'
     links:
       - name: Live
@@ -2081,7 +2081,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Custom scene viewer'
     links:
       - name: Live
@@ -2094,7 +2094,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Camera tracking'
     links:
       - name: Live
@@ -2106,7 +2106,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Custom shaders'
     links:
       - name: Live
@@ -2118,7 +2118,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Render pass'
     links:
       - name: Live
@@ -2130,7 +2130,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Simple demo'
     links:
       - name: Live
@@ -2142,7 +2142,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Text geometry'
     links:
       - name: Live
@@ -2154,7 +2154,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Particles'
     links:
       - name: Live
@@ -2166,7 +2166,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Heightmap'
     links:
       - name: Live
@@ -2178,7 +2178,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Render order'
     links:
       - name: Live
@@ -2191,7 +2191,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Transform FBX to DAE'
     links:
       - name: Live
@@ -2203,7 +2203,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Rendering: Environment map'
     links:
       - name: Live
@@ -2215,7 +2215,7 @@ requirements:
       - name: Seems correct
     labels:
       - Rendering
-      - Gazebo
+      - Garden
   - name: 'Sensors: README'
     links:
       - name: Live
@@ -2226,7 +2226,7 @@ requirements:
       - name: Seems correct
     labels:
       - Sensors
-      - Gazebo
+      - Garden
   - name: 'Sensors: Introduction'
     links:
       - name: Live
@@ -2238,7 +2238,7 @@ requirements:
       - name: Seems correct
     labels:
       - Sensors
-      - Gazebo
+      - Garden
   - name: 'Sensors: Installation'
     links:
       - name: Live
@@ -2250,7 +2250,7 @@ requirements:
       - name: Seems correct
     labels:
       - Sensors
-      - Gazebo
+      - Garden
   - name: 'Sensors: Thermal camera'
     links:
       - name: Live
@@ -2263,7 +2263,7 @@ requirements:
       - name: Seems correct
     labels:
       - Sensors
-      - Gazebo
+      - Garden
   - name: 'Sensors: Custom sensors'
     links:
       - name: Live
@@ -2276,7 +2276,7 @@ requirements:
       - name: Seems correct
     labels:
       - Sensors
-      - Gazebo
+      - Garden
   - name: 'Transport: README'
     links:
       - name: Live
@@ -2288,7 +2288,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Introduction'
     links:
       - name: Live
@@ -2300,7 +2300,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Installation'
     links:
       - name: Live
@@ -2312,7 +2312,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Nodes and Topics'
     links:
       - name: Live
@@ -2324,7 +2324,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Messages'
     links:
       - name: Live
@@ -2336,7 +2336,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Services'
     links:
       - name: Live
@@ -2348,7 +2348,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Security'
     links:
       - name: Live
@@ -2360,7 +2360,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Relay'
     links:
       - name: Live
@@ -2372,7 +2372,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Logging'
     links:
       - name: Live
@@ -2384,7 +2384,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Environment Variables'
     links:
       - name: Live
@@ -2396,7 +2396,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Development'
     links:
       - name: Live
@@ -2408,7 +2408,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'Transport: Topic statistics'
     links:
       - name: Live
@@ -2420,7 +2420,7 @@ requirements:
       - name: Seems correct
     labels:
       - Transport
-      - Gazebo
+      - Garden
   - name: 'sdformat: README'
     links:
       - name: Live
@@ -2431,7 +2431,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Install'
     links:
       - name: Live
@@ -2442,7 +2442,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Quickstart'
     links:
       - name: Live
@@ -2454,7 +2454,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Convention'
     links:
       - name: Live
@@ -2467,7 +2467,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Specifying pose'
     links:
       - name: Live
@@ -2479,7 +2479,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Model kinematics'
     links:
       - name: Live
@@ -2492,7 +2492,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Collisions and Visuals'
     links:
       - name: Live
@@ -2504,7 +2504,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Material properties of a Visual'
     links:
       - name: Live
@@ -2516,7 +2516,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Creating Worlds'
     links:
       - name: Live
@@ -2528,7 +2528,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Pose frame semantics'
     links:
       - name: Live
@@ -2541,7 +2541,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Composition'
     links:
       - name: Live
@@ -2553,7 +2553,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'sdformat: Tutorial for parameter passing'
     links:
       - name: Live
@@ -2566,7 +2566,7 @@ requirements:
       - name: Seems correct
     labels:
       - sdformat
-      - Gazebo
+      - Garden
   - name: 'ros_ign: ros_ign_bridge README - noetic'
     links:
       - name: Source
@@ -2575,7 +2575,7 @@ requirements:
       - name: Seems correct
     labels:
       - ros_ign
-      - Gazebo
+      - Garden
   - name: 'ros_ign: ros_ign_gazebo_demos README - noetic'
     links:
       - name: Source
@@ -2584,7 +2584,7 @@ requirements:
       - name: Seems correct
     labels:
       - ros_ign
-      - Gazebo
+      - Garden
   - name: 'ros_ign: ros_ign_bridge README - galactic'
     links:
       - name: Source
@@ -2593,7 +2593,7 @@ requirements:
       - name: Seems correct
     labels:
       - ros_ign
-      - Gazebo
+      - Garden
   - name: 'ros_ign: ros_ign_gazebo_demos README - galactic'
     links:
       - name: Source
@@ -2602,7 +2602,7 @@ requirements:
       - name: Seems correct
     labels:
       - ros_ign
-      - Gazebo
+      - Garden
   - name: 'ign_ros2_control : ign_ros2_control'
     links:
       - name: Source
@@ -2611,4 +2611,4 @@ requirements:
       - name: Seems correct
     labels:
       - 'ign_ros2_control '
-      - Gazebo
+      - Garden
