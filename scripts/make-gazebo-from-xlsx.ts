@@ -112,7 +112,10 @@ function getRequirementsYaml(tests: TestGroups, labels: string[]) {
         links,
         checks: [
           {
-            name: 'Seems correct',
+            name: 'Instructions work',
+          },
+          {
+            name: 'Images (if there are any) match the result',
           },
         ],
         labels: [label, 'Garden'],
