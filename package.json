@@ -69,7 +69,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@octokit/request-error": "^3.0.0",
+    "@octokit/request-error": "^3.0.1",
     "@types/sort-object-keys": "^1.1.0",
     "ajv": "^8.11.0",
     "combinate": "^1.1.11",
