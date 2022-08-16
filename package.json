@@ -78,7 +78,7 @@
     "dotenv": "^16.0.1",
     "endent": "^2.1.0",
     "js-yaml": "^4.1.0",
-    "octokit": "^2.0.5",
+    "octokit": "^2.0.7",
     "proper-url-join": "^2.1.1",
     "sitemapper": "^3.2.6",
     "sleep": "^6.3.0",
