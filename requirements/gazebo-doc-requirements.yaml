@@ -946,19 +946,20 @@ requirements:
     labels:
       - gz-physics
       - garden
-  - name: 'gz-physics: setupphysicsenginetpe'
-    links:
-      - name: Live
-        url: https://gazebosim.org/api/physics/6/setupphysicsenginetpe.html
-      - name: Source
-        url: >-
-          https://github.com/gazebosim/gz-physics/tree/gz-physics6/tutorials/09_use_custom_engine.md
-    checks:
-      - name: Instructions work
-      - name: Images (if there are any) match the result
-    labels:
-      - gz-physics
-      - garden
+  # TODO ask about this ambiguity
+  # - name: 'gz-physics: setupphysicsenginetpe'
+  #   links:
+  #     - name: Live
+  #       url: https://gazebosim.org/api/physics/6/setupphysicsenginetpe.html
+  #     - name: Source
+  #       url: >-
+  #         https://github.com/gazebosim/gz-physics/tree/gz-physics6/tutorials/09_use_custom_engine.md
+  #   checks:
+  #     - name: Instructions work
+  #     - name: Images (if there are any) match the result
+  #   labels:
+  #     - gz-physics
+  #     - garden
   - name: 'gz-plugin: README'
     links:
       - name: Live
