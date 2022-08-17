@@ -1,23 +1,8 @@
 import fs from 'fs'
 import {join} from 'path'
 import * as ros2 from 'ros2-cache'
-
-type GazeboDoc = {
-  localPath: string
-  handle: string
-  liveUrl?: string
-  sourceUrl: string
-}
-
-type GazeboRepoDocs = {
-  org: string
-  repo: string
-  branch: string
-  majorVersion?: number
-  localPath: string
-  docs: GazeboDoc[]
-  errors: string[]
-}
+import type GazeboDoc from './__types__/GazeboDoc'
+import type GazeboRepoDocs from './__types__/GazeboRepoDocs'
 
 export async function getGazeboLinks({
   docsRepo,
@@ -45,7 +30,7 @@ export async function getGazeboLinks({
   }
   cacheDir?: string
 }): Promise<{
-  docs: GazeboRepoDocs[]
+  repoDocs: GazeboRepoDocs[]
   errorText?: string
 }> {
   ros2.cache.makeCacheDir({path: cacheDir})
@@ -86,7 +71,7 @@ export async function getGazeboLinks({
     })
   }
   return {
-    docs: gzAll,
+    repoDocs: gzAll,
     errorText,
   }
 }
