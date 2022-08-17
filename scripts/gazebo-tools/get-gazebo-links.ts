@@ -267,7 +267,7 @@ async function getGzTutorialDocs({
       }
       const relativePath = join(tutorialsDirectory, file)
       const fileText = fs.readFileSync(filePath, 'utf8')
-      const match = fileText.match(/\\page\s([a-zA-Z]+)\s/)
+      const match = fileText.match(/\\page\s([a-zA-Z_0-9]+)\s/)
       if (!match) {
         gzRepo.errors.push(`Skipping ${file}: Could not find a \\page handle`)
         return
