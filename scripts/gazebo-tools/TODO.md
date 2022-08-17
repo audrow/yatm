@@ -3,5 +3,5 @@
 - [x] Handle tutorials
 - [x] Handle docs
 - [x] Handle worlds
-- [ ] Generate requirements
+- [x] Generate requirements
 - [ ] Generate test cases
