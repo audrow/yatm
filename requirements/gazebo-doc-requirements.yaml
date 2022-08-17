@@ -206,6 +206,45 @@ requirements:
     labels:
       - gz-sim
       - garden
+  - name: 'gz-sim: blender_distort_meshes'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/blender_distort_meshes.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/blender_distort_meshes.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: blender_sdf_exporter'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/blender_sdf_exporter.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/blender_sdf_exporter.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: collada_world_exporter'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/collada_world_exporter.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/collada_world_exporter.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
   - name: 'gz-sim: createsystemplugins'
     links:
       - name: Live
@@ -258,6 +297,19 @@ requirements:
     labels:
       - gz-sim
       - garden
+  - name: 'gz-sim: entity_creation'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/entity_creation.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/entity_creation.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
   - name: 'gz-sim: erbtemplate'
     links:
       - name: Live
@@ -265,6 +317,32 @@ requirements:
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/erb_template.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: gui_config'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/gui_config.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/gui_config.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: headless_rendering'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/headless_rendering.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/headless_rendering.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -289,6 +367,19 @@ requirements:
         url: https://gazebosim.org/api/sim/7/levels.html
       - name: Source
         url: https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/levels.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: light_config'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/light_config.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/light_config.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -411,6 +502,58 @@ requirements:
     labels:
       - gz-sim
       - garden
+  - name: 'gz-sim: model_and_optimize_meshes'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/model_and_optimize_meshes.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/model_and_optimize_meshes.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: model_command'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/model_command.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/model_command.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: model_photo_shoot'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/model_photo_shoot.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/model_photo_shoot.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: particle_emitter'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/particle_emitter.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/particle_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
   - name: 'gz-sim: physics'
     links:
       - name: Live
@@ -436,6 +579,32 @@ requirements:
     labels:
       - gz-sim
       - garden
+  - name: 'gz-sim: python_interfaces'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/python_interfaces.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/python_interfaces.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: rendering_plugins'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/rendering_plugins.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/rendering_plugins.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
   - name: 'gz-sim: resources'
     links:
       - name: Live
@@ -443,6 +612,32 @@ requirements:
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/resources.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: server_config'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/server_config.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/server_config.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: spherical_coordinates'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/spherical_coordinates.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/spherical_coordinates.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -462,6 +657,19 @@ requirements:
     labels:
       - gz-sim
       - garden
+  - name: 'gz-sim: test_fixture'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/test_fixture.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/test_fixture.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
   - name: 'gz-sim: triggeredpublisher'
     links:
       - name: Live
@@ -469,6 +677,19 @@ requirements:
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/triggered_publisher.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sim
+      - garden
+  - name: 'gz-sim: underwater_vehicles'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sim/7/underwater_vehicles.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sim/tree/gz-sim7/tutorials/underwater_vehicles.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -702,6 +923,45 @@ requirements:
     labels:
       - gz-math
       - garden
+  - name: 'gz-math: example_angle'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/math/7/example_angle.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-math/tree/gz-math7/tutorials/example_angle.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-math
+      - garden
+  - name: 'gz-math: example_triangle'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/math/7/example_triangle.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-math/tree/gz-math7/tutorials/example_triangle.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-math
+      - garden
+  - name: 'gz-math: example_vector2'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/math/7/example_vector2.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-math/tree/gz-math7/tutorials/example_vector2.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-math
+      - garden
   - name: 'gz-math: install'
     links:
       - name: Live
@@ -735,6 +995,19 @@ requirements:
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-math/tree/gz-math7/tutorials/rotation.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-math
+      - garden
+  - name: 'gz-math: rotation_example'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/math/7/rotation_example.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-math/tree/gz-math7/tutorials/rotation_example.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -946,7 +1219,7 @@ requirements:
     labels:
       - gz-physics
       - garden
-  # TODO ask about this ambiguity
+  # TODO fix this naming conflict
   # - name: 'gz-physics: setupphysicsenginetpe'
   #   links:
   #     - name: Live
@@ -1062,6 +1335,123 @@ requirements:
     labels:
       - gz-rendering
       - garden
+  - name: 'gz-rendering: actor_animation'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/actor_animation.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/10_actor_animation_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: gazebo_scene_viewer'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/gazebo_scene_viewer.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/11_gazebo_scene_viewer_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: mesh_viewer'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/mesh_viewer.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/12_mesh_viewer_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: custom_scene_viewer'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/custom_scene_viewer.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/13_custom_scene_viewer.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: camera_tracking'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/camera_tracking.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/14_camera_tracking_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: custom_shaders'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/custom_shaders.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/15_custom_shaders_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: render_pass'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/render_pass.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/17_render_pass_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: simple_demo'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/simple_demo.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/18_simple_demo_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: text_geom'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/text_geom.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/19_text_geom_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
   - name: 'gz-rendering: particles'
     links:
       - name: Live
@@ -1088,6 +1478,32 @@ requirements:
     labels:
       - gz-rendering
       - garden
+  - name: 'gz-rendering: render_order'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/render_order.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/21_render_order.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: transform_fbx_to_dae'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/transform_fbx_to_dae.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/21_transform_fbx_to_dae.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
   - name: 'gz-rendering: envmap'
     links:
       - name: Live
@@ -1101,12 +1517,51 @@ requirements:
     labels:
       - gz-rendering
       - garden
+  - name: 'gz-rendering: depth_camera'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/depth_camera.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/23_depth_camera_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
+  - name: 'gz-rendering: boundingbox_camera'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/rendering/7/boundingbox_camera.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-rendering/tree/gz-rendering7/tutorials/24_boundingbox_camera_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-rendering
+      - garden
   - name: 'gz-sensors: README'
     links:
       - name: Live
         url: https://github.com/gazebosim/gz-sensors/blob/gz-sensors7/README.md
       - name: Source
         url: https://gazebosim.org/libs/sensors
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sensors
+      - garden
+  - name: 'gz-sensors: custom_sensors'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sensors/7/custom_sensors.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sensors/tree/gz-sensors7/tutorials/custom_sensors.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1133,6 +1588,19 @@ requirements:
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-sensors/tree/gz-sensors7/tutorials/intro.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - gz-sensors
+      - garden
+  - name: 'gz-sensors: segmentationcamera_igngazebo'
+    links:
+      - name: Live
+        url: https://gazebosim.org/api/sensors/7/segmentationcamera_igngazebo.html
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/gz-sensors/tree/gz-sensors7/tutorials/segmentation_camera.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
