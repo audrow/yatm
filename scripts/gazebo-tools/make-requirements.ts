@@ -10,6 +10,7 @@ import type GazeboRepoDocs from './__types__/GazeboRepoDocs'
 
 async function main() {
   const outputFile = join(__dirname, 'gazebo-doc-requirements.yaml')
+  const errorLogFile = join(__dirname, 'gazebo-doc-requirements-errors.txt')
   const commonLabelForRequirements = 'garden'
   const {repoDocs, errorText} = await getGazeboLinks({
     docsRepo: {
@@ -32,9 +33,6 @@ async function main() {
       reposToSkip: ['gz-cmake'],
     },
   })
-  if (errorText) {
-    console.error(errorText)
-  }
   const requirementsYaml = repoDocsToRequirementsYaml(
     repoDocs,
     commonLabelForRequirements,
@@ -46,6 +44,11 @@ async function main() {
     ${requirementsYaml}
     `
   fs.writeFileSync(outputFile, outputText)
+
+  if (errorText) {
+    console.error(errorText)
+    fs.writeFileSync(errorLogFile, errorText)
+  }
 }
 
 function repoDocsToRequirementsYaml(
