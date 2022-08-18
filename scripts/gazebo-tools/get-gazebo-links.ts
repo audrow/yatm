@@ -125,7 +125,7 @@ async function getGzWorlds({
     }
     const doc: GazeboDoc = {
       localPath: filePath,
-      handle: filePath,
+      handle: file,
       sourceUrl: `https://github.com/${org}/${repo}/tree/${branch}/${relativePath}/${file}`,
     }
     gzWorlds.docs.push(doc)
