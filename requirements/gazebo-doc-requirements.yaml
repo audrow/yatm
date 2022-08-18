@@ -82,9 +82,9 @@ requirements:
   - name: 'gz-common: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-common/blob/gz-common5/README.md
-      - name: Source
         url: https://gazebosim.org/libs/common
+      - name: Source
+        url: https://github.com/gazebosim/gz-common/blob/gz-common5/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -120,10 +120,10 @@ requirements:
   - name: 'gz-fuel-tools: README'
     links:
       - name: Live
+        url: https://gazebosim.org/libs/fuel-tools
+      - name: Source
         url: >-
           https://github.com/gazebosim/gz-fuel-tools/blob/gz-fuel-tools8/README.md
-      - name: Source
-        url: https://gazebosim.org/libs/fuel-tools
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -185,9 +185,9 @@ requirements:
   - name: 'gz-sim: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-sim/blob/gz-sim7/README.md
-      - name: Source
         url: https://gazebosim.org/libs/sim
+      - name: Source
+        url: https://github.com/gazebosim/gz-sim/blob/gz-sim7/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -712,9 +712,9 @@ requirements:
   - name: 'gz-gui: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-gui/blob/gz-gui7/README.md
-      - name: Source
         url: https://gazebosim.org/libs/gui
+      - name: Source
+        url: https://github.com/gazebosim/gz-gui/blob/gz-gui7/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -839,9 +839,9 @@ requirements:
   - name: 'gz-launch: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-launch/blob/gz-launch6/README.md
-      - name: Source
         url: https://gazebosim.org/libs/launch
+      - name: Source
+        url: https://github.com/gazebosim/gz-launch/blob/gz-launch6/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -877,9 +877,9 @@ requirements:
   - name: 'gz-math: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-math/blob/gz-math7/README.md
-      - name: Source
         url: https://gazebosim.org/libs/math
+      - name: Source
+        url: https://github.com/gazebosim/gz-math/blob/gz-math7/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1042,9 +1042,9 @@ requirements:
   - name: 'gz-msgs: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-msgs/blob/gz-msgs9/README.md
-      - name: Source
         url: https://gazebosim.org/libs/msgs
+      - name: Source
+        url: https://github.com/gazebosim/gz-msgs/blob/gz-msgs9/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1080,9 +1080,9 @@ requirements:
   - name: 'gz-physics: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-physics/blob/gz-physics6/README.md
-      - name: Source
         url: https://gazebosim.org/libs/physics
+      - name: Source
+        url: https://github.com/gazebosim/gz-physics/blob/gz-physics6/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1219,7 +1219,7 @@ requirements:
     labels:
       - gz-physics
       - garden
-  # TODO fix this naming conflict
+  # TODO ask about this ambiguity
   # - name: 'gz-physics: setupphysicsenginetpe'
   #   links:
   #     - name: Live
@@ -1236,9 +1236,9 @@ requirements:
   - name: 'gz-plugin: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-plugin/blob/gz-plugin2/README.md
-      - name: Source
         url: https://gazebosim.org/libs/plugin
+      - name: Source
+        url: https://github.com/gazebosim/gz-plugin/blob/gz-plugin2/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1274,9 +1274,9 @@ requirements:
   - name: 'gz-rendering: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-rendering/blob/gz-rendering7/README.md
-      - name: Source
         url: https://gazebosim.org/libs/rendering
+      - name: Source
+        url: https://github.com/gazebosim/gz-rendering/blob/gz-rendering7/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1546,9 +1546,9 @@ requirements:
   - name: 'gz-sensors: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-sensors/blob/gz-sensors7/README.md
-      - name: Source
         url: https://gazebosim.org/libs/sensors
+      - name: Source
+        url: https://github.com/gazebosim/gz-sensors/blob/gz-sensors7/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1623,9 +1623,9 @@ requirements:
   - name: 'gz-tools: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-tools/blob/gz-tools2/README.md
-      - name: Source
         url: https://gazebosim.org/libs/tools
+      - name: Source
+        url: https://github.com/gazebosim/gz-tools/blob/gz-tools2/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1648,10 +1648,10 @@ requirements:
   - name: 'gz-transport: README'
     links:
       - name: Live
+        url: https://gazebosim.org/libs/transport
+      - name: Source
         url: >-
           https://github.com/gazebosim/gz-transport/blob/gz-transport12/README.md
-      - name: Source
-        url: https://gazebosim.org/libs/transport
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1817,9 +1817,9 @@ requirements:
   - name: 'gz-utils: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/gz-utils/blob/gz-utils2/README.md
-      - name: Source
         url: https://gazebosim.org/libs/utils
+      - name: Source
+        url: https://github.com/gazebosim/gz-utils/blob/gz-utils2/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -1842,16 +1842,16 @@ requirements:
   - name: 'sdformat: README'
     links:
       - name: Live
-        url: https://github.com/gazebosim/sdformat/blob/sdf13/README.md
-      - name: Source
         url: https://gazebosim.org/libs/sdformat
+      - name: Source
+        url: https://github.com/gazebosim/sdformat/blob/sdf13/README.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
     labels:
       - sdformat
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/3k_shapes.sdf'
+  - name: 'gz-sim: 3k_shapes.sdf'
     links:
       - name: Source
         url: >-
@@ -1862,7 +1862,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/ackermann_steering.sdf'
+  - name: 'gz-sim: ackermann_steering.sdf'
     links:
       - name: Source
         url: >-
@@ -1873,7 +1873,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/actor.sdf'
+  - name: 'gz-sim: actor.sdf'
     links:
       - name: Source
         url: >-
@@ -1884,7 +1884,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/actor_crowd.sdf'
+  - name: 'gz-sim: actor_crowd.sdf'
     links:
       - name: Source
         url: >-
@@ -1895,7 +1895,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/actors_population.sdf'
+  - name: 'gz-sim: actors_population.sdf'
     links:
       - name: Source
         url: >-
@@ -1906,7 +1906,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/apply_joint_force.sdf'
+  - name: 'gz-sim: apply_joint_force.sdf'
     links:
       - name: Source
         url: >-
@@ -1917,7 +1917,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/apply_link_wrench.sdf'
+  - name: 'gz-sim: apply_link_wrench.sdf'
     links:
       - name: Source
         url: >-
@@ -1928,7 +1928,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/auv_controls.sdf'
+  - name: 'gz-sim: auv_controls.sdf'
     links:
       - name: Source
         url: >-
@@ -1939,7 +1939,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/boundingbox_camera.sdf'
+  - name: 'gz-sim: boundingbox_camera.sdf'
     links:
       - name: Source
         url: >-
@@ -1950,7 +1950,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/breadcrumbs.sdf'
+  - name: 'gz-sim: breadcrumbs.sdf'
     links:
       - name: Source
         url: >-
@@ -1961,7 +1961,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/buoyancy.sdf'
+  - name: 'gz-sim: buoyancy.sdf'
     links:
       - name: Source
         url: >-
@@ -1972,7 +1972,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/buoyancy_engine.sdf'
+  - name: 'gz-sim: buoyancy_engine.sdf'
     links:
       - name: Source
         url: >-
@@ -1983,7 +1983,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/camera_sensor.sdf'
+  - name: 'gz-sim: camera_sensor.sdf'
     links:
       - name: Source
         url: >-
@@ -1994,9 +1994,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/camera_video_record_dbl_pendulum.sdf
+  - name: 'gz-sim: camera_video_record_dbl_pendulum.sdf'
     links:
       - name: Source
         url: >-
@@ -2007,7 +2005,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/collada_world_exporter.sdf'
+  - name: 'gz-sim: collada_world_exporter.sdf'
     links:
       - name: Source
         url: >-
@@ -2018,7 +2016,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/contact_sensor.sdf'
+  - name: 'gz-sim: contact_sensor.sdf'
     links:
       - name: Source
         url: >-
@@ -2029,7 +2027,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/conveyor.sdf'
+  - name: 'gz-sim: conveyor.sdf'
     links:
       - name: Source
         url: >-
@@ -2040,7 +2038,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/debug_shapes.sdf'
+  - name: 'gz-sim: debug_shapes.sdf'
     links:
       - name: Source
         url: >-
@@ -2051,7 +2049,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/default.sdf'
+  - name: 'gz-sim: default.sdf'
     links:
       - name: Source
         url: >-
@@ -2062,7 +2060,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/dem_monterey_bay.sdf'
+  - name: 'gz-sim: dem_monterey_bay.sdf'
     links:
       - name: Source
         url: >-
@@ -2073,7 +2071,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/dem_moon.sdf'
+  - name: 'gz-sim: dem_moon.sdf'
     links:
       - name: Source
         url: >-
@@ -2084,7 +2082,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/dem_volcano.sdf'
+  - name: 'gz-sim: dem_volcano.sdf'
     links:
       - name: Source
         url: >-
@@ -2095,7 +2093,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/deprecated_ignition.sdf'
+  - name: 'gz-sim: deprecated_ignition.sdf'
     links:
       - name: Source
         url: >-
@@ -2106,7 +2104,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/depth_camera_sensor.sdf'
+  - name: 'gz-sim: depth_camera_sensor.sdf'
     links:
       - name: Source
         url: >-
@@ -2117,7 +2115,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/detachable_joint.sdf'
+  - name: 'gz-sim: detachable_joint.sdf'
     links:
       - name: Source
         url: >-
@@ -2128,7 +2126,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/diff_drive.sdf'
+  - name: 'gz-sim: diff_drive.sdf'
     links:
       - name: Source
         url: >-
@@ -2139,7 +2137,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/diff_drive_skid.sdf'
+  - name: 'gz-sim: diff_drive_skid.sdf'
     links:
       - name: Source
         url: >-
@@ -2150,7 +2148,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/elevator.sdf'
+  - name: 'gz-sim: elevator.sdf'
     links:
       - name: Source
         url: >-
@@ -2161,7 +2159,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/empty.sdf'
+  - name: 'gz-sim: empty.sdf'
     links:
       - name: Source
         url: >-
@@ -2172,7 +2170,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/empty_gui.sdf'
+  - name: 'gz-sim: empty_gui.sdf'
     links:
       - name: Source
         url: >-
@@ -2183,7 +2181,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/follow_actor.sdf'
+  - name: 'gz-sim: follow_actor.sdf'
     links:
       - name: Source
         url: >-
@@ -2194,7 +2192,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/fuel.sdf'
+  - name: 'gz-sim: fuel.sdf'
     links:
       - name: Source
         url: >-
@@ -2205,7 +2203,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/fuel_textured_mesh.sdf'
+  - name: 'gz-sim: fuel_textured_mesh.sdf'
     links:
       - name: Source
         url: >-
@@ -2216,9 +2214,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/gpu_lidar_retro_values_sensor.sdf
+  - name: 'gz-sim: gpu_lidar_retro_values_sensor.sdf'
     links:
       - name: Source
         url: >-
@@ -2229,7 +2225,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/gpu_lidar_sensor.sdf'
+  - name: 'gz-sim: gpu_lidar_sensor.sdf'
     links:
       - name: Source
         url: >-
@@ -2240,7 +2236,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/graded_buoyancy.sdf'
+  - name: 'gz-sim: graded_buoyancy.sdf'
     links:
       - name: Source
         url: >-
@@ -2251,7 +2247,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/grid.sdf'
+  - name: 'gz-sim: grid.sdf'
     links:
       - name: Source
         url: >-
@@ -2262,7 +2258,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/heightmap.sdf'
+  - name: 'gz-sim: heightmap.sdf'
     links:
       - name: Source
         url: >-
@@ -2273,7 +2269,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/import_mesh.sdf'
+  - name: 'gz-sim: import_mesh.sdf'
     links:
       - name: Source
         url: >-
@@ -2284,7 +2280,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/joint_controller.sdf'
+  - name: 'gz-sim: joint_controller.sdf'
     links:
       - name: Source
         url: >-
@@ -2295,9 +2291,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/joint_position_controller.sdf
+  - name: 'gz-sim: joint_position_controller.sdf'
     links:
       - name: Source
         url: >-
@@ -2308,9 +2302,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/joint_trajectory_controller.sdf
+  - name: 'gz-sim: joint_trajectory_controller.sdf'
     links:
       - name: Source
         url: >-
@@ -2321,7 +2313,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/kinetic_energy_monitor.sdf'
+  - name: 'gz-sim: kinetic_energy_monitor.sdf'
     links:
       - name: Source
         url: >-
@@ -2332,7 +2324,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/levels.sdf'
+  - name: 'gz-sim: levels.sdf'
     links:
       - name: Source
         url: >-
@@ -2343,7 +2335,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/levels_no_performers.sdf'
+  - name: 'gz-sim: levels_no_performers.sdf'
     links:
       - name: Source
         url: >-
@@ -2354,7 +2346,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/lift_drag.sdf'
+  - name: 'gz-sim: lift_drag.sdf'
     links:
       - name: Source
         url: >-
@@ -2365,7 +2357,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/lift_drag_battery.sdf'
+  - name: 'gz-sim: lift_drag_battery.sdf'
     links:
       - name: Source
         url: >-
@@ -2376,7 +2368,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/lift_drag_nested.sdf'
+  - name: 'gz-sim: lift_drag_nested.sdf'
     links:
       - name: Source
         url: >-
@@ -2387,7 +2379,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/lightmap.sdf'
+  - name: 'gz-sim: lightmap.sdf'
     links:
       - name: Source
         url: >-
@@ -2398,7 +2390,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/lights.sdf'
+  - name: 'gz-sim: lights.sdf'
     links:
       - name: Source
         url: >-
@@ -2409,7 +2401,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/linear_battery_demo.sdf'
+  - name: 'gz-sim: linear_battery_demo.sdf'
     links:
       - name: Source
         url: >-
@@ -2420,9 +2412,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/log_record_dbl_pendulum.sdf
+  - name: 'gz-sim: log_record_dbl_pendulum.sdf'
     links:
       - name: Source
         url: >-
@@ -2433,7 +2423,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/log_record_keyboard.sdf'
+  - name: 'gz-sim: log_record_keyboard.sdf'
     links:
       - name: Source
         url: >-
@@ -2444,7 +2434,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/log_record_resources.sdf'
+  - name: 'gz-sim: log_record_resources.sdf'
     links:
       - name: Source
         url: >-
@@ -2455,7 +2445,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/log_record_shapes.sdf'
+  - name: 'gz-sim: log_record_shapes.sdf'
     links:
       - name: Source
         url: >-
@@ -2466,9 +2456,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/logical_audio_sensor_plugin.sdf
+  - name: 'gz-sim: logical_audio_sensor_plugin.sdf'
     links:
       - name: Source
         url: >-
@@ -2479,7 +2467,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/logical_camera_sensor.sdf'
+  - name: 'gz-sim: logical_camera_sensor.sdf'
     links:
       - name: Source
         url: >-
@@ -2490,7 +2478,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/mecanum_drive.sdf'
+  - name: 'gz-sim: mecanum_drive.sdf'
     links:
       - name: Source
         url: >-
@@ -2501,7 +2489,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/minimal_scene.sdf'
+  - name: 'gz-sim: minimal_scene.sdf'
     links:
       - name: Source
         url: >-
@@ -2512,7 +2500,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/model_photo_shoot.sdf'
+  - name: 'gz-sim: model_photo_shoot.sdf'
     links:
       - name: Source
         url: >-
@@ -2523,7 +2511,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/multi_lrauv_race.sdf'
+  - name: 'gz-sim: multi_lrauv_race.sdf'
     links:
       - name: Source
         url: >-
@@ -2534,9 +2522,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/multicopter_velocity_control.sdf
+  - name: 'gz-sim: multicopter_velocity_control.sdf'
     links:
       - name: Source
         url: >-
@@ -2547,7 +2533,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/nested_model.sdf'
+  - name: 'gz-sim: nested_model.sdf'
     links:
       - name: Source
         url: >-
@@ -2558,9 +2544,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/optical_tactile_sensor_plugin.sdf
+  - name: 'gz-sim: optical_tactile_sensor_plugin.sdf'
     links:
       - name: Source
         url: >-
@@ -2571,7 +2555,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/particle_emitter.sdf'
+  - name: 'gz-sim: particle_emitter.sdf'
     links:
       - name: Source
         url: >-
@@ -2582,7 +2566,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/pendulum_links.sdf'
+  - name: 'gz-sim: pendulum_links.sdf'
     links:
       - name: Source
         url: >-
@@ -2593,7 +2577,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/perfect_comms.sdf'
+  - name: 'gz-sim: perfect_comms.sdf'
     links:
       - name: Source
         url: >-
@@ -2604,7 +2588,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/performer_detector.sdf'
+  - name: 'gz-sim: performer_detector.sdf'
     links:
       - name: Source
         url: >-
@@ -2615,7 +2599,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/physics_options.sdf'
+  - name: 'gz-sim: physics_options.sdf'
     links:
       - name: Source
         url: >-
@@ -2626,7 +2610,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/plane_propeller_demo.sdf'
+  - name: 'gz-sim: plane_propeller_demo.sdf'
     links:
       - name: Source
         url: >-
@@ -2637,7 +2621,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/plot_3d.sdf'
+  - name: 'gz-sim: plot_3d.sdf'
     links:
       - name: Source
         url: >-
@@ -2648,7 +2632,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/polylines.sdf'
+  - name: 'gz-sim: polylines.sdf'
     links:
       - name: Source
         url: >-
@@ -2659,7 +2643,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/pose_publisher.sdf'
+  - name: 'gz-sim: pose_publisher.sdf'
     links:
       - name: Source
         url: >-
@@ -2670,7 +2654,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/quadcopter.sdf'
+  - name: 'gz-sim: quadcopter.sdf'
     links:
       - name: Source
         url: >-
@@ -2681,7 +2665,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/rf_comms.sdf'
+  - name: 'gz-sim: rf_comms.sdf'
     links:
       - name: Source
         url: >-
@@ -2692,7 +2676,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/rolling_shapes.sdf'
+  - name: 'gz-sim: rolling_shapes.sdf'
     links:
       - name: Source
         url: >-
@@ -2703,7 +2687,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/segmentation_camera.sdf'
+  - name: 'gz-sim: segmentation_camera.sdf'
     links:
       - name: Source
         url: >-
@@ -2714,7 +2698,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/sensors.sdf'
+  - name: 'gz-sim: sensors.sdf'
     links:
       - name: Source
         url: >-
@@ -2725,7 +2709,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/sensors_demo.sdf'
+  - name: 'gz-sim: sensors_demo.sdf'
     links:
       - name: Source
         url: >-
@@ -2736,7 +2720,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/shader_param.sdf'
+  - name: 'gz-sim: shader_param.sdf'
     links:
       - name: Source
         url: >-
@@ -2747,7 +2731,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/shapes.sdf'
+  - name: 'gz-sim: shapes.sdf'
     links:
       - name: Source
         url: >-
@@ -2758,7 +2742,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/shapes_bitmask.sdf'
+  - name: 'gz-sim: shapes_bitmask.sdf'
     links:
       - name: Source
         url: >-
@@ -2769,7 +2753,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/skid_steer_mecanum.sdf'
+  - name: 'gz-sim: skid_steer_mecanum.sdf'
     links:
       - name: Source
         url: >-
@@ -2780,7 +2764,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/sky.sdf'
+  - name: 'gz-sim: sky.sdf'
     links:
       - name: Source
         url: >-
@@ -2791,7 +2775,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/spaces.sdf'
+  - name: 'gz-sim: spaces.sdf'
     links:
       - name: Source
         url: >-
@@ -2802,7 +2786,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/spherical_coordinates.sdf'
+  - name: 'gz-sim: spherical_coordinates.sdf'
     links:
       - name: Source
         url: >-
@@ -2813,7 +2797,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/thermal_camera.sdf'
+  - name: 'gz-sim: thermal_camera.sdf'
     links:
       - name: Source
         url: >-
@@ -2824,7 +2808,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/touch_plugin.sdf'
+  - name: 'gz-sim: touch_plugin.sdf'
     links:
       - name: Source
         url: >-
@@ -2835,7 +2819,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/track_drive.sdf'
+  - name: 'gz-sim: track_drive.sdf'
     links:
       - name: Source
         url: >-
@@ -2846,7 +2830,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/tracked_vehicle_simple.sdf'
+  - name: 'gz-sim: tracked_vehicle_simple.sdf'
     links:
       - name: Source
         url: >-
@@ -2857,7 +2841,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/trajectory_follower.sdf'
+  - name: 'gz-sim: trajectory_follower.sdf'
     links:
       - name: Source
         url: >-
@@ -2868,9 +2852,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/triggered_camera_sensor.sdf
+  - name: 'gz-sim: triggered_camera_sensor.sdf'
     links:
       - name: Source
         url: >-
@@ -2881,7 +2863,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/triggered_publisher.sdf'
+  - name: 'gz-sim: triggered_publisher.sdf'
     links:
       - name: Source
         url: >-
@@ -2892,9 +2874,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/trisphere_cycle_wheel_slip.sdf
+  - name: 'gz-sim: trisphere_cycle_wheel_slip.sdf'
     links:
       - name: Source
         url: >-
@@ -2905,7 +2885,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/tunnel.sdf'
+  - name: 'gz-sim: tunnel.sdf'
     links:
       - name: Source
         url: >-
@@ -2916,7 +2896,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/velocity_control.sdf'
+  - name: 'gz-sim: velocity_control.sdf'
     links:
       - name: Source
         url: >-
@@ -2927,9 +2907,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: >-
-      gz-sim:
-      .cache/gazebosim/gz-sim/examples/worlds/video_record_dbl_pendulum.sdf
+  - name: 'gz-sim: video_record_dbl_pendulum.sdf'
     links:
       - name: Source
         url: >-
@@ -2940,7 +2918,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/visibility.sdf'
+  - name: 'gz-sim: visibility.sdf'
     links:
       - name: Source
         url: >-
@@ -2951,7 +2929,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/visualize_contacts.sdf'
+  - name: 'gz-sim: visualize_contacts.sdf'
     links:
       - name: Source
         url: >-
@@ -2962,7 +2940,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/visualize_lidar.sdf'
+  - name: 'gz-sim: visualize_lidar.sdf'
     links:
       - name: Source
         url: >-
@@ -2973,7 +2951,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/wide_angle_camera.sdf'
+  - name: 'gz-sim: wide_angle_camera.sdf'
     links:
       - name: Source
         url: >-
@@ -2984,7 +2962,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/wind.sdf'
+  - name: 'gz-sim: wind.sdf'
     links:
       - name: Source
         url: >-
@@ -2995,7 +2973,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: .cache/gazebosim/gz-sim/examples/worlds/world_joint.sdf'
+  - name: 'gz-sim: world_joint.sdf'
     links:
       - name: Source
         url: >-
