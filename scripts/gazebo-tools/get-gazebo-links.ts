@@ -246,8 +246,8 @@ async function getGzTutorialDocs({
       const readmeDoc: GazeboDoc = {
         localPath: readmePath,
         handle: 'README',
-        liveUrl: `https://github.com/${gzRepo.org}/${gzRepo.repo}/blob/${gzRepo.branch}/README.md`,
-        sourceUrl: `https://gazebosim.org/libs/${gzWebsiteRef}`,
+        liveUrl: `https://gazebosim.org/libs/${gzWebsiteRef}`,
+        sourceUrl: `https://github.com/${gzRepo.org}/${gzRepo.repo}/blob/${gzRepo.branch}/README.md`,
       }
       gzRepo.docs.push(readmeDoc)
     }
