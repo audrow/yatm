@@ -12,25 +12,36 @@ async function main() {
   const outputFile = join(__dirname, 'gazebo-doc-requirements.yaml')
   const errorLogFile = join(__dirname, 'gazebo-doc-requirements-errors.txt')
   const commonLabelForRequirements = 'garden'
+
   const {repoDocs, errorText} = await getGazeboLinks({
-    docsRepo: {
+    cacheDir: '.cache',
+    gzDocsRepo: {
       url: 'https://github.com/gazebosim/docs',
       org: 'gazebosim',
       name: 'docs',
       branch: 'master',
       releaseName: 'garden',
     },
-    worldsRepo: {
+    gzWorldRepo: {
       url: 'https://github.com/gazebosim/gz-sim',
       org: 'gazebosim',
       name: 'gz-sim',
       branch: 'gz-sim7',
       pathToWoldFiles: 'examples/worlds',
     },
-    tutorials: {
+    gzTutorialRepos: {
       reposYamlUrl:
         'https://raw.githubusercontent.com/ignition-tooling/gazebodistro/master/collection-garden.yaml',
       reposToSkip: ['gz-cmake'],
+      tutorialsDirectory: 'tutorials',
+    },
+    sdfTutorialRepo: {
+      url: 'https://github.com/gazebosim/sdf_tutorials',
+      relativePathToManifest: 'manifest.xml',
+      org: 'gazebosim',
+      name: 'sdf_tutorials',
+      branch: 'master',
+      handlesToSkip: /(proposal|roadmap|usd|bindings)/,
     },
   })
   const requirementsYaml = repoDocsToRequirementsYaml(

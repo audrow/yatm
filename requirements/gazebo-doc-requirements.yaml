@@ -2996,3 +2996,146 @@ requirements:
     labels:
       - gz-sim
       - garden
+  - name: 'sdf_tutorials: Install'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=install
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/install/tutorial_12.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Quickstart'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=quickstart
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/quickstart/tutorial_2-0.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Specifying pose'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=specify_pose
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/specify_pose/tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Model kinematics'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=spec_model_kinematics
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/spec_model_kinematics/tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Collisions and Visuals'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=spec_shapes
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/spec_shapes/tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Creating Worlds'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=spec_world
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/spec_world/tutorial1.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Material properties of a Visual'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=spec_materials
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/spec_materials/tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Pose frame semantics'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=pose_frame_semantics
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/pose_frame_semantics/tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Convention'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=convention_tutorial
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/convention/tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Composition'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=composition
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/composition/legacy_behavior.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden
+  - name: 'sdf_tutorials: Tutorial for parameter passing'
+    links:
+      - name: Live
+        url: http://sdformat.org/tutorials?tut=param_passing_tutorial
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/sdf_tutorials/blob/master/param_passing/tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - sdf_tutorials
+      - garden

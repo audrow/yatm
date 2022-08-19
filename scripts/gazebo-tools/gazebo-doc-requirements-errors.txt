@@ -24,3 +24,15 @@ Errors in gazebosim/gz-sim:
  * Skipping 'actors_population.sdf.erb' since it is not an SDF file
  * Skipping 'shapes_population.sdf.erb' since it is not an SDF file
 
+Errors in gazebosim/sdf_tutorials:
+ * Skipping better_pose_proposal
+ * Skipping pose_frame_semantics_proposal
+ * Skipping convert_sdf_to_usd
+ * Skipping python_bindings
+ * Skipping custom_elements_attributes_proposal
+ * Skipping roadmap
+ * Skipping composition_proposal
+ * Skipping composition_merge_proposal
+ * Skipping param_passing_proposal
+ * Skipping proposal_format
+
