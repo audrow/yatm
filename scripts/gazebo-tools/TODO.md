@@ -4,4 +4,4 @@
 - [x] Handle docs
 - [x] Handle worlds
 - [x] Generate requirements
-- [ ] Generate test cases
+- [x] Generate test cases

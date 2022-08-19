@@ -58,7 +58,7 @@ export async function getGazeboLinks({
   })
 
   const gzAll = [gzDocs, ...gzRepos, gzWorld]
-  // console.log(JSON.stringify(gzAll, null, 2))
+
   let errorText: string | undefined
   if (gzAll.some((gz) => gz.errors.length > 0)) {
     errorText = '\nErrors\n======\n'
@@ -264,23 +264,26 @@ async function getGzTutorialDocs({
       const filePath = join(localTutorialsPath, file)
       if (fs.statSync(filePath).isDirectory()) {
         return
-      }
-      const relativePath = join(tutorialsDirectory, file)
-      const fileText = fs.readFileSync(filePath, 'utf8')
-      const match = fileText.match(/\\page\s([a-zA-Z_0-9]+)\s/)
-      if (!match) {
-        gzRepo.errors.push(`Skipping ${file}: Could not find a \\page handle`)
-        return
       } else if (!file.endsWith('.md')) {
         gzRepo.errors.push(`Skipping '${file}' since it is not a markdown file`)
         return
       }
+      const relativePath = join(tutorialsDirectory, file)
+      const fileText = fs.readFileSync(filePath, 'utf8')
+      const match = fileText.match(
+        /\\page\s*([a-zA-Z0-9-_]+)\s*([A-Za-z0-9-_+ "]+)?/,
+      )
+      if (!match) {
+        gzRepo.errors.push(`Skipping ${file}: Could not find a \\page handle`)
+        return
+      }
       const handle = match![1]
+      const title = match[2] || handle
       const liveUrl = `https://gazebosim.org/api/${gzWebsiteRef}/${gzRepo.majorVersion}/${handle}.html`
       const sourceUrl = `https://github.com/${gzRepo.org}/${gzRepo.repo}/tree/${gzRepo.branch}/${relativePath}`
       const doc: GazeboDoc = {
         localPath: filePath,
-        handle,
+        handle: title,
         liveUrl,
         sourceUrl,
       }
