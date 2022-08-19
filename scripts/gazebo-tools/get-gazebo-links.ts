@@ -2,6 +2,7 @@ import {XMLParser} from 'fast-xml-parser'
 import fs from 'fs'
 import {join} from 'path'
 import * as ros2 from 'ros2-cache'
+import {getNumber} from './utils'
 import type GazeboDoc from './__types__/GazeboDoc'
 import type GazeboRepoDocs from './__types__/GazeboRepoDocs'
 
@@ -408,14 +409,6 @@ async function cloneRepo({
     }
     return errorMessage
   }
-}
-
-export function getNumber(text: string) {
-  const match = text.match(/\d+/)
-  if (!match) {
-    throw new Error(`Could not parse text: ${text}`)
-  }
-  return Number(match[0])
 }
 
 async function main() {

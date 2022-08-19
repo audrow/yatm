@@ -1,4 +1,4 @@
-import {getNumber} from './get-gazebo-links'
+import {getNumber} from './utils'
 
 describe('getNumber', () => {
   it('parses a number', () => {
