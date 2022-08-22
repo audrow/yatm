@@ -3,13 +3,16 @@ import fs from 'fs'
 import {join} from 'path'
 import sortObject from 'sort-object-keys'
 import * as constants from '../constants'
+import * as githubConstants from '../constants.github'
 import dbPlugins from '../plugins/db-plugins'
 import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
 import testCaseMarkupPlugins from '../plugins/test-case-markup-plugins'
 import type DbPlugins from '../plugins/__types__/DbPlugins'
 import type Plugins from '../plugins/__types__/Plugins'
 import loadRequirements from '../requirements/utils/load-requirements'
-import generateTestCases from '../test-cases/generator/generate-test-cases'
+import generateTestCases, {
+  generateTestCaseCombinations,
+} from '../test-cases/generator/generate-test-cases'
 import loadConfig from '../test-cases/utils/load-config'
 import loadTestCases from '../test-cases/utils/load-test-cases'
 import printTestCases from '../test-cases/utils/print-test-cases'
@@ -79,6 +82,34 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
         clearDirectory(constants.OUTPUT_TEST_CASE_PATH)
         saveTestCases(testCases, constants.OUTPUT_TEST_CASE_PATH)
       }
+    })
+
+  testCasesCmd
+    .command('combinations')
+    .aliases(['c', 'combos'])
+    .action(() => {
+      const {sets, generation} = loadConfig(constants.TEST_CASE_CONFIG)
+      const combinationsSet = new Set<string>()
+      sets.forEach((set) => {
+        const {dimensions} = set
+        const combs = generateTestCaseCombinations(dimensions)
+        combs.forEach((c) => combinationsSet.add(JSON.stringify(c)))
+      })
+      const githubUrl = `https://github.com/${githubConstants.REPOSITORY.owner}/${githubConstants.REPOSITORY.name}`
+      const combinationsList = Array.from(combinationsSet).map((c) =>
+        JSON.parse(c),
+      )
+      let markdown = ''
+      combinationsList.forEach((c) => {
+        const labels = [...Object.values(c), `generation-${generation}`]
+          .map((v) => `label:"${v}"`)
+          .join('+')
+        const url = `${githubUrl}/issues?q=is%3Aissue+is%3Aopen+${encodeURI(
+          labels,
+        )}`
+        markdown += `- [ ] [${Object.values(c).join(', ')}](${url})\n`
+      })
+      console.log(markdown)
     })
 
   testCasesCmd

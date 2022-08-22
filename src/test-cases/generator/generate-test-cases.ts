@@ -85,7 +85,7 @@ function getTestCasesFromRequirements(
   generation: number,
 ) {
   const testCases: TestCase[] = []
-  const dimensionCombinations = combinate(dimensions)
+  const dimensionCombinations = generateTestCaseCombinations(dimensions)
   dimensionCombinations.forEach((combo) => {
     requirements.forEach((requirement) => {
       testCases.push({
@@ -96,4 +96,8 @@ function getTestCasesFromRequirements(
     })
   })
   return testCases
+}
+
+export function generateTestCaseCombinations(dimensions: TestCaseDimensions) {
+  return combinate(dimensions)
 }

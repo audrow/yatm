@@ -4,10 +4,47 @@ sets:
       - isMatch: true
         labels:
           - garden
+      - isMatch: false
+        name: install
     dimensions:
       os:
-        - focal
-      arch:
-        - amd64
+        - Ubuntu Focal
+        - Ubuntu Jammy
       buildType:
-        - binary
+        - Binary
+        - Source
+  - filters:
+      - isMatch: true
+        labels:
+          - garden
+      - isMatch: true
+        name: osx
+    dimensions:
+      os:
+        - macOS 11 (Big Sur)
+      buildType:
+        - Source
+  - filters:
+      - isMatch: true
+        labels:
+          - garden
+      - isMatch: true
+        name: windows
+    dimensions:
+      os:
+        - Windows 10
+      buildType:
+        - Source
+  - filters:
+      - isMatch: true
+        labels:
+          - garden
+      - isMatch: true
+        name: ubuntu
+    dimensions:
+      os:
+        - Ubuntu Focal
+        - Ubuntu Jammy
+      buildType:
+        - Source
+        - Binary
