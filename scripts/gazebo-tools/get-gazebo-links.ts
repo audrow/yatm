@@ -302,6 +302,8 @@ async function getGzTutorialLinks({
         return
       }
       const handle = match![1]
+      // const matchHeading = fileText.match(/#\s+([A-Za-z0-9-_+ "]+)/)
+      // const title = match[2] || matchHeading && matchHeading[1] || handle
       const title = match[2] || handle
       const liveUrl = `https://gazebosim.org/api/${gzWebsiteRef}/${gzRepo.majorVersion}/${handle}.html`
       const sourceUrl = `https://github.com/${gzRepo.org}/${gzRepo.repo}/tree/${gzRepo.branch}/${relativePath}`
