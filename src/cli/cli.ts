@@ -89,26 +89,62 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
     .aliases(['c', 'combos'])
     .action(() => {
       const {sets, generation} = loadConfig(constants.TEST_CASE_CONFIG)
-      const combinationsSet = new Set<string>()
+      const requirements = loadRequirements(constants.OUTPUT_REQUIREMENTS_PATH)
+
+      const combinationsMap = new Map<string, string[]>()
       sets.forEach((set) => {
-        const {dimensions} = set
+        const {filters, dimensions} = set
+
+        const testCases = generateTestCases({
+          requirements,
+          dimensions,
+          filters,
+          generation,
+        })
+
+        const labels = new Set<string>()
+        testCases.forEach((testCase) => {
+          if (testCase.labels) {
+            testCase.labels.forEach((label) => labels.add(label))
+          }
+        })
+
         const combs = generateTestCaseCombinations(dimensions)
-        combs.forEach((c) => combinationsSet.add(JSON.stringify(c)))
+        combs.forEach((c) => {
+          const stringComb = JSON.stringify(c)
+          if (combinationsMap.has(stringComb)) {
+            const labels_ = new Set([
+              ...combinationsMap.get(stringComb)!,
+              ...Array.from(labels),
+            ])
+            combinationsMap.set(JSON.stringify(c), Array.from(labels_))
+          } else {
+            combinationsMap.set(JSON.stringify(c), Array.from(labels))
+          }
+        })
       })
       const githubUrl = `https://github.com/${githubConstants.REPOSITORY.owner}/${githubConstants.REPOSITORY.name}`
-      const combinationsList = Array.from(combinationsSet).map((c) =>
-        JSON.parse(c),
-      )
       let markdown = ''
-      combinationsList.forEach((c) => {
-        const labels = [...Object.values(c), `generation-${generation}`]
+      for (const [combination, auxLabels] of combinationsMap) {
+        const combination_ = JSON.parse(combination)
+        const mainLabels = [
+          ...Object.values(combination_),
+          `generation-${generation}`,
+        ]
           .map((v) => `label:"${v}"`)
           .join('+')
         const url = `${githubUrl}/issues?q=is%3Aissue+is%3Aopen+${encodeURI(
-          labels,
+          mainLabels,
         )}`
-        markdown += `- [ ] [${Object.values(c).join(', ')}](${url})\n`
-      })
+        markdown += `- [ ] [${Object.values(combination_).join(
+          ', ',
+        )}](${url})\n`
+        for (const auxLabel of auxLabels) {
+          markdown += `  - [ ] [${auxLabel}](${url}+${encodeURI(
+            `label:${auxLabel}`,
+          )})\n`
+        }
+      }
       console.log(markdown)
     })
 
