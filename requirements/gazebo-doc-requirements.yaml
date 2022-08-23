@@ -1874,6 +1874,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: ackermann_steering.sdf'
     links:
       - name: Source
@@ -1885,6 +1886,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: actor.sdf'
     links:
       - name: Source
@@ -1896,6 +1898,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: actor_crowd.sdf'
     links:
       - name: Source
@@ -1907,6 +1910,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: actors_population.sdf'
     links:
       - name: Source
@@ -1918,6 +1922,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: apply_joint_force.sdf'
     links:
       - name: Source
@@ -1929,6 +1934,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: apply_link_wrench.sdf'
     links:
       - name: Source
@@ -1940,6 +1946,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: auv_controls.sdf'
     links:
       - name: Source
@@ -1951,6 +1958,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: boundingbox_camera.sdf'
     links:
       - name: Source
@@ -1962,6 +1970,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: breadcrumbs.sdf'
     links:
       - name: Source
@@ -1973,6 +1982,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: buoyancy.sdf'
     links:
       - name: Source
@@ -1984,6 +1994,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: buoyancy_engine.sdf'
     links:
       - name: Source
@@ -1995,6 +2006,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: camera_sensor.sdf'
     links:
       - name: Source
@@ -2006,6 +2018,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: camera_video_record_dbl_pendulum.sdf'
     links:
       - name: Source
@@ -2017,6 +2030,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: collada_world_exporter.sdf'
     links:
       - name: Source
@@ -2028,6 +2042,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: contact_sensor.sdf'
     links:
       - name: Source
@@ -2039,6 +2054,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: conveyor.sdf'
     links:
       - name: Source
@@ -2050,6 +2066,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: debug_shapes.sdf'
     links:
       - name: Source
@@ -2061,6 +2078,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: default.sdf'
     links:
       - name: Source
@@ -2072,6 +2090,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: dem_monterey_bay.sdf'
     links:
       - name: Source
@@ -2083,6 +2102,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: dem_moon.sdf'
     links:
       - name: Source
@@ -2094,6 +2114,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: dem_volcano.sdf'
     links:
       - name: Source
@@ -2105,6 +2126,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: deprecated_ignition.sdf'
     links:
       - name: Source
@@ -2116,6 +2138,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: depth_camera_sensor.sdf'
     links:
       - name: Source
@@ -2127,6 +2150,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: detachable_joint.sdf'
     links:
       - name: Source
@@ -2138,6 +2162,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: diff_drive.sdf'
     links:
       - name: Source
@@ -2149,6 +2174,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: diff_drive_skid.sdf'
     links:
       - name: Source
@@ -2160,6 +2186,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: elevator.sdf'
     links:
       - name: Source
@@ -2171,6 +2198,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: empty.sdf'
     links:
       - name: Source
@@ -2182,6 +2210,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: empty_gui.sdf'
     links:
       - name: Source
@@ -2193,6 +2222,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: follow_actor.sdf'
     links:
       - name: Source
@@ -2204,6 +2234,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: fuel.sdf'
     links:
       - name: Source
@@ -2215,6 +2246,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: fuel_textured_mesh.sdf'
     links:
       - name: Source
@@ -2226,6 +2258,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: gpu_lidar_retro_values_sensor.sdf'
     links:
       - name: Source
@@ -2237,6 +2270,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: gpu_lidar_sensor.sdf'
     links:
       - name: Source
@@ -2248,6 +2282,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: graded_buoyancy.sdf'
     links:
       - name: Source
@@ -2259,6 +2294,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: grid.sdf'
     links:
       - name: Source
@@ -2270,6 +2306,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: heightmap.sdf'
     links:
       - name: Source
@@ -2281,6 +2318,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: import_mesh.sdf'
     links:
       - name: Source
@@ -2292,6 +2330,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: joint_controller.sdf'
     links:
       - name: Source
@@ -2303,6 +2342,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: joint_position_controller.sdf'
     links:
       - name: Source
@@ -2314,6 +2354,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: joint_trajectory_controller.sdf'
     links:
       - name: Source
@@ -2325,6 +2366,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: kinetic_energy_monitor.sdf'
     links:
       - name: Source
@@ -2336,6 +2378,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: levels.sdf'
     links:
       - name: Source
@@ -2347,6 +2390,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: levels_no_performers.sdf'
     links:
       - name: Source
@@ -2358,6 +2402,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: lift_drag.sdf'
     links:
       - name: Source
@@ -2369,6 +2414,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: lift_drag_battery.sdf'
     links:
       - name: Source
@@ -2380,6 +2426,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: lift_drag_nested.sdf'
     links:
       - name: Source
@@ -2391,6 +2438,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: lightmap.sdf'
     links:
       - name: Source
@@ -2402,6 +2450,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: lights.sdf'
     links:
       - name: Source
@@ -2413,6 +2462,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: linear_battery_demo.sdf'
     links:
       - name: Source
@@ -2424,6 +2474,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: log_record_dbl_pendulum.sdf'
     links:
       - name: Source
@@ -2435,6 +2486,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: log_record_keyboard.sdf'
     links:
       - name: Source
@@ -2446,6 +2498,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: log_record_resources.sdf'
     links:
       - name: Source
@@ -2457,6 +2510,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: log_record_shapes.sdf'
     links:
       - name: Source
@@ -2468,6 +2522,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: logical_audio_sensor_plugin.sdf'
     links:
       - name: Source
@@ -2479,6 +2534,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: logical_camera_sensor.sdf'
     links:
       - name: Source
@@ -2490,6 +2546,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: mecanum_drive.sdf'
     links:
       - name: Source
@@ -2501,6 +2558,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: minimal_scene.sdf'
     links:
       - name: Source
@@ -2512,6 +2570,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: model_photo_shoot.sdf'
     links:
       - name: Source
@@ -2523,6 +2582,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: multi_lrauv_race.sdf'
     links:
       - name: Source
@@ -2534,6 +2594,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: multicopter_velocity_control.sdf'
     links:
       - name: Source
@@ -2545,6 +2606,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: nested_model.sdf'
     links:
       - name: Source
@@ -2556,6 +2618,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: optical_tactile_sensor_plugin.sdf'
     links:
       - name: Source
@@ -2567,6 +2630,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: particle_emitter.sdf'
     links:
       - name: Source
@@ -2578,6 +2642,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: pendulum_links.sdf'
     links:
       - name: Source
@@ -2589,6 +2654,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: perfect_comms.sdf'
     links:
       - name: Source
@@ -2600,6 +2666,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: performer_detector.sdf'
     links:
       - name: Source
@@ -2611,6 +2678,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: physics_options.sdf'
     links:
       - name: Source
@@ -2622,6 +2690,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: plane_propeller_demo.sdf'
     links:
       - name: Source
@@ -2633,6 +2702,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: plot_3d.sdf'
     links:
       - name: Source
@@ -2644,6 +2714,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: polylines.sdf'
     links:
       - name: Source
@@ -2655,6 +2726,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: pose_publisher.sdf'
     links:
       - name: Source
@@ -2666,6 +2738,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: quadcopter.sdf'
     links:
       - name: Source
@@ -2677,6 +2750,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: rf_comms.sdf'
     links:
       - name: Source
@@ -2688,6 +2762,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: rolling_shapes.sdf'
     links:
       - name: Source
@@ -2699,6 +2774,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: segmentation_camera.sdf'
     links:
       - name: Source
@@ -2710,6 +2786,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: sensors.sdf'
     links:
       - name: Source
@@ -2721,6 +2798,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: sensors_demo.sdf'
     links:
       - name: Source
@@ -2732,6 +2810,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: shader_param.sdf'
     links:
       - name: Source
@@ -2743,6 +2822,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: shapes.sdf'
     links:
       - name: Source
@@ -2754,6 +2834,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: shapes_bitmask.sdf'
     links:
       - name: Source
@@ -2765,6 +2846,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: skid_steer_mecanum.sdf'
     links:
       - name: Source
@@ -2776,6 +2858,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: sky.sdf'
     links:
       - name: Source
@@ -2787,6 +2870,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: spaces.sdf'
     links:
       - name: Source
@@ -2798,6 +2882,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: spherical_coordinates.sdf'
     links:
       - name: Source
@@ -2809,6 +2894,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: thermal_camera.sdf'
     links:
       - name: Source
@@ -2820,6 +2906,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: touch_plugin.sdf'
     links:
       - name: Source
@@ -2831,6 +2918,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: track_drive.sdf'
     links:
       - name: Source
@@ -2842,6 +2930,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: tracked_vehicle_simple.sdf'
     links:
       - name: Source
@@ -2853,6 +2942,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: trajectory_follower.sdf'
     links:
       - name: Source
@@ -2864,6 +2954,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: triggered_camera_sensor.sdf'
     links:
       - name: Source
@@ -2875,6 +2966,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: triggered_publisher.sdf'
     links:
       - name: Source
@@ -2886,6 +2978,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: trisphere_cycle_wheel_slip.sdf'
     links:
       - name: Source
@@ -2897,6 +2990,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: tunnel.sdf'
     links:
       - name: Source
@@ -2908,6 +3002,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: velocity_control.sdf'
     links:
       - name: Source
@@ -2919,6 +3014,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: video_record_dbl_pendulum.sdf'
     links:
       - name: Source
@@ -2930,6 +3026,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: visibility.sdf'
     links:
       - name: Source
@@ -2941,6 +3038,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: visualize_contacts.sdf'
     links:
       - name: Source
@@ -2952,6 +3050,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: visualize_lidar.sdf'
     links:
       - name: Source
@@ -2963,6 +3062,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: wide_angle_camera.sdf'
     links:
       - name: Source
@@ -2974,6 +3074,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: wind.sdf'
     links:
       - name: Source
@@ -2985,6 +3086,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'gz-sim: world_joint.sdf'
     links:
       - name: Source
@@ -2996,6 +3098,7 @@ requirements:
     labels:
       - gz-sim
       - garden
+      - sdf worlds
   - name: 'sdf_tutorials: Install'
     links:
       - name: Live

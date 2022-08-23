@@ -133,6 +133,7 @@ async function getGzWorldLinks({
     localPath: join(cacheDir, org, repo),
     docs: [],
     errors: [],
+    extraLabels: ['sdf worlds'],
   }
   const errorMessage = await cloneRepo({
     url: repoUrl,

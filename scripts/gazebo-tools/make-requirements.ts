@@ -80,6 +80,10 @@ function repoDocsToRequirementsYaml(
         name: 'Source',
         url: doc.sourceUrl,
       })
+      const labels = [repoDoc.repo, commonLabel]
+      if (repoDoc.extraLabels) {
+        labels.push(...repoDoc.extraLabels)
+      }
       const req: Requirement = {
         name: `${repoDoc.repo}: ${doc.handle}`,
         links,
@@ -91,7 +95,7 @@ function repoDocsToRequirementsYaml(
             name: 'Images (if there are any) match the result',
           },
         ],
-        labels: [repoDoc.repo, commonLabel],
+        labels,
       }
       requirements.push(req)
     })

@@ -5,6 +5,7 @@ type GazeboRepoDocs = {
   repo: string
   branch: string
   majorVersion?: number
+  extraLabels?: string[]
   localPath: string
   docs: GazeboDoc[]
   errors: string[]
