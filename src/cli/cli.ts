@@ -139,10 +139,14 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
         markdown += `- [ ] [${Object.values(combination_).join(
           ', ',
         )}](${url})\n`
-        for (const auxLabel of auxLabels) {
-          markdown += `  - [ ] [${auxLabel}](${url}+${encodeURI(
-            `label:${auxLabel}`,
-          )})\n`
+        if (auxLabels.length > 0) {
+          markdown += '\n  <details><summary>Labels</summary>\n\n'
+          for (const auxLabel of auxLabels) {
+            markdown += `  - [ ] [${auxLabel}](${url}+${encodeURI(
+              `label:${auxLabel}`,
+            )})\n`
+          }
+          markdown += '\n  </details>\n'
         }
       }
       console.log(markdown)
