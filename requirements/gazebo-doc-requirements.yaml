@@ -437,7 +437,9 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: ardupilot'
+  - name: >-
+      gz-sim: Case study: migrating the ArduPilot ModelPlugin from Gazebo
+      classic to Gazebo
     links:
       - name: Live
         url: https://gazebosim.org/api/sim/7/ardupilot.html
@@ -450,7 +452,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: migrationlinkapi'
+  - name: 'gz-sim: Migration from Gazebo-classic: Link API'
     links:
       - name: Live
         url: https://gazebosim.org/api/sim/7/migrationlinkapi.html
@@ -463,7 +465,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: migrationmodelapi'
+  - name: 'gz-sim: Migration from Gazebo-classic: Model API'
     links:
       - name: Live
         url: https://gazebosim.org/api/sim/7/migrationmodelapi.html
@@ -476,7 +478,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: migrationplugins'
+  - name: 'gz-sim: Migration from Gazebo Classic: Plugins'
     links:
       - name: Live
         url: https://gazebosim.org/api/sim/7/migrationplugins.html
@@ -489,7 +491,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: migrationsdf'
+  - name: 'gz-sim: Migration from Gazebo classic: SDF'
     links:
       - name: Live
         url: https://gazebosim.org/api/sim/7/migrationsdf.html
@@ -502,7 +504,7 @@ requirements:
     labels:
       - gz-sim
       - garden
-  - name: 'gz-sim: migrationworldapi'
+  - name: 'gz-sim: Migration from Gazebo-classic: World API'
     links:
       - name: Live
         url: https://gazebosim.org/api/sim/7/migrationworldapi.html
