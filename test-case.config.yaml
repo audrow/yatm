@@ -16,6 +16,9 @@ sets:
       buildType:
         - Binary
         - Source
+  #####################
+  # INSTALL FROM SOURCE
+  #####################
   # Install on MacOS from source
   - filters:
       - isMatch: true
@@ -59,7 +62,10 @@ sets:
         - Ubuntu Jammy
       buildType:
         - Source
-  # FROM BINARIES
+  #####################
+  # INSTALL FROM BINARIES
+  #####################
+  # Install on MacOS from binaries
   - filters:
       - isMatch: true
         labels:
@@ -73,7 +79,7 @@ sets:
         - macOS 11 (Big Sur)
       buildType:
         - Binary
-  # Install on Windows from source
+  # Install on Windows from binaries
   - filters:
       - isMatch: true
         labels:
@@ -87,7 +93,7 @@ sets:
         - Windows 10
       buildType:
         - Binary
-  # Install on Ubuntu from source
+  # Install on Ubuntu from binaries
   - filters:
       - isMatch: true
         labels:
