@@ -64,17 +64,20 @@ async function closeDuplicates(issues: GithubIssue[], id: number) {
     return
   }
   const issueLabelsString = JSON.stringify(issue.labels)
-  const duplicates = issues
+  const copies = issues
     .filter((i) => i.title === issue.title)
     .filter((i) => JSON.stringify(i.labels) === issueLabelsString)
     .sort((a, b) => a.number - b.number)
-  const issueToKeep = duplicates.pop()
-  const duplicateIds = duplicates.map((i) => i.number)
-  duplicateIds.forEach(async (id) => {
-    await closeIssue(REPOSITORY, id)
-  })
-  issues = issues.filter((i) => !(i.number in duplicates))
-  console.log(`Keeping issue ${issueToKeep!.number}`)
+  if (copies.length > 1) {
+    console.log(`Duplicates found for issue ${id}`)
+    const issueToKeep = copies.pop()
+    const duplicateIds = copies.map((i) => i.number)
+    duplicateIds.forEach(async (id) => {
+      await closeIssue(REPOSITORY, id)
+    })
+    issues = issues.filter((i) => !(i.number in copies))
+    console.log(`Keeping issue ${issueToKeep!.number}`)
+  }
 }
 
 export default dbPlugins
