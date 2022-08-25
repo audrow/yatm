@@ -65,7 +65,7 @@ async function closeDuplicates(issues: GithubIssue[], id: number) {
   }
   const issueLabelsString = JSON.stringify(issue.labels)
   const duplicates = issues
-    .filter((i) => i.title == issue.title)
+    .filter((i) => i.title === issue.title)
     .filter((i) => JSON.stringify(i.labels) === issueLabelsString)
     .sort((a, b) => a.number - b.number)
   const issueToKeep = duplicates.pop()
