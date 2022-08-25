@@ -206,6 +206,22 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
     if (obj.update) {
       command.command('update').alias('u').action(obj.update)
     }
+    if (obj.hasDuplicates) {
+      command
+        .command('has-duplicates')
+        .alias('dup')
+        .argument('<id>', 'The id of the test case', Number.parseInt)
+        .action(obj.hasDuplicates)
+    }
+    if (obj.deleteNonUnique) {
+      command
+        .command('delete-non-unique')
+        .alias('del-dup')
+        .action(obj.deleteNonUnique)
+    }
+    if (obj.count) {
+      command.command('count').action(obj.count)
+    }
 
     command
       .command('delete')
