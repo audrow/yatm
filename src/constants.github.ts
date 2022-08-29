@@ -6,6 +6,6 @@ export const GITHUB_TOKEN =
 export const RETRY_SECONDS = 60 * 5
 
 export const REPOSITORY: Repo = {
-  owner: 'audrow',
-  name: 'gazebo-test-cases',
+  owner: 'gazebosim',
+  name: 'garden-tutorial-party',
 }
