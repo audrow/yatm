@@ -1,21 +1,37 @@
 generation: 1
 sets:
-  # Makes everything but install files
+  # Makes everything but install files and READMEs
   - filters:
       - isMatch: true
         labels:
           - garden
       - isMatch: false
         name: install
+      - isMatch: false
+        name: README
     dimensions:
       os:
         - Ubuntu Focal
-        - Ubuntu Jammy # comment in for tier 2
+        - Ubuntu Jammy
         - macOS 11 (Big Sur)
-        - Windows 10 # comment in for tier 3
+        - Windows 10
       buildType:
         - Binary
         - Source
+  # Makes the READMEs only once
+  - filters:
+      - isMatch: true
+        labels:
+          - garden
+      - isMatch: false
+        name: install
+      - isMatch: true
+        name: README
+    dimensions:
+      os:
+        - Ubuntu Focal
+      buildType:
+        - Binary
   #####################
   # INSTALL FROM SOURCE
   #####################
