@@ -143,7 +143,7 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
           markdown += '\n  <details><summary>Labels</summary>\n\n'
           for (const auxLabel of auxLabels) {
             markdown += `  - [ ] [${auxLabel}](${url}+${encodeURI(
-              `label:${auxLabel}`,
+              `label:"${auxLabel}"`,
             )})\n`
           }
           markdown += '\n  </details>\n'
