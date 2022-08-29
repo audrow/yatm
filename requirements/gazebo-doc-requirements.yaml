@@ -27,6 +27,7 @@ requirements:
     labels:
       - docs
       - garden
+      - install
   - name: 'docs: install_ubuntu_src'
     links:
       - name: Live
@@ -40,6 +41,7 @@ requirements:
     labels:
       - docs
       - garden
+      - install
   - name: 'docs: install_windows_src'
     links:
       - name: Live
@@ -53,6 +55,7 @@ requirements:
     labels:
       - docs
       - garden
+      - install
   - name: 'docs: migration_from_ignition'
     links:
       - name: Live
