@@ -264,7 +264,7 @@ async function getGzTutorialLinks({
       gzRepo.errors.push(errorMessage)
     }
 
-    const gzWebsiteRef = repo.name.replace(/gz-/, '')
+    const gzWebsiteRef = repo.name.replace(/gz-/, '').replace(/-/, '_')
     const readmePath = join(gzRepo.localPath, 'README.md')
     if (fs.existsSync(readmePath)) {
       const readmeDoc: GazeboDoc = {

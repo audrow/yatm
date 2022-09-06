@@ -2,6 +2,104 @@
 # yatm/scripts/gazebo-tools/make-requirements.ts. Do not edit it directly.
 
 requirements:
+  - name: 'docs: GUI_tutorial'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/GUI_tutorial
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/GUI_tutorial.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: Manipulating_models'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/Manipulating_models
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/docs/tree/master/garden/Manipulating_models.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: Model_insertion_fuel'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/Model_insertion_fuel
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/docs/tree/master/garden/Model_insertion_fuel.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: actors'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/actors
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/actors.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: building_robot'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/building_robot
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/building_robot.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: comparison'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/comparison
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/comparison.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: hotkeys'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/hotkeys
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/hotkeys.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: ign_docker_env'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/ign_docker_env
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/ign_docker_env.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
   - name: 'docs: install'
     links:
       - name: Live
@@ -14,6 +112,20 @@ requirements:
     labels:
       - docs
       - garden
+      - install
+  - name: 'docs: install_osx'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/install_osx
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/install_osx.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+      - install
   - name: 'docs: install_osx_src'
     links:
       - name: Live
@@ -28,6 +140,19 @@ requirements:
       - docs
       - garden
       - install
+  - name: 'docs: install_ubuntu'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/install_ubuntu
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/install_ubuntu.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+      - install
   - name: 'docs: install_ubuntu_src'
     links:
       - name: Live
@@ -35,6 +160,19 @@ requirements:
       - name: Source
         url: >-
           https://github.com/gazebosim/docs/tree/master/garden/install_ubuntu_src.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: install_windows'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/install_windows
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/docs/tree/master/garden/install_windows.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -69,6 +207,67 @@ requirements:
     labels:
       - docs
       - garden
+  - name: 'docs: moving_robot'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/moving_robot
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/moving_robot.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: ros2_integration'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/ros2_integration
+      - name: Source
+        url: >-
+          https://github.com/gazebosim/docs/tree/master/garden/ros2_integration.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: sdf_worlds'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/sdf_worlds
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/sdf_worlds.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: sensors'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/sensors
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/sensors.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: spawn_urdf'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/spawn_urdf
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/spawn_urdf.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
   - name: 'docs: troubleshooting'
     links:
       - name: Live
@@ -76,6 +275,18 @@ requirements:
       - name: Source
         url: >-
           https://github.com/gazebosim/docs/tree/master/garden/troubleshooting.md
+    checks:
+      - name: Instructions work
+      - name: Images (if there are any) match the result
+    labels:
+      - docs
+      - garden
+  - name: 'docs: tutorials'
+    links:
+      - name: Live
+        url: https://gazebosim.org/docs/garden/tutorials
+      - name: Source
+        url: https://github.com/gazebosim/docs/tree/master/garden/tutorials.md
     checks:
       - name: Instructions work
       - name: Images (if there are any) match the result
@@ -136,7 +347,7 @@ requirements:
   - name: 'gz-fuel-tools: README'
     links:
       - name: Live
-        url: https://gazebosim.org/libs/fuel-tools
+        url: https://gazebosim.org/libs/fuel_tools
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-fuel-tools/blob/gz-fuel-tools8/README.md
@@ -149,7 +360,7 @@ requirements:
   - name: 'gz-fuel-tools: Installation'
     links:
       - name: Live
-        url: https://gazebosim.org/api/fuel-tools/8/install.html
+        url: https://gazebosim.org/api/fuel_tools/8/install.html
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-fuel-tools/tree/gz-fuel-tools8/tutorials/01_installation.md
@@ -162,7 +373,7 @@ requirements:
   - name: 'gz-fuel-tools: Configuration'
     links:
       - name: Live
-        url: https://gazebosim.org/api/fuel-tools/8/configuration.html
+        url: https://gazebosim.org/api/fuel_tools/8/configuration.html
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-fuel-tools/tree/gz-fuel-tools8/tutorials/02_configuration.md
@@ -175,7 +386,7 @@ requirements:
   - name: 'gz-fuel-tools: Command Line Tools'
     links:
       - name: Live
-        url: https://gazebosim.org/api/fuel-tools/8/cmdline.html
+        url: https://gazebosim.org/api/fuel_tools/8/cmdline.html
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-fuel-tools/tree/gz-fuel-tools8/tutorials/03_command_line.md
@@ -188,7 +399,7 @@ requirements:
   - name: 'gz-fuel-tools: C++ API'
     links:
       - name: Live
-        url: https://gazebosim.org/api/fuel-tools/8/cppapi.html
+        url: https://gazebosim.org/api/fuel_tools/8/cppapi.html
       - name: Source
         url: >-
           https://github.com/gazebosim/gz-fuel-tools/tree/gz-fuel-tools8/tutorials/04_cpp_api.md
