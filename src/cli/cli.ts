@@ -3,13 +3,16 @@ import fs from 'fs'
 import {join} from 'path'
 import sortObject from 'sort-object-keys'
 import * as constants from '../constants'
+import * as githubConstants from '../constants.github'
 import dbPlugins from '../plugins/db-plugins'
 import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
 import testCaseMarkupPlugins from '../plugins/test-case-markup-plugins'
 import type DbPlugins from '../plugins/__types__/DbPlugins'
 import type Plugins from '../plugins/__types__/Plugins'
 import loadRequirements from '../requirements/utils/load-requirements'
-import generateTestCases from '../test-cases/generator/generate-test-cases'
+import generateTestCases, {
+  generateTestCaseCombinations,
+} from '../test-cases/generator/generate-test-cases'
 import loadConfig from '../test-cases/utils/load-config'
 import loadTestCases from '../test-cases/utils/load-test-cases'
 import printTestCases from '../test-cases/utils/print-test-cases'
@@ -82,6 +85,74 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
     })
 
   testCasesCmd
+    .command('combinations')
+    .aliases(['c', 'combos'])
+    .action(() => {
+      const {sets, generation} = loadConfig(constants.TEST_CASE_CONFIG)
+      const requirements = loadRequirements(constants.OUTPUT_REQUIREMENTS_PATH)
+
+      const combinationsMap = new Map<string, string[]>()
+      sets.forEach((set) => {
+        const {filters, dimensions} = set
+
+        const testCases = generateTestCases({
+          requirements,
+          dimensions,
+          filters,
+          generation,
+        })
+
+        const labels = new Set<string>()
+        testCases.forEach((testCase) => {
+          if (testCase.labels) {
+            testCase.labels.forEach((label) => labels.add(label))
+          }
+        })
+
+        const combs = generateTestCaseCombinations(dimensions)
+        combs.forEach((c) => {
+          const stringComb = JSON.stringify(c)
+          if (combinationsMap.has(stringComb)) {
+            const labels_ = new Set([
+              ...combinationsMap.get(stringComb)!,
+              ...Array.from(labels),
+            ])
+            combinationsMap.set(JSON.stringify(c), Array.from(labels_))
+          } else {
+            combinationsMap.set(JSON.stringify(c), Array.from(labels))
+          }
+        })
+      })
+      const githubUrl = `https://github.com/${githubConstants.REPOSITORY.owner}/${githubConstants.REPOSITORY.name}`
+      let markdown = ''
+      for (const [combination, auxLabels] of combinationsMap) {
+        const combination_ = JSON.parse(combination)
+        const mainLabels = [
+          ...Object.values(combination_),
+          `generation-${generation}`,
+        ]
+          .map((v) => `label:"${v}"`)
+          .join('+')
+        const url = `${githubUrl}/issues?q=is%3Aissue+is%3Aopen+${encodeURI(
+          mainLabels,
+        )}`
+        markdown += `- [ ] [${Object.values(combination_).join(
+          ', ',
+        )}](${url})\n`
+        if (auxLabels.length > 0) {
+          markdown += '\n  <details><summary>Labels</summary>\n\n'
+          for (const auxLabel of auxLabels) {
+            markdown += `  - [ ] [${auxLabel}](${url}+${encodeURI(
+              `label:"${auxLabel}"`,
+            )})\n`
+          }
+          markdown += '\n  </details>\n'
+        }
+      }
+      console.log(markdown)
+    })
+
+  testCasesCmd
     .command('markup-preview')
     .aliases(['mup', 'markup'])
     .addOption(
@@ -134,6 +205,22 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
     }
     if (obj.update) {
       command.command('update').alias('u').action(obj.update)
+    }
+    if (obj.hasDuplicates) {
+      command
+        .command('has-duplicates')
+        .alias('dup')
+        .argument('<id>', 'The id of the test case', Number.parseInt)
+        .action(obj.hasDuplicates)
+    }
+    if (obj.deleteNonUnique) {
+      command
+        .command('delete-non-unique')
+        .alias('del-dup')
+        .action(obj.deleteNonUnique)
+    }
+    if (obj.count) {
+      command.command('count').action(obj.count)
     }
 
     command

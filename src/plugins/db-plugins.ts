@@ -33,7 +33,51 @@ const dbPlugins: DbPlugins = {
         async (issue) => await closeIssue(REPOSITORY, issue.number),
       )
     },
+    deleteNonUnique: async () => {
+      const issues = await getIssues(REPOSITORY, 'open')
+      let idx = 0
+      while (idx < issues.length) {
+        await closeDuplicates(issues, issues[idx].number)
+        idx++
+      }
+    },
+    hasDuplicates: async (id: number) => {
+      const issues = await getIssues(REPOSITORY, 'open')
+      await closeDuplicates(issues, id)
+    },
+    count: async () => {
+      const issues = await getIssues(REPOSITORY, 'open')
+      console.log('Issues: ', issues.length)
+    },
   },
+}
+
+type GithubIssue = Exclude<
+  Awaited<ReturnType<typeof getIssues>>[0],
+  null | undefined
+>
+
+async function closeDuplicates(issues: GithubIssue[], id: number) {
+  const issue = issues.find((issue) => issue.number === id)
+  if (!issue) {
+    console.error(`Issue ${id} not found`)
+    return
+  }
+  const issueLabelsString = JSON.stringify(issue.labels)
+  const copies = issues
+    .filter((i) => i.title === issue.title)
+    .filter((i) => JSON.stringify(i.labels) === issueLabelsString)
+    .sort((a, b) => a.number - b.number)
+  if (copies.length > 1) {
+    console.log(`Duplicates found for issue ${id}`)
+    const issueToKeep = copies.pop()
+    const duplicateIds = copies.map((i) => i.number)
+    duplicateIds.forEach(async (id) => {
+      await closeIssue(REPOSITORY, id)
+    })
+    issues = issues.filter((i) => !(i.number in copies))
+    console.log(`Keeping issue ${issueToKeep!.number}`)
+  }
 }
 
 export default dbPlugins

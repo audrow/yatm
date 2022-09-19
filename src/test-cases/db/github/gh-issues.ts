@@ -1,13 +1,13 @@
 import {Octokit} from 'octokit'
 import {sleep} from 'sleep'
-import {GITHUB_API_TOKEN, RETRY_SECONDS} from '../../../constants.github'
+import {GITHUB_TOKEN, RETRY_SECONDS} from '../../../constants.github'
 import type GithubIssue from './__types__/GithubIssue'
 import type IssueState from './__types__/IssueState'
 import type Repo from './__types__/Repo'
 import type Status from './__types__/Status'
 
 const gh = new Octokit({
-  auth: GITHUB_API_TOKEN,
+  auth: GITHUB_TOKEN,
 }).rest
 
 export async function isIssueAlreadyOpen(

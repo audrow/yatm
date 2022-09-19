@@ -1,0 +1,38 @@
+
+Errors
+======
+Errors in gazebosim/docs:
+ * Skipping 'index.yaml' since it is not a markdown file
+
+Errors in gazebosim/gz-fuel-tools:
+ * Skipping index.md: Could not find a \page handle
+
+Errors in gazebosim/gz-gui:
+ * Skipping index.md: Could not find a \page handle
+
+Errors in gazebosim/gz-rendering:
+ * Skipping index.md: Could not find a \page handle
+
+Errors in gazebosim/gz-sensors:
+ * Skipping 04_boundingbox_camera.md: Could not find a \page handle
+
+Errors in gazebosim/sdformat:
+ * Could not read the tutorials directory
+
+Errors in gazebosim/gz-sim:
+ * Skipping 'CMakeLists.txt' since it is not an SDF file
+ * Skipping 'actors_population.sdf.erb' since it is not an SDF file
+ * Skipping 'shapes_population.sdf.erb' since it is not an SDF file
+
+Errors in gazebosim/sdf_tutorials:
+ * Skipping better_pose_proposal
+ * Skipping pose_frame_semantics_proposal
+ * Skipping convert_sdf_to_usd
+ * Skipping python_bindings
+ * Skipping custom_elements_attributes_proposal
+ * Skipping roadmap
+ * Skipping composition_proposal
+ * Skipping composition_merge_proposal
+ * Skipping param_passing_proposal
+ * Skipping proposal_format
+
