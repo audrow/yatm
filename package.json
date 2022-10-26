@@ -79,7 +79,7 @@
     "endent": "^2.1.0",
     "fast-xml-parser": "^4.0.11",
     "js-yaml": "^4.1.0",
-    "octokit": "^2.0.9",
+    "octokit": "^2.0.10",
     "proper-url-join": "^2.1.1",
     "ros2-cache": "^0.0.4",
     "sitemapper": "^3.2.6",
