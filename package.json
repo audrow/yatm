@@ -55,7 +55,7 @@
     "@types/sleep": "^0.0.8",
     "@types/url-parse": "^1.4.8",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.1",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "husky": "^8.0.3",
