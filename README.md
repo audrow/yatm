@@ -46,13 +46,10 @@ To get started, install [NodeJS 16](https://nodejs.org/en/), clone this reposito
 ```bash
 npm ci  # install dependencies
 npm run prepare  # setup git hooks
-npm link # call directly with tcm
 ```
 
-From there, you should be able to run the following command. If this doesn't work make sure that the place where node files are being stored is in your system path (`PATH`). You can also use `npx ts-node src/index.ts`.
-
 ```bash
-tcm -h
+npx ts-node src/index.ts -h
 ```
 
 From there, you can run the tests to confirm that things are working:
@@ -65,21 +62,21 @@ npm test
 
 ### Command line interface
 
-To run the script we'll use `tcm`. You can run this command without any arguments to see the help message. Note that most commands have shortcuts, such as `tcm requirements` which can be shortened to `tcm r`.
+To run the script we'll use `npx ts-node src/index.ts`. You can run this command without any arguments to see the help message. Note that most commands have shortcuts, such as `npx ts-node src/index.ts requirements` which can be shortened to `npx ts-node src/index.ts r`.
 
 Here are the steps to using this package:
 
 1. Make requirements
 
    ```bash
-   tcm requirements list-plugins # or tcm r l
-   tcm requirements make all # plugin name or all
+   npx ts-node src/index.ts requirements list-plugins # or npx ts-node src/index.ts r l
+   npx ts-node src/index.ts requirements make all # plugin name or all
    ```
 
 2. Make test cases:
 
    ```bash
-   tcm test-cases make
+   npx ts-node src/index.ts test-cases make
    ```
 
    Note that these test cases are made from data specified in the `test-case.config.yaml`.
@@ -87,13 +84,13 @@ Here are the steps to using this package:
 3. Create the test cases in the db
 
    ```bash
-   tcm test-cases db github create # or tcm t d github c
+   npx ts-node src/index.ts test-cases db github create # or npx ts-node src/index.ts t d github c
    ```
 
    You could then delete the created issues with the following command:
 
    ```bash
-   tcm test-cases db github delete "." # or tcm t d github d
+   npx ts-node src/index.ts test-cases db github delete "." # or npx ts-node src/index.ts t d github d
    ```
 
    Note you can also specify some regex code with create or delete that will be used to match labels or the PR's title.
