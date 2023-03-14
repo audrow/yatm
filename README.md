@@ -104,10 +104,10 @@ Here is where different configuration lives:
 - `src/constants.ts`: Configuration about directory structure, files that are looked for, etc.
 - `test-case.config.yaml`: A YAML file that specifies the test case generation, as well as filters for what test cases to create from requirements and to specify the dimensions that should be varied for the test cases.
 
-You will also need an environmental variable for your Github Personal Access token, stored in `GITHUB_API_TOKEN`. The easiest way to do this is probably to have a `.env` file in the project's root which has the following content:
+You will also need an environmental variable for your Github Personal Access token, stored in `GITHUB_TOKEN`. The easiest way to do this is probably to have a `.env` file in the project's root which has the following content:
 
 ```bash
-GITHUB_API_TOKEN="ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+GITHUB_TOKEN=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
 Note that your personal access token will need to have the ability to read and write the repository you would like to create issues in.
