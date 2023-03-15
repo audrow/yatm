@@ -5,127 +5,132 @@ translation_map:
   fastdds: 'FastDDS'
   dds: 'DDS vendor'
 sets:
-  # Makes everything but install files and READMEs
+  # Documentation
+  # This is only being run on one combination since this is testing the documentation
+  # and the functionality seen in the documentation will be tested on several other
+  # platforms, chip sets, and operating systems in the core and feature test cases
   - filters:
       - isMatch: true
         labels:
-          - garden
+          - docs
       - isMatch: false
-        name: install
+        labels:
+          - launch-files
       - isMatch: false
-        name: README
-    dimensions:
-      os:
-        - Ubuntu Focal
-        - Ubuntu Jammy
-        - macOS 11 (Big Sur)
-        - Windows 10
-      buildType:
-        - Binary
-        - Source
-  # Makes the READMEs only once
-  - filters:
-      - isMatch: true
+        name: Launch system
         labels:
-          - garden
+          - launch
       - isMatch: false
-        name: install
-      - isMatch: true
-        name: README
-    dimensions:
-      os:
-        - Ubuntu Focal
-      buildType:
-        - Binary
-  #####################
-  # INSTALL FROM SOURCE
-  #####################
-  # Install on MacOS from source
-  - filters:
-      - isMatch: true
         labels:
-          - garden
-      - isMatch: true
-        name: osx
-      - isMatch: true
-        name: src
-    dimensions:
-      os:
-        - macOS 11 (Big Sur)
-      buildType:
-        - Source
-  # Install on Windows from source
-  - filters:
-      - isMatch: true
-        labels:
-          - garden
-      - isMatch: true
-        name: windows
-      - isMatch: true
-        name: src
-    dimensions:
-      os:
-        - Windows 10
-      buildType:
-        - Source
-  # Install on Ubuntu from source
-  - filters:
-      - isMatch: true
-        labels:
-          - garden
-      - isMatch: true
-        name: ubuntu
-      - isMatch: true
-        name: src
-    dimensions:
-      os:
-        - Ubuntu Focal
-        - Ubuntu Jammy
-      buildType:
-        - Source
-  #####################
-  # INSTALL FROM BINARIES
-  #####################
-  # Install on MacOS from binaries
-  - filters:
-      - isMatch: true
-        labels:
-          - garden
-      - isMatch: true
-        name: osx
+          - webots
       - isMatch: false
-        name: src
+        name: Security on Two
+      - isMatch: false
+        name: Eclipse Oxygen with ROS 2 and rviz2
+      - isMatch: false
+        name: Building Realtime rt_preempt kernel for ROS 2
+      - isMatch: false
+        name: Releasing a ROS 2 package with bloom
+      - isMatch: false
+        name: Rosbag with ROS1 Bridge
     dimensions:
-      os:
-        - macOS 11 (Big Sur)
+      dds:
+        - fastdds
       buildType:
-        - Binary
-  # Install on Windows from binaries
+        - debian
+      os:
+        - jammy
+      chip:
+        - amd64
+
+  # Features
+  # Jammy
   - filters:
       - isMatch: true
         labels:
-          - garden
-      - isMatch: true
-        name: windows
+          - feature
       - isMatch: false
-        name: src
+        labels:
+          - windows
     dimensions:
-      os:
-        - Windows 10
+      dds:
+        - fastdds
+        - cyclone
       buildType:
-        - Binary
-  # Install on Ubuntu from binaries
+        - debian
+      os:
+        - jammy
+      chip:
+        - amd64
+  # Windows
   - filters:
       - isMatch: true
         labels:
-          - garden
-      - isMatch: true
-        name: ubuntu
+          - feature
       - isMatch: false
-        name: src
+        labels:
+          - linux
     dimensions:
-      os:
-        - Ubuntu Focal
-        - Ubuntu Jammy
+      dds:
+        - fastdds
+        - cyclone
       buildType:
-        - Binary
+        - binary
+      os:
+        - windows
+      chip:
+        - amd64
+
+  # Core
+  # Jammy
+  - filters:
+      - isMatch: true
+        labels:
+          - core
+    dimensions:
+      dds:
+        - fastdds
+        - cyclone
+        - connext
+      buildType:
+        - debian
+        - binary
+        - source
+      chip:
+        - amd64
+        - arm64
+      os:
+        - jammy
+  # Windows (no arm64)
+  - filters:
+      - isMatch: true
+        labels:
+          - core
+    dimensions:
+      dds:
+        - fastdds
+        - cyclone
+        - connext
+      buildType:
+        - binary
+        - source
+      chip:
+        - amd64
+      os:
+        - windows
+
+  # Core for tear 3 platforms
+  - filters:
+      - isMatch: true
+        labels:
+          - core
+    dimensions:
+      dds:
+        - fastdds
+      buildType:
+        - source
+      chip:
+        - amd64
+      os:
+        - focal
+        - rhel 8
