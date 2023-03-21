@@ -21,7 +21,8 @@ async function processSitemap(distro: string, baseUrl: string) {
     throw new Error('Could not fetch distro sitemap')
   }
   const pages: Page[] = distroSitemap.map((url) => {
-    const match = url.match(distroUrl + '/(.+).html')
+    const urlWithoutEn = url.replace(`${distro}en`, distro)
+    const match = urlWithoutEn.match(distroUrl + '/(.+).html')
     if (!match) {
       throw new Error(`Could not parse url ${url}`)
     }
@@ -32,7 +33,7 @@ async function processSitemap(distro: string, baseUrl: string) {
     }
     const labels = urlParts.map((p) => p.toLowerCase())
     return {
-      url,
+      url: urlWithoutEn,
       name,
       labels,
     }
