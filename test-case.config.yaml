@@ -90,7 +90,6 @@ sets:
       buildType:
         - debian
         - binary
-        - source
       chip:
         - amd64
         - arm64
@@ -127,5 +126,4 @@ sets:
       chip:
         - amd64
       os:
-        - focal
-        - rhel 8
+        - rhel 9
