@@ -424,7 +424,14 @@ requirements:
     checks:
       - name: Check delete
         try:
-          - stdin: ros2 param delete
+          - stdin: ros2 run turtlesim turtlesim_node
+            terminal: 1
+          - stdin: ros2 param delete /turtlesim background_b
+            terminal: 2
+        expect:
+          - stdout: |
+              Deleting parameter failed: cannot undeclare a statically typed parameter
+            terminal: 2
       - name: Check describe
         try:
           - stdin: ros2 run turtlesim turtlesim_node
