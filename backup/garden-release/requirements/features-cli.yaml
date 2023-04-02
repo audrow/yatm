@@ -73,14 +73,14 @@ requirements:
         expect:
           - note: Something like the following
             stdout: |
-              Files:             my-bag_0.db3
-              Bag size:          16.9 KiB
-              Storage id:        sqlite3
-              Duration:          3.0s
-              Start:             Apr  4 2022 18:00:05.863 (1649120405.863)
-              End:               Apr  4 2022 18:00:08.863 (1649120408.863)
-              Messages:          4
-              Topic information: Topic: /chatter | Type: std_msgs/msg/String | Count: 4 | Serialization Format: cdr
+              Files:             my-bag_0.mcap
+              Bag size:          3.0 KiB
+              Storage id:        mcap
+              Duration:          3.999s
+              Start:             Apr  2 2023 13:45:47.834 (1680414347.834)
+              End:               Apr  2 2023 13:45:51.834 (1680414351.834)
+              Messages:          5
+              Topic information: Topic: /chatter | Type: std_msgs/msg/String | Count: 5 | Serialization Format: cdr
       - name: Check play
         try:
           - note: Continuing from the previous two checks. Make sure that the talker is stopped.
