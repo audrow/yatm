@@ -630,7 +630,7 @@ requirements:
         try:
           - stdin: ros2 run demo_nodes_cpp add_two_ints_server
             terminal: 1
-          - stdin: ros2 service find
+          - stdin: ros2 service find example_interfaces/srv/AddTwoInts
             terminal: 2
         expect:
           - stdout: /add_two_ints
