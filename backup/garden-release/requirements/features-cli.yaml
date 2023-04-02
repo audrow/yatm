@@ -105,31 +105,127 @@ requirements:
             note: Something like the following.
             terminal: 2
 
-  # TODO add details to this requirement
   - name: Check ROS 2 component CLI
     labels:
       - ros2cli
       - feature
       - ros2component
     checks:
-      - name: Check info
-        try:
-          - stdin: ros2 component info
       - name: Check list
         try:
+          - stdin: ros2 run rclcpp_components component_container
+            terminal: 1
           - stdin: ros2 component list
+            terminal: 2
+        expect:
+          - stdout: /ComponentManager
+            terminal: 2
       - name: Check load
         try:
-          - stdin: ros2 component load
+          - stdin: ros2 run rclcpp_components component_container
+            terminal: 1
+          - stdin: ros2 component load /ComponentManager action_tutorials_cpp action_tutorials_cpp::FibonacciActionServer
+            terminal: 2
+        expect:
+          - stdout: |
+              [INFO] [1680446030.083590920] [ComponentManager]: Found class: rclcpp_components::NodeFactoryTemplate<action_tutorials_cpp::FibonacciActionServer>
+              [INFO] [1680446030.083610890] [ComponentManager]: Instantiate class: rclcpp_components::NodeFactoryTemplate<action_tutorials_cpp::FibonacciActionServer>
+            terminal: 1
+          - stdout: Loaded component 1 into '/ComponentManager' container node as '/fibonacci_action_server'
+            terminal: 2
       - name: Check standalone
         try:
-          - stdin: ros2 component standalone
+          - stdin: ros2 run rclcpp_components component_container
+            terminal: 1
+          - stdin: ros2 component standalone action_tutorials_cpp action_tutorials_cpp::FibonacciActionServer
+            terminal: 2
+          - stdin: ros2 component list
+            terminal: 3
+        expect:
+          - stdout: |
+              [INFO] [1680446030.083590920] [ComponentManager]: Found class: rclcpp_components::NodeFactoryTemplate<action_tutorials_cpp::FibonacciActionServer>
+              [INFO] [1680446030.083610890] [ComponentManager]: Instantiate class: rclcpp_components::NodeFactoryTemplate<action_tutorials_cpp::FibonacciActionServer>
+            terminal: 2
+          - stdout: |
+              /ComponentManager
+              /standalone_container_8269218e7494
+                1  /fibonacci_action_server
+            terminal: 3
       - name: Check types
         try:
           - stdin: ros2 component types
+        expect:
+          - note: Something like the following
+            stdout: |
+              robot_state_publisher
+                robot_state_publisher::RobotStatePublisher
+              tf2_ros
+                tf2_ros::StaticTransformBroadcasterNode
+              quality_of_service_demo_cpp
+                quality_of_service_demo::MessageLostListener
+                quality_of_service_demo::MessageLostTalker
+                quality_of_service_demo::QosOverridesListener
+                quality_of_service_demo::QosOverridesTalker
+              image_tools
+                image_tools::Cam2Image
+                image_tools::ShowImage
+              logging_demo
+                logging_demo::LoggerConfig
+                logging_demo::LoggerUsage
+              examples_rclcpp_wait_set
+                Talker
+                Listener
+              examples_rclcpp_minimal_subscriber
+                WaitSetSubscriber
+                StaticWaitSetSubscriber
+                TimeTriggeredWaitSetSubscriber
+              demo_nodes_cpp_native
+                demo_nodes_cpp_native::Talker
+              demo_nodes_cpp
+                demo_nodes_cpp::OneOffTimerNode
+                demo_nodes_cpp::ReuseTimerNode
+                demo_nodes_cpp::ServerNode
+                demo_nodes_cpp::ClientNode
+                demo_nodes_cpp::IntrospectionServiceNode
+                demo_nodes_cpp::IntrospectionClientNode
+                demo_nodes_cpp::ListParameters
+                demo_nodes_cpp::ParameterBlackboard
+                demo_nodes_cpp::SetAndGetParameters
+                demo_nodes_cpp::ParameterEventsAsyncNode
+                demo_nodes_cpp::EvenParameterNode
+                demo_nodes_cpp::SetParametersCallback
+                demo_nodes_cpp::ContentFilteringPublisher
+                demo_nodes_cpp::ContentFilteringSubscriber
+                demo_nodes_cpp::Talker
+                demo_nodes_cpp::LoanedMessageTalker
+                demo_nodes_cpp::SerializedMessageTalker
+                demo_nodes_cpp::Listener
+                demo_nodes_cpp::SerializedMessageListener
+                demo_nodes_cpp::ListenerBestEffort
+              composition
+                composition::Talker
+                composition::Listener
+                composition::NodeLikeListener
+                composition::Server
+                composition::Client
+              action_tutorials_cpp
+                action_tutorials_cpp::FibonacciActionClient
+                action_tutorials_cpp::FibonacciActionServer
       - name: Check unload
         try:
-          - stdin: ros2 component unload
+          - stdin: ros2 run rclcpp_components component_container
+            terminal: 1
+          - stdin: ros2 component load action_tutorials_cpp action_tutorials_cpp::FibonacciActionServer
+            terminal: 2
+          - stdin: ros2 component unload /ComponentManager 1
+            terminal: 3
+        expect:
+          - stdout: |
+              Loaded component 1 into '/ComponentManager' container node as '/fibonacci_action_server'
+            terminal: 2
+          - stdout: |
+              Unloaded component 1 from '/ComponentManager' container node
+            terminal: 3
 
   - name: Check ROS 2 daemon CLI
     labels:
