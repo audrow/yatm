@@ -36,4 +36,6 @@ export const TRANSLATION_MAP = {
   dds: 'DDS vendor',
 }
 
+export const DISTRO_LABEL = 'iron'
+
 export const CODE_URL = 'https://github.com/audrow/yatm'
