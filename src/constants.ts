@@ -62,6 +62,9 @@ export const REPOSITORY: Repo = {
   name: ENV.GITHUB_REPO_NAME,
 }
 
+// TODO(YV): Update to YATM_DISTRO_LABEL
+export const DISTRO_LABEL = 'iron'
+
 const packageXml = JSON.parse(
   fs.readFileSync(join(process.cwd(), 'package.json'), 'utf8'),
 )
