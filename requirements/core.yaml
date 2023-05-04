@@ -38,16 +38,16 @@ requirements:
             note: Suggests the launch files name `talker_listener`
           - stdin: ros2 launch demo_nodes_cpp talker_listener<tab><tab>
             note: Lists several launch files that start with `talker_listener`
-          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.p<tab>
-            note: Completes the launch files name `talker_listener.launch.py`
+          - stdin: ros2 launch demo_nodes_cpp talker_listener_launch.p<tab>
+            note: Completes the launch files name `talker_listener_launch.py`
         expect:
-          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+          - stdin: ros2 launch demo_nodes_cpp talker_listener_launch.py
             note: You eventually get to the full command
       - name: Node discovery
         description: |
           With another node running, use `ros2 node list` to ensure that the expected node is listed. Then stop the node and ensure that the list operation no longer shows the node.
         try:
-          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+          - stdin: ros2 launch demo_nodes_cpp talker_listener_launch.py
             terminal: 1
           - stdin: ros2 node list
             terminal: 2
@@ -60,7 +60,7 @@ requirements:
         description: |
           With another node running, use `ros2 topic list` to ensure that the expected topics are listed. Then stop the node and ensure that the list operation no longer shows the node's topics.
         try:
-          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+          - stdin: ros2 launch demo_nodes_cpp talker_listener_launch.py
             terminal: 1
           - stdin: ros2 topic list
             terminal: 2
@@ -149,7 +149,7 @@ requirements:
 
           Loading visualizations into the tree and using the mouse to navigate through the virtual workspace is sufficient for this test.
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: rviz2
             terminal: 2
@@ -176,7 +176,7 @@ requirements:
 
           The rqt window should be generally usable and should be able to populate some of the discovered plugins.
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: rqt
             terminal: 2

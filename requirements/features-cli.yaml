@@ -405,7 +405,7 @@ requirements:
     checks:
       - name: Check launch package
         try:
-          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+          - stdin: ros2 launch demo_nodes_cpp talker_listener_launch.py
         expect:
           - note: You should see something like the following
             stdout: |
@@ -423,9 +423,9 @@ requirements:
 
       - name: Check launch launch file directly
         try:
-          - stdin: curl https://raw.githubusercontent.com/ros2/demos/master/demo_nodes_cpp/launch/topics/talker_listener.launch.py > /tmp/talker_listener.launch.py
+          - stdin: curl https://raw.githubusercontent.com/ros2/demos/master/demo_nodes_cpp/launch/topics/talker_listener_launch.py > /tmp/talker_listener_launch.py
             note: Download a launch file, for example with `curl`.
-          - stdin: ros2 launch /tmp/talker_listener.launch.py
+          - stdin: ros2 launch /tmp/talker_listener_launch.py
         expect:
           - note: You should see something like the following
             stdout: |
@@ -471,7 +471,7 @@ requirements:
     checks:
       - name: Check info
         try:
-          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+          - stdin: ros2 launch demo_nodes_cpp talker_listener_launch.py
             note: Launch a node
             terminal: 1
           - stdin: ros2 node info /talker
@@ -501,7 +501,7 @@ requirements:
               Action Clients:
       - name: Check list
         try:
-          - stdin: ros2 launch demo_nodes_cpp talker_listener.launch.py
+          - stdin: ros2 launch demo_nodes_cpp talker_listener_launch.py
             note: Launch a node
             terminal: 1
           - stdin: ros2 node list
@@ -777,7 +777,7 @@ requirements:
     checks:
       - name: Check bw
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic bw /joint_states
             terminal: 2
@@ -793,7 +793,7 @@ requirements:
               ...
       - name: Check delay
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic delay /joint_states
             terminal: 2
@@ -808,7 +808,7 @@ requirements:
               ...
       - name: Check echo
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic echo /joint_states
             terminal: 2
@@ -834,7 +834,7 @@ requirements:
               ...
       - name: Check find
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic find sensor_msgs/msg/JointState
             terminal: 2
@@ -843,7 +843,7 @@ requirements:
             stdout: /joint_states
       - name: Check hz
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic hz /joint_states
             terminal: 2
@@ -858,7 +858,7 @@ requirements:
               ...
       - name: Check info
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic info /joint_states
             terminal: 2
@@ -870,7 +870,7 @@ requirements:
               Subscription count: 1
       - name: Check list
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic list
             terminal: 2
@@ -887,7 +887,7 @@ requirements:
               /tf_static
       - name: Check type
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
             terminal: 1
           - stdin: ros2 topic type /joint_states
             terminal: 2
