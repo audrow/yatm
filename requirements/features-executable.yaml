@@ -435,6 +435,7 @@ requirements:
     labels:
       - executable
       - feature
+      - linux
     checks:
       - name: Check `tlsf_allocator_example`
         try:
@@ -443,6 +444,7 @@ requirements:
     labels:
       - executable
       - feature
+      - linux
     checks:
       - name: Check `rttest_plot`
         try:
