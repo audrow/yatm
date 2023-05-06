@@ -215,7 +215,7 @@ requirements:
         try:
           - stdin: ros2 run rclcpp_components component_container
             terminal: 1
-          - stdin: ros2 component load action_tutorials_cpp action_tutorials_cpp::FibonacciActionServer
+          - stdin: ros2 component load /ComponentManager action_tutorials_cpp action_tutorials_cpp::FibonacciActionServer
             terminal: 2
           - stdin: ros2 component unload /ComponentManager 1
             terminal: 3
