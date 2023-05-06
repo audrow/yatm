@@ -31,7 +31,7 @@ requirements:
         try:
           - stdin: ros2 run examples_rclcpp_minimal_action_server action_server_member_functions
             terminal: 1
-          - stdin: ros2 action send_goal /fibonacci example_interfaces/action/Fibonacci order:\ 2\
+          - stdin: ros2 action send_goal /fibonacci example_interfaces/action/Fibonacci order:\ 2
             terminal: 2
         expect:
           - stdout: |
