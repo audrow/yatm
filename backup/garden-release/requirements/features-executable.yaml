@@ -515,13 +515,13 @@ requirements:
     checks:
       - name: Check `ros2 bag record -a`
         try:
-          - stdin: ros2 run rosbag2 ros2 bag record -a
+          - stdin: ros2 bag record -a
       - name: Check `ros2 bag record <topic1> <topic2> <topic3>`
         try:
-          - stdin: ros2 run rosbag2 ros2 bag record <topic1> <topic2> <topic3>
+          - stdin: ros2 bag record <topic1> <topic2> <topic3>
       - name: Check `ros2 bag info <bag_file>`
         try:
-          - stdin: ros2 run rosbag2 ros2 bag info <bag_file>
+          - stdin: ros2 bag info <bag_file>
       - name: Check `ros2 bag play <bag_file>`
         try:
-          - stdin: ros2 run rosbag2 ros2 bag play <bag_file>
+          - stdin: ros2 bag play <bag_file>
