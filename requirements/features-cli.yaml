@@ -447,14 +447,13 @@ requirements:
       - feature
       - ros2multicast
     checks:
-      - name: Check receive
+      - name: Check send and receive
         try:
           - stdin: ros2 multicast receive
             terminal: 1
           - stdin: ros2 multicast send
             terminal: 2
-      - name: Check send
-        try:
+        expect:
           - stdout: |
               Waiting for UDP multicast datagram...
               Received from 10.211.55.9:59527: 'Hello World!'
