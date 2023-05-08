@@ -418,6 +418,7 @@ requirements:
     labels:
       - executable
       - feature
+      - linux
     checks:
       - name: Check `pendulum_demo`
         try:
