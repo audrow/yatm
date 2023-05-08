@@ -172,7 +172,7 @@ requirements:
           - stdin: ros2 run tf2_ros tf2_monitor
       - name: Check `static_transform_publisher`
         try:
-          - stdin: ros2 run tf2_ros static_transform_publisher
+          - stdin: ros2 run tf2_ros static_transform_publisher --frame-id world --child-frame-id map
   - name: Executables in `examples_rclcpp_minimal_publisher`
     labels:
       - executable
