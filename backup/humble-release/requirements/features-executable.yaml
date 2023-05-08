@@ -156,9 +156,9 @@ requirements:
       - executable
       - feature
     checks:
-      - name: Check `lifecycle_demo.launch.py`
+      - name: Check `lifecycle_demo_launch.py`
         try:
-          - stdin: ros2 launch lifecycle lifecycle_demo.launch.py
+          - stdin: ros2 launch lifecycle lifecycle_demo_launch.py
   - name: Executables in `tf2_ros`
     labels:
       - executable
@@ -471,9 +471,9 @@ requirements:
       - executable
       - feature
     checks:
-      - name: Check `dummy_robot_bringup.launch.py`
+      - name: Check `dummy_robot_bringup_launch.py`
         try:
-          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup.launch.py
+          - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.py
       - name: Check `dummy_robot_bringup_launch.xml`
         try:
           - stdin: ros2 launch dummy_robot_bringup dummy_robot_bringup_launch.xml

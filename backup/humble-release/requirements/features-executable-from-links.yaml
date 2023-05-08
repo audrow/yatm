@@ -125,9 +125,9 @@ requirements:
           - note: |
               You will need two machines with ROS 2: one mobile and one stationary.
           - stdin: ros2 run topic_monitor topic_monitor --display
-          - stdin: ros2 launch topic_monitor reliability_demo.launch.py
+          - stdin: ros2 launch topic_monitor reliability_demo_launch.py
             note: |
-              Run the `ros2 launch topic_monitor reliability_demo.launch.py` executable on the stationary machine. This will start two nodes: one publishing in “reliable” mode, and one in “best effort”.
+              Run the `ros2 launch topic_monitor reliability_demo_launch.py` executable on the stationary machine. This will start two nodes: one publishing in “reliable” mode, and one in “best effort”.
           - stdin: ros2 run topic_monitor topic_monitor --display --allowed-latency 5
             note: |
               Start the monitor on a mobile machine such as a laptop. Use `ros2 run topic_monitor topic_monitor --display --allowed-latency 5` to account for any latency that may occur re-sending the reliable messages.
