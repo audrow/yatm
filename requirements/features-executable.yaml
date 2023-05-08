@@ -507,7 +507,7 @@ requirements:
     checks:
       - name: Check `rqt`
         try:
-          - stdin: ros2 run rqt rqt
+          - stdin: rqt
   - name: Executables in `rosbag2`
     labels:
       - executable
