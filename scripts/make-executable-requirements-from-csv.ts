@@ -21,7 +21,9 @@ function getPackageExecutables(content: string) {
     }
 
     // Handle different formats used in CSV columns
-    const splitExecutables = executables.split(':')
+    // The data file `executable-features.csv` needs to use `: ` to separate the package
+    // and executables since there exists cases using parameter by `key:=value` for a launch file
+    const splitExecutables = executables.split(': ')
     let currentPackage: string
     let currentExecutables: string[]
     if (splitExecutables.length === 2 && lastPackage.slice(-1) === '*') {
@@ -88,7 +90,10 @@ function getRequirementsYaml(features: Features, labels: string[]) {
       labels: [...labels],
       checks: executables.map((executable) => {
         let command: string
-        if (executable.match(/launch/)) {
+        if (executable.match(/[ros2 launch][ros2 bag]/)) {
+          // Deal with special cases that using `ros2 launch` or `ros2 bag`
+          command = `${executable}`
+        } else if (executable.match(/launch/)) {
           command = `ros2 launch ${packageName} ${executable}`
         } else {
           command = `ros2 run ${packageName} ${executable}`

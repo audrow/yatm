@@ -38,6 +38,6 @@ dummy_map_server,dummy_map_server
 dummy_sensors,"dummy_joint_states, dummy_laser"
 dummy_robot_bringup,"dummy_robot_bringup_launch.py, dummy_robot_bringup_launch.xml, dummy_robot_bringup_launch.yaml "
 rviz2,rviz2
-gazebo_ros_pkgs,gazebo --verbose /opt/ros/rolling/share/gazebo_plugins/worlds/gazebo_ros_camera_distortion_barrel_demo.world
+gazebo_ros_pkgs,"ros2 launch gazebo_ros gazebo.launch.py verbose:=true world:=/opt/ros/${ROS_DISTRO}/share/gazebo_plugins/worlds/gazebo_ros_camera_distortion_barrel_demo.world"
 rqt,rqt
 rosbag2,"ros2 bag record -a, ros2 bag record <topic1> <topic2> <topic3>, ros2 bag info <bag_file>, ros2 bag play <bag_file>"
