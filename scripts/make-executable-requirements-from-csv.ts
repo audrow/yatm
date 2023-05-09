@@ -90,7 +90,7 @@ function getRequirementsYaml(features: Features, labels: string[]) {
       labels: [...labels],
       checks: executables.map((executable) => {
         let command: string
-        if (executable.match(/[ros2 launch][ros2 bag]/)) {
+        if (executable.match(/(ros2 launch)|(ros2 bag)/)) {
           // Deal with special cases that using `ros2 launch` or `ros2 bag`
           command = `${executable}`
         } else if (executable.match(/launch/)) {
