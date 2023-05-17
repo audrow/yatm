@@ -645,7 +645,7 @@ requirements:
         try:
           - stdin: ros2 pkg prefix turtlesim
         expect:
-          - note: This varies depending on your install type. For example, from binaries on Ubuntu, it will be `/opt/ros/humble`
+          - note: This varies depending on your install type. For example, from binaries on Ubuntu, it will be `/opt/ros/iron`
       - name: Check xml
         try:
           - stdin: ros2 pkg xml turtlesim
