@@ -8,6 +8,51 @@ requirements:
         url: https://github.com/ros2/demos/blob/iron/composition/README.md
     checks:
       - name: The executables in the README and present and work as expected.
+  - name: Demo Nodes (CPP) executables
+    labels:
+      - executable
+      - feature
+    links:
+      - name: Nodes cpp demos
+        url: https://github.com/ros2/demos/blob/iron/demo_nodes_cpp/README.md
+    checks:
+      - name: The executables in the README and present and work as expected.
+  - name: Demo Nodes Native (CPP) executables
+    labels:
+      - executable
+      - feature
+    links:
+      - name: Nodes cpp native demos
+        url: https://github.com/ros2/demos/blob/iron/demo_nodes_cpp_native/README.md
+    checks:
+      - name: The executables in the README and present and work as expected.
+  - name: Dummy Map Server executables
+    labels:
+      - executable
+      - feature
+    links:
+      - name: Dummy Map Server
+        url: https://github.com/ros2/demos/blob/iron/dummy_robot/dummy_map_server/README.md#run
+    checks:
+      - name: The executables in the README and present and work as expected.
+  - name: Dummy Sensors executables
+    labels:
+      - executable
+      - feature
+    links:
+      - name: Dummy Sensors
+        url: https://github.com/ros2/demos/blob/iron/dummy_robot/dummy_sensors/README.md#run
+    checks:
+      - name: The executables in the README and present and work as expected.
+  - name: Image-tools executables
+    labels:
+      - executable
+      - feature
+    links:
+      - name: Image-tools demos
+        url: https://github.com/ros2/demos/blob/iron/image_tools/README.md#run
+    checks:
+      - name: The executables in the README and present and work as expected.
   - name: Intra-process executables
     labels:
       - executable
