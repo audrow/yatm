@@ -158,6 +158,7 @@ requirements:
     labels:
       - executable
       - feature
+      - linux
       - ros1_bridge
     links:
       - name: Reference URL
