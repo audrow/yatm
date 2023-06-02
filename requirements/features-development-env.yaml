@@ -5,5 +5,5 @@ requirements:
       - development
     checks:
       - name: Test message generation using .msg, .srv, .action and .idl on top of the installed environment.
-      description: |
-        Generate messages from .msg, .srv, and .action files, this will automatically create their .idl files. Additionally, ensure that messages can be generated from .idl files alone.
+        description: |
+          Generate messages from .msg, .srv, and .action files, this will automatically create their .idl files. Additionally, ensure that messages can be generated from .idl files alone.
