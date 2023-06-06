@@ -668,6 +668,14 @@ requirements:
               [INFO] [1649123363.906469087] [talker]: Publishing: 'Hello World: 2'
               [INFO] [1649123364.905960807] [talker]: Publishing: 'Hello World: 3'
               ...
+
+  - name: Check ROS 2 run CLI with prefixes
+    labels:
+      - ros2cli
+      - feature
+      - ros2run
+      - linux
+    checks:
       - name: Check run with prefix
         try:
           - stdin: ros2 run --prefix 'gdb -ex run' demo_nodes_cpp talker
