@@ -461,6 +461,7 @@ requirements:
     labels:
       - executable
       - feature
+      - linux
     checks:
       - name: >-
           Check `gazebo --verbose
