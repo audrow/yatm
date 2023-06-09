@@ -1,6 +1,8 @@
+// import def from 'ajv/dist/vocabularies/discriminator'
 import 'dotenv/config'
 import fs from 'fs'
 import {join} from 'path'
+import type Repo from './test-cases/db/github/__types__/Repo'
 
 const packageXml = JSON.parse(
   fs.readFileSync(join(process.cwd(), 'package.json'), 'utf8'),
@@ -29,11 +31,32 @@ export const OUTPUT_TEST_CASE_RENDER_PATH = join(
   RENDERED_TEST_CASE_DIRECTORY,
 )
 
-export const TRANSLATION_MAP = {
-  jammy: 'Ubuntu Jammy',
-  installType: 'Install type',
-  fastdds: 'FastDDS',
-  dds: 'DDS vendor',
+// Define the names of the environment variables that will be retireved.
+export const GITHUB_REPO_OWNER_ENVAR_NAME = 'GITHUB_REPO_OWNER'
+export const GITHUB_REPO_NAME_ENVAR_NAME = 'GITHUB_REPO_NAME'
+export const GITHUB_TOKEN_ENVAR_NAME = 'GITHUB_TOKEN'
+export const CODE_URL = 'https://github.com/audrow/yatm'
+
+// Retrieve the environment variables and define other constants to export.
+export const GITHUB_TOKEN = extractStringEnvVar(GITHUB_TOKEN_ENVAR_NAME)
+export const GITHUB_RETRY_SECONDS = 60 * 5
+export const REPOSITORY: Repo = {
+  owner: extractStringEnvVar(GITHUB_REPO_OWNER_ENVAR_NAME),
+  name: extractStringEnvVar(GITHUB_REPO_NAME_ENVAR_NAME),
 }
 
-export const CODE_URL = 'https://github.com/audrow/yatm'
+// Helper function to retrieve environment variables or throw and error if unspecified.
+export function extractStringEnvVar(
+  key: keyof NodeJS.ProcessEnv,
+  default_value = undefined,
+): string {
+  const value = process.env[key] || default_value
+
+  if (value === undefined) {
+    const message = `The environment variable "${key}" cannot be "undefined".`
+
+    throw new Error(message)
+  }
+
+  return value
+}

@@ -9,6 +9,11 @@ const configSchema: JSONSchemaType<Config> = {
       type: 'number',
       minimum: 1,
     },
+    translation_map: {
+      type: 'oject',
+      properties: {},
+      additionalProperties: true,
+    },
     sets: {
       type: 'array',
       items: {
@@ -64,7 +69,7 @@ const configSchema: JSONSchemaType<Config> = {
       minItems: 1,
     },
   },
-  required: ['generation', 'sets'],
+  required: ['generation', 'translation_map', 'sets'],
   additionalProperties: false,
 }
 

@@ -3,7 +3,6 @@ import fs from 'fs'
 import {join} from 'path'
 import sortObject from 'sort-object-keys'
 import * as constants from '../constants'
-import * as githubConstants from '../constants.github'
 import dbPlugins from '../plugins/db-plugins'
 import requirementsGeneratorPlugins from '../plugins/requirements-generator-plugins'
 import testCaseMarkupPlugins from '../plugins/test-case-markup-plugins'
@@ -123,7 +122,7 @@ function addTestCasesCommand(cmd: Command, dbPlugins: DbPlugins) {
           }
         })
       })
-      const githubUrl = `https://github.com/${githubConstants.REPOSITORY.owner}/${githubConstants.REPOSITORY.name}`
+      const githubUrl = `https://github.com/${constants.REPOSITORY.owner}/${constants.REPOSITORY.name}`
       let markdown = ''
       for (const [combination, auxLabels] of combinationsMap) {
         const combination_ = JSON.parse(combination)

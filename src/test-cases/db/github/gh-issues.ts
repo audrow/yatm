@@ -1,6 +1,6 @@
 import {Octokit} from 'octokit'
 import {sleep} from 'sleep'
-import {GITHUB_TOKEN, RETRY_SECONDS} from '../../../constants.github'
+import {GITHUB_RETRY_SECONDS, GITHUB_TOKEN} from '../../../constants'
 import type GithubIssue from './__types__/GithubIssue'
 import type IssueState from './__types__/IssueState'
 import type Repo from './__types__/Repo'
@@ -88,8 +88,10 @@ export async function createIssues(repo: Repo, issues: GithubIssue[]) {
   do {
     status = await createIssuesHelper(repo, issues)
     if (status === 'failure') {
-      console.log(`Retrying in ${RETRY_SECONDS.toLocaleString()} seconds...`)
-      sleep(RETRY_SECONDS)
+      console.log(
+        `Retrying in ${GITHUB_RETRY_SECONDS.toLocaleString()} seconds...`,
+      )
+      sleep(GITHUB_RETRY_SECONDS)
     }
   } while (status === 'failure')
 }
