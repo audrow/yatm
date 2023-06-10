@@ -10,9 +10,10 @@ const configSchema: JSONSchemaType<Config> = {
       minimum: 1,
     },
     translation_map: {
-      type: 'oject',
+      type: 'object',
       properties: {},
       additionalProperties: true,
+      required: [],
     },
     sets: {
       type: 'array',
