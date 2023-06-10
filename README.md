@@ -1,13 +1,14 @@
 # README
 
-- [Features](#features)
-- [Getting started](#getting-started)
-- [How to use this repository](#how-to-use-this-repository)
-  - [Command line interface](#command-line-interface)
-  - [Configuration](#configuration)
-  - [Creating Requirements](#creating-requirements)
-  - [Creating Test Cases from Requirements](#creating-test-cases-from-requirements)
-  - [Lessons Learned](#lessons-learned)
+- [README](#readme)
+  - [Features](#features)
+  - [Getting started](#getting-started)
+  - [How to use this repository](#how-to-use-this-repository)
+    - [Command line interface](#command-line-interface)
+    - [Configuration](#configuration)
+    - [Creating Requirements](#creating-requirements)
+    - [Creating Test Cases from Requirements](#creating-test-cases-from-requirements)
+    - [Lessons Learned](#lessons-learned)
 
 This project is used as an alternative to various test case management softwares.
 It allows you to define requirements and then to create test cases from those requirements.
@@ -97,20 +98,16 @@ Here are the steps to using this package:
 
 ### Configuration
 
-At the moment things are not very well exposed or configurable without going into a few top-level files and configuring them. If this package has more interest, I expect it to become more configurable over time.
-Here is where different configuration lives:
+`YATM` relies on several environment variables that need to be set.
+`YATM_TEST_CASE_CONFIG_PATH`: The absolute path to the YAML file that specifies the test case generation, as well as filters for what test cases to create from requirements and to specify the dimensions that should be varied for the test cases. See [example-test-case.config.yaml](./example-test-case.config.yaml)
 
-- `src/constants.github.ts`: Configuration to use this project with Github as the database
-- `src/constants.ts`: Configuration about directory structure, files that are looked for, etc.
-- `test-case.config.yaml`: A YAML file that specifies the test case generation, as well as filters for what test cases to create from requirements and to specify the dimensions that should be varied for the test cases.
+- `YATM_REQUIREMENTS_DIRECTORY_PATH`: The absolute path to a directly containing YAML files files that describe testing requirements. See [Creating Requirements](#creating-requirements) for more details.
+- `YATM_OUTPUT_DIRECTORY_PATH` (OPTIONAL): The absolute path to a directory where YATM should output test cases to. If unspecified, a `generated-files/` directory is created in the current working directory.
+- `GITHUB_REPO_OWNER`: The name of the github organization or owner containing the repository below.
+- `GITHUB_REPO_NAME`: The name of repository where Issue tickets for test cases should be opened.
+- `GITHUB_TOKEN`: Your Github Personal Access token which has the ability to read and write to the repository above.
 
-You will also need an environmental variable for your Github Personal Access token, stored in `GITHUB_TOKEN`. The easiest way to do this is probably to have a `.env` file in the project's root which has the following content:
-
-```bash
-GITHUB_TOKEN=ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Note that your personal access token will need to have the ability to read and write the repository you would like to create issues in.
+For convenience it's recommended to create a `.env` file in the project's root which exports the environment variables described above.
 
 ### Creating Requirements
 
