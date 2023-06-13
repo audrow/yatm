@@ -37,8 +37,6 @@ sets:
         labels:
           - ignition
       - isMatch: false
-        name: Custom ROS2 Interfaces.rst
-      - isMatch: false
         name: Recording A Bag From Your Own Node Python
     dimensions:
       dds:
