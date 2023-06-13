@@ -14,4 +14,7 @@ export GITHUB_REPO_NAME=garden-tutorial-party
 export GITHUB_TOKEN=<your-github-token>
 ```
 
+For convenience these exports may be added to a `.env` file in the root directory of `yatm`.
+Alternatively a tool like [direnv](https://direnv.net/) may also help with environment setup.
+
 Follow instruction [here](https://github.com/audrow/yatm#how-to-use-this-repository) to create and upload test cases.
