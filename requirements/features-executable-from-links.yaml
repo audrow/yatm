@@ -26,8 +26,9 @@ requirements:
         url: https://github.com/ros2/launch/blob/iron/launch_testing/README.md#examples
     checks:
       - name: Clone the example repository
-        - stdin: mkdir -p ~/launch_ws/src
-        - stdin: git clone https://github.com/ros2/launch -b iron ~/launch_ws/src/launch
+        try:
+          - stdin: mkdir -p ~/launch_ws/src
+          - stdin: git clone https://github.com/ros2/launch -b iron ~/launch_ws/src/launch
       - name: Test `hello_world_launch_test.py`
         try:
           - stdin: launch_test ~/launch_ws/src/launch/launch_testing/test/launch_testing/examples/hello_world_launch_test.py
