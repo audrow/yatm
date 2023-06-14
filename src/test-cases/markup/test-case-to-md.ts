@@ -1,13 +1,14 @@
 import endent from 'endent'
-import {CODE_URL, TRANSLATION_MAP as tMap} from '../../constants'
+import {CODE_URL, TEST_CASE_CONFIG} from '../../constants'
 import type Step from '../../requirements/__types__/Step'
+import loadConfig from '../utils/load-config'
 import type TestCase from '../__types__/TestCase'
 
 export default testCaseToMd
 
 function testCaseToMd(
   testCase: TestCase,
-  translationMap: {[key: string]: string} = tMap,
+  translationMap: {[key: string]: string} = {},
   isIncludeGeneratedUrl = true,
 ) {
   let text = ''
@@ -153,7 +154,7 @@ function getStep(step: Step) {
 }
 
 async function main() {
-  const translationMap = (await import('../../constants')).TRANSLATION_MAP
+  const {translation_map} = loadConfig(TEST_CASE_CONFIG)
   const testCase: TestCase = {
     name: 'test case',
     dimensions: {
@@ -202,7 +203,7 @@ async function main() {
       },
     ],
   }
-  const out = testCaseToMd(testCase, translationMap)
+  const out = testCaseToMd(testCase, translation_map)
   console.log(out)
 }
 

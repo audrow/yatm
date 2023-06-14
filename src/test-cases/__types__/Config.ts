@@ -8,6 +8,9 @@ type Config = {
       [key: string]: string[]
     }
   }[]
+  translation_map: {
+    [key: string]: string
+  }
 }
 
 export default Config

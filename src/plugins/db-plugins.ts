@@ -1,4 +1,4 @@
-import {REPOSITORY} from '../constants.github'
+import {REPOSITORY} from '../constants'
 import {
   closeIssue,
   createIssues,

@@ -3,6 +3,12 @@ import testCaseToMd from './test-case-to-md'
 
 describe('testCaseToMd', () => {
   it('should render a test case', () => {
+    const translationMap = {
+      jammy: 'Ubuntu Jammy',
+      installType: 'Install type',
+      fastdds: 'FastDDS',
+      dds: 'DDS vendor',
+    }
     const testCase: TestCase = {
       name: 'test case',
       dimensions: {
@@ -42,6 +48,6 @@ describe('testCaseToMd', () => {
       ],
     }
 
-    expect(testCaseToMd(testCase)).toMatchSnapshot()
+    expect(testCaseToMd(testCase, translationMap)).toMatchSnapshot()
   })
 })

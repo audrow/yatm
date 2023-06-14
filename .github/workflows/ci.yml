@@ -13,4 +13,10 @@ jobs:
       - name: Install
         run: npm ci
       - name: Validate
+        env:
+          YATM_TEST_CASE_CONFIG_PATH: ./example-test-case.config.yaml
+          YATM_REQUIREMENTS_DIRECTORY_PATH==: ./src/requirements/validator
+          GITHUB_REPO_OWNER: audrow
+          GITHUB_REPO_NAME: yatm
+          GITHUB_TOKEN: dummy_key
         run: npm run validate
