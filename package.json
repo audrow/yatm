@@ -73,7 +73,7 @@
     "@types/sort-object-keys": "^1.1.0",
     "ajv": "^8.12.0",
     "combinate": "^1.1.11",
-    "commander": "^10.0.1",
+    "commander": "^11.0.0",
     "csv": "^6.3.1",
     "dotenv": "^16.1.4",
     "endent": "^2.1.0",
