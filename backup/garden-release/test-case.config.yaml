@@ -21,8 +21,11 @@ sets:
         labels:
           - launch
       - isMatch: false
+        name: Webots
         labels:
           - webots
+      - isMatch: false
+        name: Deploying ROS 2 on IBM Cloud
       - isMatch: false
         name: Security on Two
       - isMatch: false
@@ -33,6 +36,13 @@ sets:
         name: Releasing a ROS 2 package with bloom
       - isMatch: false
         name: Rosbag with ROS1 Bridge
+      # Ignore links which are redirects.
+      - isMatch: false
+        name: Ignition
+        labels:
+          - ignition
+      - isMatch: false
+        name: Recording A Bag From Your Own Node Python
     dimensions:
       dds:
         - fastdds
