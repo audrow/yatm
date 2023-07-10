@@ -10,7 +10,7 @@ export default function testCaseToGithubIssue(testCase: TestCase) {
   }
   labels.push(...Object.values(testCase.dimensions))
   labels.push(`generation-${testCase.generation}`)
-  if (DISTRO_LABEL !== "") {
+  if (DISTRO_LABEL !== '') {
     labels.push(DISTRO_LABEL)
   }
   const outIssue: GithubIssue = {
