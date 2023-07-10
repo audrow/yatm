@@ -3,7 +3,7 @@ import fs from 'fs'
 import yaml from 'js-yaml'
 import {join} from 'path'
 import urlParse from 'url-parse'
-import {DISTRO} from '../../../constants'
+import {DISTRO_LABEL} from '../../../constants'
 import validateRequirements from '../../validator/validate-requirements'
 import type Requirement from '../../__types__/Requirement'
 import {errorIfFileExists} from '../utils'
@@ -11,11 +11,16 @@ import getFromSiteMap from './get-pages-from-sitemap'
 
 async function makeDocumentationRequirementFiles(
   outputDirectory: string,
-  distro = DISTRO,
+  distro = DISTRO_LABEL,
   baseUrl = 'https://docs.ros.org/en/',
   sections: string[] = ['Install', 'Tutorials', 'How-to-guide'],
   documentationLabel = 'docs',
 ) {
+  if (distro === "") {
+    console.log("Unable to generate requirements from ros2-docs sitemap " +
+    "as YATM_DISTRO_LABEL envar is not set to a valid distribution (eg. rolling).")
+    process.exit(1)
+  }
   const pages = await getFromSiteMap(distro, baseUrl, sections)
   const requirements = pages.map((page) => {
     const out: Requirement = {

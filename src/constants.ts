@@ -7,6 +7,7 @@ import type Repo from './test-cases/db/github/__types__/Repo'
 // =================================================================================================
 // Define the names of the environment variables that will be retrieved.
 const envSchema = z.object({
+  YATM_DISTRO_LABEL: z.string().default(''),
   YATM_TEST_CASE_CONFIG_PATH: z.string(),
   YATM_REQUIREMENTS_DIRECTORY_PATH: z.string(),
   YATM_OUTPUT_DIRECTORY_PATH: z
@@ -62,8 +63,7 @@ export const REPOSITORY: Repo = {
   name: ENV.GITHUB_REPO_NAME,
 }
 
-// TODO(YV): Update to YATM_DISTRO_LABEL
-export const DISTRO_LABEL = 'iron'
+export const DISTRO_LABEL = ENV.YATM_DISTRO_LABEL
 
 const packageXml = JSON.parse(
   fs.readFileSync(join(process.cwd(), 'package.json'), 'utf8'),
