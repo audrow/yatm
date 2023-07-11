@@ -16,13 +16,6 @@ async function makeDocumentationRequirementFiles(
   sections: string[] = ['Install', 'Tutorials', 'How-to-guide'],
   documentationLabel = 'docs',
 ) {
-  if (distro === '') {
-    console.log(
-      'Unable to generate requirements from ros2-docs sitemap ' +
-        'as YATM_DISTRO_LABEL envar is not set to a valid distribution (eg. rolling).',
-    )
-    process.exit(1)
-  }
   const pages = await getFromSiteMap(distro, baseUrl, sections)
   const requirements = pages.map((page) => {
     const out: Requirement = {

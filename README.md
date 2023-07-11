@@ -103,7 +103,7 @@ Here are the steps to using this package:
 
 - `YATM_REQUIREMENTS_DIRECTORY_PATH`: The absolute path to a directly containing YAML files files that describe testing requirements. See [Creating Requirements](#creating-requirements) for more details.
 - `YATM_OUTPUT_DIRECTORY_PATH` (OPTIONAL): The absolute path to a directory where YATM should output test cases to. If unspecified, a `generated-files/` directory is created in the current working directory.
-- `YATM_DISTRO_LABEL` (OPTIONAL): When generating requirements from ros2-docs, this should be set to the distro name, eg. `rolling`. Any Github tickets created will also append this value as a "label" for the ticket if it is non-empty.
+- `YATM_DISTRO_LABEL`: When generating requirements from ros2-docs, this should be set to the distro name, eg. `rolling`. Any Github tickets created will also append this value as a "label" for the ticket if it is non-empty.
 - `GITHUB_REPO_OWNER`: The name of the github organization or owner containing the repository below.
 - `GITHUB_REPO_NAME`: The name of repository where Issue tickets for test cases should be opened.
 - `GITHUB_TOKEN`: Your Github Personal Access token which has the ability to read and write to the repository above.

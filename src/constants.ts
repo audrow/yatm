@@ -7,7 +7,7 @@ import type Repo from './test-cases/db/github/__types__/Repo'
 // =================================================================================================
 // Define the names of the environment variables that will be retrieved.
 const envSchema = z.object({
-  YATM_DISTRO_LABEL: z.string().default(''),
+  YATM_DISTRO_LABEL: z.string(),
   YATM_TEST_CASE_CONFIG_PATH: z.string(),
   YATM_REQUIREMENTS_DIRECTORY_PATH: z.string(),
   YATM_OUTPUT_DIRECTORY_PATH: z
