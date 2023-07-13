@@ -42,6 +42,7 @@ export default function generateTestCases({
 function filterRequirements(
   requirements: Requirement[],
   filters: RequirementFilter | RequirementFilter[],
+  remove_duplicates = true,
 ) {
   if (!Array.isArray(filters)) {
     filters = [filters]
@@ -76,6 +77,51 @@ function filterRequirements(
       })
     }
   }
+  // Remove requirements with duplicate names by selecting the requirement
+  // with the greater number of labels.
+  const original_count: number = requirements.length
+  if (remove_duplicates) {
+    const requirementsWithSameNameMap: {[name: string]: Requirement[]} = {}
+    requirements.forEach((requirement) => {
+      if (!requirementsWithSameNameMap[requirement.name]) {
+        const requirementsWithSameName = requirements.filter(
+          (r) => r.name === requirement.name,
+        )
+        if (requirementsWithSameName.length > 1) {
+          requirementsWithSameNameMap[requirement.name] =
+            requirementsWithSameName
+        }
+      }
+    })
+
+    Object.entries(requirementsWithSameNameMap).forEach(
+      ([, requirementsWithSameName]) => {
+        const requirementsToRemove: Requirement[] =
+          requirementsWithSameName.sort((r1, r2) => {
+            if (r1.labels && r2.labels && r1.labels.length > r2.labels.length) {
+              return 1
+            }
+
+            if (r1.labels && r2.labels && r1.labels.length < r2.labels.length) {
+              return -1
+            }
+            return 0
+          })
+        // Pop the last element which is the requirement we want to keep.
+        // Delete remaining requirements.
+        requirementsToRemove.pop()
+        requirementsToRemove.forEach((r: Requirement) => {
+          const index = requirements.indexOf(r)
+          if (index > -1) {
+            requirements.splice(index, 1)
+          }
+        })
+      },
+    )
+    const final_count: number = requirements.length
+    console.log('Removed %i duplicates', original_count - final_count)
+  }
+
   return requirements
 }
 

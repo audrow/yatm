@@ -3,6 +3,7 @@ import fs from 'fs'
 import yaml from 'js-yaml'
 import {join} from 'path'
 import urlParse from 'url-parse'
+import {DISTRO_LABEL} from '../../../constants'
 import validateRequirements from '../../validator/validate-requirements'
 import type Requirement from '../../__types__/Requirement'
 import {errorIfFileExists} from '../utils'
@@ -10,7 +11,7 @@ import getFromSiteMap from './get-pages-from-sitemap'
 
 async function makeDocumentationRequirementFiles(
   outputDirectory: string,
-  distro = 'rolling',
+  distro = DISTRO_LABEL,
   baseUrl = 'https://docs.ros.org/en/',
   sections: string[] = ['Install', 'Tutorials', 'How-to-guide'],
   documentationLabel = 'docs',
