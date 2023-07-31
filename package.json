@@ -77,7 +77,7 @@
     "csv": "^6.3.1",
     "dotenv": "^16.3.1",
     "endent": "^2.1.0",
-    "fast-xml-parser": "^4.2.6",
+    "fast-xml-parser": "^4.2.7",
     "js-yaml": "^4.1.0",
     "octokit": "^3.1.0",
     "proper-url-join": "^2.1.1",
