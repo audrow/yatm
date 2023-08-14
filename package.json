@@ -54,7 +54,7 @@
     "@types/proper-url-join": "^2.1.1",
     "@types/sleep": "^0.0.9",
     "@types/url-parse": "^1.4.8",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
