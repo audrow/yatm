@@ -11,7 +11,7 @@ import type GazeboRepoDocs from './__types__/GazeboRepoDocs'
 async function main() {
   const outputFile = join(__dirname, 'gazebo-doc-requirements.yaml')
   const errorLogFile = join(__dirname, 'gazebo-doc-requirements-errors.txt')
-  const commonLabelForRequirements = 'garden'
+  const commonLabelForRequirements = 'harmonic'
 
   const {repoDocs, errorText} = await getGazeboLinks({
     cacheDir: '.cache',
@@ -20,18 +20,18 @@ async function main() {
       org: 'gazebosim',
       name: 'docs',
       branch: 'master',
-      releaseName: 'garden',
+      releaseName: 'harmonic',
     },
     gzWorldRepo: {
       url: 'https://github.com/gazebosim/gz-sim',
       org: 'gazebosim',
       name: 'gz-sim',
-      branch: 'gz-sim7',
+      branch: 'gz-sim8',
       pathToWoldFiles: 'examples/worlds',
     },
     gzTutorialRepos: {
       reposYamlUrl:
-        'https://raw.githubusercontent.com/ignition-tooling/gazebodistro/master/collection-garden.yaml',
+        'https://raw.githubusercontent.com/ignition-tooling/gazebodistro/master/collection-harmonic.yaml',
       reposToSkip: ['gz-cmake'],
       tutorialsDirectory: 'tutorials',
     },
